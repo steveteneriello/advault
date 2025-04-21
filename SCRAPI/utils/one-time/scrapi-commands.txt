@@ -1,0 +1,47 @@
+# SCRAPI Commands Reference
+
+This file contains a reference of all available commands for the SCRAPI system.
+
+## Data Collection
+- `npm run collect:ads` - Collect ads using Google Ads Scraper
+- `npm run collect:render` - Trigger rendered HTML/PNG collection
+- `npm run collect:and-process` - Collect and process ads in one step
+- `npm run collect:html` - Render ad landing pages as HTML
+
+## Scraping
+- `npm run scrape:single` - Run a single query
+- `npm run scrape:batch` - Run a batch of queries
+- `npm run scrape:ips` - Get notifier IP list
+- `npm run scrapi` - Run the SCRAPI automation for a single query
+- `npm run scrapi-batch` - Run the SCRAPI batch automation
+
+## SERP Commands
+- `npm run serp` - Run the SERP automation
+
+## Processing
+- `npm run process:stage` - Process data into staging table
+- `npm run process:render` - Process ad rendering
+- `npm run process:png-to-base64` - Process PNG files to base64
+- `npm run process:all` - Process all data
+- `npm run batch:process` - Process batch jobs from Oxylabs
+
+## Rendering
+- `npm run render:html` - Render ad landing pages as HTML
+- `npm run render:simple` - Simple ad renderer
+- `npm run render:direct` - Direct rendering processor
+
+## Storage
+- `npm run storage:upload` - Upload files to Supabase Storage
+
+## Reporting
+- `npm run report:generate` - Generate SERP report
+
+## Automation
+- `npm run automation` - Run AdVault automation
+- `npm run scheduler` - Run AdMachines scheduler
+- `npm run advault` - Run AdVault automation master
+
+## Utilities
+- `npm run keyword:feeder` - Generate search queries from locations
+- `npm run check:bucket` - Check SERP images bucket
+- `npm run reprocess:failures` - Reprocess extraction failures

@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0",
+    "dotenv": "^16.4.1",
+    "node-cron": "^3.0.3",
+    "sanitize-html": "^2.16.0"
+  },
+  "scripts": {
+    "scrapi": "node SCRAPI/d-automations/1-automation-triggers/scrapi-automation.js",
+    "dev": "node index.js",
+    "fix-serp-ads": "node SCRAPI/utils/serp-ad-linker.js",
+    "archive-files": "node SCRAPI/utils/file-archiver.js",
+    "view-backups": "node SCRAPI/utils/view-file-backups.js",
+    "job-status": "node SCRAPI/utils/active/job-status-dashboard.js"
+  }
+}

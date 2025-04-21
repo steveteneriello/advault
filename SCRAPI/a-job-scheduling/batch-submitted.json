@@ -1,0 +1,3010 @@
+{
+  "queries": [
+    {
+      "id": "7319492646462822401",
+      "query": "disaster restoration",
+      "geo_location": "Phoenix, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492646462822401/results"
+    },
+    {
+      "id": "7319492648278977537",
+      "query": "disaster restoration",
+      "geo_location": "Glendale, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492648278977537/results"
+    },
+    {
+      "id": "7319492649176535041",
+      "query": "disaster restoration",
+      "geo_location": "Tempe, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492649176535041/results"
+    },
+    {
+      "id": "7319492650862647297",
+      "query": "disaster restoration",
+      "geo_location": "Yuma, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492650862647297/results"
+    },
+    {
+      "id": "7319492651709916161",
+      "query": "disaster restoration",
+      "geo_location": "Mesa, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492651709916161/results"
+    },
+    {
+      "id": "7319492652666202113",
+      "query": "disaster restoration",
+      "geo_location": "Prescott Valley, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492652666202113/results"
+    },
+    {
+      "id": "7319492653488279553",
+      "query": "disaster restoration",
+      "geo_location": "Scottsdale, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492653488279553/results"
+    },
+    {
+      "id": "7319492655170193409",
+      "query": "disaster restoration",
+      "geo_location": "Chandler, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492655170193409/results"
+    },
+    {
+      "id": "7319492656063603713",
+      "query": "disaster restoration",
+      "geo_location": "San Tan Valley, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492656063603713/results"
+    },
+    {
+      "id": "7319492656977948673",
+      "query": "disaster restoration",
+      "geo_location": "Gilbert, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492656977948673/results"
+    },
+    {
+      "id": "7319492784732265473",
+      "query": "disaster restoration",
+      "geo_location": "Peoria, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492784732265473/results"
+    },
+    {
+      "id": "7319492786414161921",
+      "query": "disaster restoration",
+      "geo_location": "Goodyear, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492786414161921/results"
+    },
+    {
+      "id": "7319492787265613825",
+      "query": "disaster restoration",
+      "geo_location": "Buckeye, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492787265613825/results"
+    },
+    {
+      "id": "7319492788142227457",
+      "query": "disaster restoration",
+      "geo_location": "Kailua, Hawaii, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492788142227457/results"
+    },
+    {
+      "id": "7319492789085933569",
+      "query": "disaster restoration",
+      "geo_location": "Washington, District of Columbia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492789085933569/results"
+    },
+    {
+      "id": "7319492789929013249",
+      "query": "disaster restoration",
+      "geo_location": "San Juan, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492789929013249/results"
+    },
+    {
+      "id": "7319492790839171073",
+      "query": "disaster restoration",
+      "geo_location": "Bayamón, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492790839171073/results"
+    },
+    {
+      "id": "7319492791791271937",
+      "query": "disaster restoration",
+      "geo_location": "Ponce, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492791791271937/results"
+    },
+    {
+      "id": "7319492792802086914",
+      "query": "disaster restoration",
+      "geo_location": "Carolina, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492792802086914/results"
+    },
+    {
+      "id": "7319492793699671041",
+      "query": "disaster restoration",
+      "geo_location": "Arecibo, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492793699671041/results"
+    },
+    {
+      "id": "7319492921403664385",
+      "query": "disaster restoration",
+      "geo_location": "San Germán, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492921403664385/results"
+    },
+    {
+      "id": "7319492922498358273",
+      "query": "disaster restoration",
+      "geo_location": "Staten Island, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492922498358273/results"
+    },
+    {
+      "id": "7319492924146733057",
+      "query": "disaster restoration",
+      "geo_location": "Lancaster, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492924146733057/results"
+    },
+    {
+      "id": "7319492925132381185",
+      "query": "disaster restoration",
+      "geo_location": "Rock Hill, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492925132381185/results"
+    },
+    {
+      "id": "7319492927112109057",
+      "query": "disaster restoration",
+      "geo_location": "Bend, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492927112109057/results"
+    },
+    {
+      "id": "7319492927955147777",
+      "query": "disaster restoration",
+      "geo_location": "Mission Viejo, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492927955147777/results"
+    },
+    {
+      "id": "7319492928844338177",
+      "query": "disaster restoration",
+      "geo_location": "Tucson, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492928844338177/results"
+    },
+    {
+      "id": "7319492929746126849",
+      "query": "disaster restoration",
+      "geo_location": "Surprise, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492929746126849/results"
+    },
+    {
+      "id": "7319492930639525889",
+      "query": "disaster restoration",
+      "geo_location": "Aguadilla, Puerto Rico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492930639525889/results"
+    },
+    {
+      "id": "7319492931449018369",
+      "query": "disaster restoration",
+      "geo_location": "Lancaster, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492931449018369/results"
+    },
+    {
+      "id": "7319493059341716481",
+      "query": "disaster restoration",
+      "geo_location": "Baltimore, Maryland, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493059341716481/results"
+    },
+    {
+      "id": "7319493060440626177",
+      "query": "disaster restoration",
+      "geo_location": "Richmond, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493060440626177/results"
+    },
+    {
+      "id": "7319493061342417921",
+      "query": "disaster restoration",
+      "geo_location": "Allentown, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493061342417921/results"
+    },
+    {
+      "id": "7319493062361618433",
+      "query": "disaster restoration",
+      "geo_location": "Harrisburg, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493062361618433/results"
+    },
+    {
+      "id": "7319493063439577089",
+      "query": "disaster restoration",
+      "geo_location": "Scranton, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493063439577089/results"
+    },
+    {
+      "id": "7319493064374893570",
+      "query": "disaster restoration",
+      "geo_location": "Newark, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493064374893570/results"
+    },
+    {
+      "id": "7319493066123910146",
+      "query": "disaster restoration",
+      "geo_location": "Reading, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493066123910146/results"
+    },
+    {
+      "id": "7319493067055049729",
+      "query": "disaster restoration",
+      "geo_location": "York, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493067055049729/results"
+    },
+    {
+      "id": "7319493067944235009",
+      "query": "disaster restoration",
+      "geo_location": "Roanoke, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493067944235009/results"
+    },
+    {
+      "id": "7319493068804065281",
+      "query": "disaster restoration",
+      "geo_location": "Hagerstown, Maryland, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493068804065281/results"
+    },
+    {
+      "id": "7319493195866331137",
+      "query": "disaster restoration",
+      "geo_location": "Erie, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493195866331137/results"
+    },
+    {
+      "id": "7319493197602754561",
+      "query": "disaster restoration",
+      "geo_location": "Newport News, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493197602754561/results"
+    },
+    {
+      "id": "7319493199276303361",
+      "query": "disaster restoration",
+      "geo_location": "Fredericksburg, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493199276303361/results"
+    },
+    {
+      "id": "7319493200140326913",
+      "query": "disaster restoration",
+      "geo_location": "Paterson, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493200140326913/results"
+    },
+    {
+      "id": "7319493201167917057",
+      "query": "disaster restoration",
+      "geo_location": "Hampton, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493201167917057/results"
+    },
+    {
+      "id": "7319493202191332353",
+      "query": "disaster restoration",
+      "geo_location": "Lakewood, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493202191332353/results"
+    },
+    {
+      "id": "7319493203122463745",
+      "query": "disaster restoration",
+      "geo_location": "Philadelphia, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493203122463745/results"
+    },
+    {
+      "id": "7319493204070393857",
+      "query": "disaster restoration",
+      "geo_location": "Trenton, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493204070393857/results"
+    },
+    {
+      "id": "7319493204988936193",
+      "query": "disaster restoration",
+      "geo_location": "Norfolk, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493204988936193/results"
+    },
+    {
+      "id": "7319493205857143809",
+      "query": "disaster restoration",
+      "geo_location": "Lynchburg, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493205857143809/results"
+    },
+    {
+      "id": "7319493333590478849",
+      "query": "disaster restoration",
+      "geo_location": "Charlottesville, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493333590478849/results"
+    },
+    {
+      "id": "7319493335310150657",
+      "query": "disaster restoration",
+      "geo_location": "Portsmouth, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493335310150657/results"
+    },
+    {
+      "id": "7319493336396492801",
+      "query": "disaster restoration",
+      "geo_location": "Virginia Beach, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493336396492801/results"
+    },
+    {
+      "id": "7319493337335990273",
+      "query": "disaster restoration",
+      "geo_location": "Chesapeake, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493337335990273/results"
+    },
+    {
+      "id": "7319493338346843138",
+      "query": "disaster restoration",
+      "geo_location": "Arlington, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493338346843138/results"
+    },
+    {
+      "id": "7319493339282161665",
+      "query": "disaster restoration",
+      "geo_location": "Frederick, Maryland, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493339282161665/results"
+    },
+    {
+      "id": "7319493340150393857",
+      "query": "disaster restoration",
+      "geo_location": "Alexandria, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493340150393857/results"
+    },
+    {
+      "id": "7319493341060546561",
+      "query": "disaster restoration",
+      "geo_location": "Waldorf, Maryland, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493341060546561/results"
+    },
+    {
+      "id": "7319493342859906049",
+      "query": "disaster restoration",
+      "geo_location": "Columbia, Maryland, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493342859906049/results"
+    },
+    {
+      "id": "7319493343799414785",
+      "query": "disaster restoration",
+      "geo_location": "Suffolk, Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493343799414785/results"
+    },
+    {
+      "id": "7319493471583098881",
+      "query": "disaster restoration",
+      "geo_location": "Cincinnati, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493471583098881/results"
+    },
+    {
+      "id": "7319493472514235393",
+      "query": "disaster restoration",
+      "geo_location": "Cleveland, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493472514235393/results"
+    },
+    {
+      "id": "7319493473361470465",
+      "query": "disaster restoration",
+      "geo_location": "Columbus, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493473361470465/results"
+    },
+    {
+      "id": "7319493474175160321",
+      "query": "disaster restoration",
+      "geo_location": "Eau Claire, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493474175160321/results"
+    },
+    {
+      "id": "7319493475748036609",
+      "query": "disaster restoration",
+      "geo_location": "Aurora, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493475748036609/results"
+    },
+    {
+      "id": "7319493477425746945",
+      "query": "disaster restoration",
+      "geo_location": "Naperville, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493477425746945/results"
+    },
+    {
+      "id": "7319493478289778689",
+      "query": "disaster restoration",
+      "geo_location": "Carmel, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493478289778689/results"
+    },
+    {
+      "id": "7319493479246098433",
+      "query": "disaster restoration",
+      "geo_location": "Bloomington, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493479246098433/results"
+    },
+    {
+      "id": "7319493480105916417",
+      "query": "disaster restoration",
+      "geo_location": "Detroit, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493480105916417/results"
+    },
+    {
+      "id": "7319493481066419201",
+      "query": "disaster restoration",
+      "geo_location": "Indianapolis, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493481066419201/results"
+    },
+    {
+      "id": "7319493608652946433",
+      "query": "disaster restoration",
+      "geo_location": "Milwaukee, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493608652946433/results"
+    },
+    {
+      "id": "7319493609638611969",
+      "query": "disaster restoration",
+      "geo_location": "Dayton, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493609638611969/results"
+    },
+    {
+      "id": "7319493610540395521",
+      "query": "disaster restoration",
+      "geo_location": "Grand Rapids, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493610540395521/results"
+    },
+    {
+      "id": "7319493611425373185",
+      "query": "disaster restoration",
+      "geo_location": "Toledo, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493611425373185/results"
+    },
+    {
+      "id": "7319493612272638977",
+      "query": "disaster restoration",
+      "geo_location": "Madison, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493612272638977/results"
+    },
+    {
+      "id": "7319493613195367425",
+      "query": "disaster restoration",
+      "geo_location": "Fort Wayne, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493613195367425/results"
+    },
+    {
+      "id": "7319493614080391169",
+      "query": "disaster restoration",
+      "geo_location": "Lansing, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493614080391169/results"
+    },
+    {
+      "id": "7319493614973756418",
+      "query": "disaster restoration",
+      "geo_location": "Youngstown, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493614973756418/results"
+    },
+    {
+      "id": "7319493615825216513",
+      "query": "disaster restoration",
+      "geo_location": "Canton, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493615825216513/results"
+    },
+    {
+      "id": "7319493616651496449",
+      "query": "disaster restoration",
+      "geo_location": "South Bend, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493616651496449/results"
+    },
+    {
+      "id": "7319493743617255425",
+      "query": "disaster restoration",
+      "geo_location": "Peoria, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493743617255425/results"
+    },
+    {
+      "id": "7319493744468713473",
+      "query": "disaster restoration",
+      "geo_location": "Round Lake Beach, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493744468713473/results"
+    },
+    {
+      "id": "7319493745353714689",
+      "query": "disaster restoration",
+      "geo_location": "Green Bay, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493745353714689/results"
+    },
+    {
+      "id": "7319493746330989569",
+      "query": "disaster restoration",
+      "geo_location": "Evansville, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493746330989569/results"
+    },
+    {
+      "id": "7319493747257902081",
+      "query": "disaster restoration",
+      "geo_location": "Kalamazoo, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493747257902081/results"
+    },
+    {
+      "id": "7319493748151298051",
+      "query": "disaster restoration",
+      "geo_location": "Lorain, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493748151298051/results"
+    },
+    {
+      "id": "7319493749116001281",
+      "query": "disaster restoration",
+      "geo_location": "Muskegon, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493749116001281/results"
+    },
+    {
+      "id": "7319493749950672897",
+      "query": "disaster restoration",
+      "geo_location": "Lafayette, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493749950672897/results"
+    },
+    {
+      "id": "7319493750818894849",
+      "query": "disaster restoration",
+      "geo_location": "Springfield, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493750818894849/results"
+    },
+    {
+      "id": "7319493751703894017",
+      "query": "disaster restoration",
+      "geo_location": "South Lyon, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493751703894017/results"
+    },
+    {
+      "id": "7319493879709850625",
+      "query": "disaster restoration",
+      "geo_location": "Joliet, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493879709850625/results"
+    },
+    {
+      "id": "7319493880737457153",
+      "query": "disaster restoration",
+      "geo_location": "Champaign, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493880737457153/results"
+    },
+    {
+      "id": "7319493881781833729",
+      "query": "disaster restoration",
+      "geo_location": "Warren, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493881781833729/results"
+    },
+    {
+      "id": "7319493883669252098",
+      "query": "disaster restoration",
+      "geo_location": "Saginaw, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493883669252098/results"
+    },
+    {
+      "id": "7319493884692680705",
+      "query": "disaster restoration",
+      "geo_location": "Elgin, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493884692680705/results"
+    },
+    {
+      "id": "7319493885703499777",
+      "query": "disaster restoration",
+      "geo_location": "Holland, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493885703499777/results"
+    },
+    {
+      "id": "7319493886617870337",
+      "query": "disaster restoration",
+      "geo_location": "Dearborn, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493886617870337/results"
+    },
+    {
+      "id": "7319493887548983297",
+      "query": "disaster restoration",
+      "geo_location": "Bloomington, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493887548983297/results"
+    },
+    {
+      "id": "7319493888454959105",
+      "query": "disaster restoration",
+      "geo_location": "Chicago, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493888454959105/results"
+    },
+    {
+      "id": "7319493890371771393",
+      "query": "disaster restoration",
+      "geo_location": "Akron, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319493890371771393/results"
+    },
+    {
+      "id": "7319494018000234497",
+      "query": "disaster restoration",
+      "geo_location": "Ann Arbor, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494018000234497/results"
+    },
+    {
+      "id": "7319494019698947073",
+      "query": "disaster restoration",
+      "geo_location": "Flint, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494019698947073/results"
+    },
+    {
+      "id": "7319494020734934018",
+      "query": "disaster restoration",
+      "geo_location": "Rockford, Illinois, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494020734934018/results"
+    },
+    {
+      "id": "7319494021653491713",
+      "query": "disaster restoration",
+      "geo_location": "Appleton, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494021653491713/results"
+    },
+    {
+      "id": "7319494022580431873",
+      "query": "disaster restoration",
+      "geo_location": "Elkhart, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494022580431873/results"
+    },
+    {
+      "id": "7319494023482183681",
+      "query": "disaster restoration",
+      "geo_location": "Racine, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494023482183681/results"
+    },
+    {
+      "id": "7319494024379782145",
+      "query": "disaster restoration",
+      "geo_location": "Sterling Heights, Michigan, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494024379782145/results"
+    },
+    {
+      "id": "7319494026112016385",
+      "query": "disaster restoration",
+      "geo_location": "Kenosha, Wisconsin, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494026112016385/results"
+    },
+    {
+      "id": "7319494026992833537",
+      "query": "disaster restoration",
+      "geo_location": "Middletown, Ohio, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494026992833537/results"
+    },
+    {
+      "id": "7319494028049800193",
+      "query": "disaster restoration",
+      "geo_location": "Wichita, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494028049800193/results"
+    },
+    {
+      "id": "7319494155766353921",
+      "query": "disaster restoration",
+      "geo_location": "Independence, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494155766353921/results"
+    },
+    {
+      "id": "7319494156693296129",
+      "query": "disaster restoration",
+      "geo_location": "Fishers, Indiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494156693296129/results"
+    },
+    {
+      "id": "7319494158308107265",
+      "query": "disaster restoration",
+      "geo_location": "Davenport, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494158308107265/results"
+    },
+    {
+      "id": "7319494159214055425",
+      "query": "disaster restoration",
+      "geo_location": "Cedar Rapids, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494159214055425/results"
+    },
+    {
+      "id": "7319494160145188865",
+      "query": "disaster restoration",
+      "geo_location": "Olathe, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494160145188865/results"
+    },
+    {
+      "id": "7319494161021804545",
+      "query": "disaster restoration",
+      "geo_location": "Lee's Summit, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494161021804545/results"
+    },
+    {
+      "id": "7319494161864881153",
+      "query": "disaster restoration",
+      "geo_location": "Des Moines, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494161864881153/results"
+    },
+    {
+      "id": "7319494162674374657",
+      "query": "disaster restoration",
+      "geo_location": "Lincoln, Nebraska, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494162674374657/results"
+    },
+    {
+      "id": "7319494163538384898",
+      "query": "disaster restoration",
+      "geo_location": "Norman, Oklahoma, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494163538384898/results"
+    },
+    {
+      "id": "7319494164528262145",
+      "query": "disaster restoration",
+      "geo_location": "Waterloo, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494164528262145/results"
+    },
+    {
+      "id": "7319494291502430209",
+      "query": "disaster restoration",
+      "geo_location": "Sioux City, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494291502430209/results"
+    },
+    {
+      "id": "7319494292571955201",
+      "query": "disaster restoration",
+      "geo_location": "St. Louis, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494292571955201/results"
+    },
+    {
+      "id": "7319494293532459009",
+      "query": "disaster restoration",
+      "geo_location": "Springfield, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494293532459009/results"
+    },
+    {
+      "id": "7319494294425859073",
+      "query": "disaster restoration",
+      "geo_location": "Kansas City, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494294425859073/results"
+    },
+    {
+      "id": "7319494296149695489",
+      "query": "disaster restoration",
+      "geo_location": "Kansas City, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494296149695489/results"
+    },
+    {
+      "id": "7319494297101798401",
+      "query": "disaster restoration",
+      "geo_location": "Oklahoma City, Oklahoma, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494297101798401/results"
+    },
+    {
+      "id": "7319494298192320513",
+      "query": "disaster restoration",
+      "geo_location": "Omaha, Nebraska, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494298192320513/results"
+    },
+    {
+      "id": "7319494299089915906",
+      "query": "disaster restoration",
+      "geo_location": "Tulsa, Oklahoma, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494299089915906/results"
+    },
+    {
+      "id": "7319494300822163457",
+      "query": "disaster restoration",
+      "geo_location": "Iowa City, Iowa, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494300822163457/results"
+    },
+    {
+      "id": "7319494301778470913",
+      "query": "disaster restoration",
+      "geo_location": "Lawrence, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494301778470913/results"
+    },
+    {
+      "id": "7319494428786168833",
+      "query": "disaster restoration",
+      "geo_location": "Topeka, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494428786168833/results"
+    },
+    {
+      "id": "7319494429817991169",
+      "query": "disaster restoration",
+      "geo_location": "Columbia, Missouri, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494429817991169/results"
+    },
+    {
+      "id": "7319494430791046145",
+      "query": "disaster restoration",
+      "geo_location": "Broken Arrow, Oklahoma, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494430791046145/results"
+    },
+    {
+      "id": "7319494431676049409",
+      "query": "disaster restoration",
+      "geo_location": "Overland Park, Kansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494431676049409/results"
+    },
+    {
+      "id": "7319494432582039553",
+      "query": "disaster restoration",
+      "geo_location": "Duluth, Minnesota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494432582039553/results"
+    },
+    {
+      "id": "7319494433563498497",
+      "query": "disaster restoration",
+      "geo_location": "New Orleans, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494433563498497/results"
+    },
+    {
+      "id": "7319494434515612673",
+      "query": "disaster restoration",
+      "geo_location": "Metairie, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494434515612673/results"
+    },
+    {
+      "id": "7319494435413179393",
+      "query": "disaster restoration",
+      "geo_location": "Mandeville, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494435413179393/results"
+    },
+    {
+      "id": "7319494436264627201",
+      "query": "disaster restoration",
+      "geo_location": "Auburn, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494436264627201/results"
+    },
+    {
+      "id": "7319494437225132033",
+      "query": "disaster restoration",
+      "geo_location": "El Paso, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494437225132033/results"
+    },
+    {
+      "id": "7319494564643877889",
+      "query": "disaster restoration",
+      "geo_location": "Pasadena, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494564643877889/results"
+    },
+    {
+      "id": "7319494565533059073",
+      "query": "disaster restoration",
+      "geo_location": "Temple, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494565533059073/results"
+    },
+    {
+      "id": "7319494566518738945",
+      "query": "disaster restoration",
+      "geo_location": "Harlingen, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494566518738945/results"
+    },
+    {
+      "id": "7319494567361786881",
+      "query": "disaster restoration",
+      "geo_location": "Midland, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494567361786881/results"
+    },
+    {
+      "id": "7319494568313903105",
+      "query": "disaster restoration",
+      "geo_location": "Round Rock, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494568313903105/results"
+    },
+    {
+      "id": "7319494569265988610",
+      "query": "disaster restoration",
+      "geo_location": "Sugar Land, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494569265988610/results"
+    },
+    {
+      "id": "7319494570243281921",
+      "query": "disaster restoration",
+      "geo_location": "Orlando, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494570243281921/results"
+    },
+    {
+      "id": "7319494571182788609",
+      "query": "disaster restoration",
+      "geo_location": "McAllen, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494571182788609/results"
+    },
+    {
+      "id": "7319494572143283201",
+      "query": "disaster restoration",
+      "geo_location": "Birmingham, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494572143283201/results"
+    },
+    {
+      "id": "7319494573049252865",
+      "query": "disaster restoration",
+      "geo_location": "Pensacola, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494573049252865/results"
+    },
+    {
+      "id": "7319494700145080321",
+      "query": "disaster restoration",
+      "geo_location": "Huntsville, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494700145080321/results"
+    },
+    {
+      "id": "7319494701101376513",
+      "query": "disaster restoration",
+      "geo_location": "Winter Haven, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494701101376513/results"
+    },
+    {
+      "id": "7319494702082820097",
+      "query": "disaster restoration",
+      "geo_location": "Shreveport, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494702082820097/results"
+    },
+    {
+      "id": "7319494702963622913",
+      "query": "disaster restoration",
+      "geo_location": "Garland, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494702963622913/results"
+    },
+    {
+      "id": "7319494704708457474",
+      "query": "disaster restoration",
+      "geo_location": "St. Petersburg, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494704708457474/results"
+    },
+    {
+      "id": "7319494705606055937",
+      "query": "disaster restoration",
+      "geo_location": "Montgomery, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494705606055937/results"
+    },
+    {
+      "id": "7319494707342502913",
+      "query": "disaster restoration",
+      "geo_location": "Hialeah, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494707342502913/results"
+    },
+    {
+      "id": "7319494708118432769",
+      "query": "disaster restoration",
+      "geo_location": "Amarillo, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494708118432769/results"
+    },
+    {
+      "id": "7319494709049585665",
+      "query": "disaster restoration",
+      "geo_location": "Ocala, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494709049585665/results"
+    },
+    {
+      "id": "7319494709947147265",
+      "query": "disaster restoration",
+      "geo_location": "Hollywood, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494709947147265/results"
+    },
+    {
+      "id": "7319494837051350017",
+      "query": "disaster restoration",
+      "geo_location": "Port Arthur, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494837051350017/results"
+    },
+    {
+      "id": "7319494837969890305",
+      "query": "disaster restoration",
+      "geo_location": "Dallas, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494837969890305/results"
+    },
+    {
+      "id": "7319494838863286273",
+      "query": "disaster restoration",
+      "geo_location": "Tampa, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494838863286273/results"
+    },
+    {
+      "id": "7319494839806985217",
+      "query": "disaster restoration",
+      "geo_location": "Jackson, Mississippi, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494839806985217/results"
+    },
+    {
+      "id": "7319494840968829953",
+      "query": "disaster restoration",
+      "geo_location": "Gulfport, Mississippi, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494840968829953/results"
+    },
+    {
+      "id": "7319494841862209537",
+      "query": "disaster restoration",
+      "geo_location": "Brownsville, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494841862209537/results"
+    },
+    {
+      "id": "7319494842789145601",
+      "query": "disaster restoration",
+      "geo_location": "Pembroke Pines, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494842789145601/results"
+    },
+    {
+      "id": "7319494843724489729",
+      "query": "disaster restoration",
+      "geo_location": "Conroe, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494843724489729/results"
+    },
+    {
+      "id": "7319494844571742209",
+      "query": "disaster restoration",
+      "geo_location": "St. Augustine, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494844571742209/results"
+    },
+    {
+      "id": "7319494845536412673",
+      "query": "disaster restoration",
+      "geo_location": "Miami, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494845536412673/results"
+    },
+    {
+      "id": "7319494972514783233",
+      "query": "disaster restoration",
+      "geo_location": "Houston, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494972514783233/results"
+    },
+    {
+      "id": "7319494973429151745",
+      "query": "disaster restoration",
+      "geo_location": "San Antonio, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494973429151745/results"
+    },
+    {
+      "id": "7319494974377064449",
+      "query": "disaster restoration",
+      "geo_location": "Jacksonville, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494974377064449/results"
+    },
+    {
+      "id": "7319494975241091073",
+      "query": "disaster restoration",
+      "geo_location": "Fort Worth, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494975241091073/results"
+    },
+    {
+      "id": "7319494976323195905",
+      "query": "disaster restoration",
+      "geo_location": "Cape Coral, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494976323195905/results"
+    },
+    {
+      "id": "7319494977321464833",
+      "query": "disaster restoration",
+      "geo_location": "Baton Rouge, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494977321464833/results"
+    },
+    {
+      "id": "7319494978994981889",
+      "query": "disaster restoration",
+      "geo_location": "Palm Bay, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494978994981889/results"
+    },
+    {
+      "id": "7319494979875788801",
+      "query": "disaster restoration",
+      "geo_location": "Port St. Lucie, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494979875788801/results"
+    },
+    {
+      "id": "7319494980802729985",
+      "query": "disaster restoration",
+      "geo_location": "Denton, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494980802729985/results"
+    },
+    {
+      "id": "7319494981687720961",
+      "query": "disaster restoration",
+      "geo_location": "Kissimmee, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319494981687720961/results"
+    },
+    {
+      "id": "7319495110134077441",
+      "query": "disaster restoration",
+      "geo_location": "Arlington, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495110134077441/results"
+    },
+    {
+      "id": "7319495111925063681",
+      "query": "disaster restoration",
+      "geo_location": "Corpus Christi, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495111925063681/results"
+    },
+    {
+      "id": "7319495113099456513",
+      "query": "disaster restoration",
+      "geo_location": "Mobile, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495113099456513/results"
+    },
+    {
+      "id": "7319495114173190145",
+      "query": "disaster restoration",
+      "geo_location": "Lubbock, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495114173190145/results"
+    },
+    {
+      "id": "7319495115116933121",
+      "query": "disaster restoration",
+      "geo_location": "Killeen, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495115116933121/results"
+    },
+    {
+      "id": "7319495116123552769",
+      "query": "disaster restoration",
+      "geo_location": "Tallahassee, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495116123552769/results"
+    },
+    {
+      "id": "7319495117012743169",
+      "query": "disaster restoration",
+      "geo_location": "Irving, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495117012743169/results"
+    },
+    {
+      "id": "7319495117914508289",
+      "query": "disaster restoration",
+      "geo_location": "Lafayette, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495117914508289/results"
+    },
+    {
+      "id": "7319495118858242049",
+      "query": "disaster restoration",
+      "geo_location": "Deltona, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495118858242049/results"
+    },
+    {
+      "id": "7319495119760017409",
+      "query": "disaster restoration",
+      "geo_location": "College Station, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495119760017409/results"
+    },
+    {
+      "id": "7319495246868387841",
+      "query": "disaster restoration",
+      "geo_location": "Gainesville, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495246868387841/results"
+    },
+    {
+      "id": "7319495247719826433",
+      "query": "disaster restoration",
+      "geo_location": "Waco, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495247719826433/results"
+    },
+    {
+      "id": "7319495248621625345",
+      "query": "disaster restoration",
+      "geo_location": "Panama City, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495248621625345/results"
+    },
+    {
+      "id": "7319495250303544321",
+      "query": "disaster restoration",
+      "geo_location": "Tuscaloosa, Alabama, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495250303544321/results"
+    },
+    {
+      "id": "7319495251192731649",
+      "query": "disaster restoration",
+      "geo_location": "Leesburg, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495251192731649/results"
+    },
+    {
+      "id": "7319495252144839681",
+      "query": "disaster restoration",
+      "geo_location": "Houma, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495252144839681/results"
+    },
+    {
+      "id": "7319495253046620161",
+      "query": "disaster restoration",
+      "geo_location": "Lake Charles, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495253046620161/results"
+    },
+    {
+      "id": "7319495254015479809",
+      "query": "disaster restoration",
+      "geo_location": "Tyler, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495254015479809/results"
+    },
+    {
+      "id": "7319495254929836033",
+      "query": "disaster restoration",
+      "geo_location": "Lehigh Acres, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495254929836033/results"
+    },
+    {
+      "id": "7319495255764526081",
+      "query": "disaster restoration",
+      "geo_location": "West Palm Beach, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495255764526081/results"
+    },
+    {
+      "id": "7319495383502049281",
+      "query": "disaster restoration",
+      "geo_location": "Monroe, Louisiana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495383502049281/results"
+    },
+    {
+      "id": "7319495384487698433",
+      "query": "disaster restoration",
+      "geo_location": "Lakeland, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495384487698433/results"
+    },
+    {
+      "id": "7319495385385285633",
+      "query": "disaster restoration",
+      "geo_location": "Laredo, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495385385285633/results"
+    },
+    {
+      "id": "7319495386249312257",
+      "query": "disaster restoration",
+      "geo_location": "Fort Lauderdale, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495386249312257/results"
+    },
+    {
+      "id": "7319495387616665601",
+      "query": "disaster restoration",
+      "geo_location": "Galveston, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495387616665601/results"
+    },
+    {
+      "id": "7319495388526808065",
+      "query": "disaster restoration",
+      "geo_location": "Odessa, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495388526808065/results"
+    },
+    {
+      "id": "7319495390254885889",
+      "query": "disaster restoration",
+      "geo_location": "Beaumont, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495390254885889/results"
+    },
+    {
+      "id": "7319495391144067073",
+      "query": "disaster restoration",
+      "geo_location": "Clearwater, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495391144067073/results"
+    },
+    {
+      "id": "7319495392272344065",
+      "query": "disaster restoration",
+      "geo_location": "Brandon, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495392272344065/results"
+    },
+    {
+      "id": "7319495393526433793",
+      "query": "disaster restoration",
+      "geo_location": "Miami Gardens, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495393526433793/results"
+    },
+    {
+      "id": "7319495521561741313",
+      "query": "disaster restoration",
+      "geo_location": "Edinburg, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495521561741313/results"
+    },
+    {
+      "id": "7319495522585161729",
+      "query": "disaster restoration",
+      "geo_location": "Wichita Falls, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495522585161729/results"
+    },
+    {
+      "id": "7319495523700841473",
+      "query": "disaster restoration",
+      "geo_location": "San Angelo, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495523700841473/results"
+    },
+    {
+      "id": "7319495525496003585",
+      "query": "disaster restoration",
+      "geo_location": "New Braunfels, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495525496003585/results"
+    },
+    {
+      "id": "7319495526401977345",
+      "query": "disaster restoration",
+      "geo_location": "Bonita Springs, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495526401977345/results"
+    },
+    {
+      "id": "7319495527274405889",
+      "query": "disaster restoration",
+      "geo_location": "Boca Raton, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495527274405889/results"
+    },
+    {
+      "id": "7319495528251676673",
+      "query": "disaster restoration",
+      "geo_location": "Austin, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495528251676673/results"
+    },
+    {
+      "id": "7319495529228946433",
+      "query": "disaster restoration",
+      "geo_location": "Plano, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495529228946433/results"
+    },
+    {
+      "id": "7319495530113945601",
+      "query": "disaster restoration",
+      "geo_location": "Frisco, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495530113945601/results"
+    },
+    {
+      "id": "7319495531066058754",
+      "query": "disaster restoration",
+      "geo_location": "McKinney, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495531066058754/results"
+    },
+    {
+      "id": "7319495658908443649",
+      "query": "disaster restoration",
+      "geo_location": "Pearland, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495658908443649/results"
+    },
+    {
+      "id": "7319495659982182401",
+      "query": "disaster restoration",
+      "geo_location": "The Woodlands, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495659982182401/results"
+    },
+    {
+      "id": "7319495660862972929",
+      "query": "disaster restoration",
+      "geo_location": "Riverview, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495660862972929/results"
+    },
+    {
+      "id": "7319495662746229761",
+      "query": "disaster restoration",
+      "geo_location": "League City, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495662746229761/results"
+    },
+    {
+      "id": "7319495664507826177",
+      "query": "disaster restoration",
+      "geo_location": "Bowling Green, Kentucky, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495664507826177/results"
+    },
+    {
+      "id": "7319495665426391041",
+      "query": "disaster restoration",
+      "geo_location": "Atlanta, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495665426391041/results"
+    },
+    {
+      "id": "7319495666370111489",
+      "query": "disaster restoration",
+      "geo_location": "Charlotte, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495666370111489/results"
+    },
+    {
+      "id": "7319495667397703681",
+      "query": "disaster restoration",
+      "geo_location": "Raleigh, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495667397703681/results"
+    },
+    {
+      "id": "7319495668345622529",
+      "query": "disaster restoration",
+      "geo_location": "Louisville, Kentucky, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495668345622529/results"
+    },
+    {
+      "id": "7319495669389988865",
+      "query": "disaster restoration",
+      "geo_location": "Memphis, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495669389988865/results"
+    },
+    {
+      "id": "7319495796490008577",
+      "query": "disaster restoration",
+      "geo_location": "Knoxville, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495796490008577/results"
+    },
+    {
+      "id": "7319495798171900929",
+      "query": "disaster restoration",
+      "geo_location": "Columbia, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495798171900929/results"
+    },
+    {
+      "id": "7319495799082062849",
+      "query": "disaster restoration",
+      "geo_location": "Durham, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495799082062849/results"
+    },
+    {
+      "id": "7319495799946090497",
+      "query": "disaster restoration",
+      "geo_location": "Augusta, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495799946090497/results"
+    },
+    {
+      "id": "7319495800868846593",
+      "query": "disaster restoration",
+      "geo_location": "Winston-Salem, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495800868846593/results"
+    },
+    {
+      "id": "7319495801753850881",
+      "query": "disaster restoration",
+      "geo_location": "Chattanooga, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495801753850881/results"
+    },
+    {
+      "id": "7319495802680780801",
+      "query": "disaster restoration",
+      "geo_location": "Greenville, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495802680780801/results"
+    },
+    {
+      "id": "7319495803599348737",
+      "query": "disaster restoration",
+      "geo_location": "Fayetteville, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495803599348737/results"
+    },
+    {
+      "id": "7319495804429821953",
+      "query": "disaster restoration",
+      "geo_location": "Myrtle Beach, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495804429821953/results"
+    },
+    {
+      "id": "7319495805339960321",
+      "query": "disaster restoration",
+      "geo_location": "Lexington, Kentucky, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495805339960321/results"
+    },
+    {
+      "id": "7319495932343502849",
+      "query": "disaster restoration",
+      "geo_location": "Savannah, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495932343502849/results"
+    },
+    {
+      "id": "7319495933299811329",
+      "query": "disaster restoration",
+      "geo_location": "Concord, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495933299811329/results"
+    },
+    {
+      "id": "7319495934235143169",
+      "query": "disaster restoration",
+      "geo_location": "Asheville, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495934235143169/results"
+    },
+    {
+      "id": "7319495935170465793",
+      "query": "disaster restoration",
+      "geo_location": "Hickory, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495935170465793/results"
+    },
+    {
+      "id": "7319495936030297089",
+      "query": "disaster restoration",
+      "geo_location": "Macon, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495936030297089/results"
+    },
+    {
+      "id": "7319495936957242369",
+      "query": "disaster restoration",
+      "geo_location": "Charleston, West Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495936957242369/results"
+    },
+    {
+      "id": "7319495937871587329",
+      "query": "disaster restoration",
+      "geo_location": "Greenville, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495937871587329/results"
+    },
+    {
+      "id": "7319495938794345473",
+      "query": "disaster restoration",
+      "geo_location": "North Charleston, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495938794345473/results"
+    },
+    {
+      "id": "7319495940614681601",
+      "query": "disaster restoration",
+      "geo_location": "Jacksonville, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495940614681601/results"
+    },
+    {
+      "id": "7319495942372067329",
+      "query": "disaster restoration",
+      "geo_location": "Wilmington, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319495942372067329/results"
+    },
+    {
+      "id": "7319496069488848897",
+      "query": "disaster restoration",
+      "geo_location": "Columbus, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496069488848897/results"
+    },
+    {
+      "id": "7319496070499666945",
+      "query": "disaster restoration",
+      "geo_location": "Spartanburg, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496070499666945/results"
+    },
+    {
+      "id": "7319496071556652033",
+      "query": "disaster restoration",
+      "geo_location": "Huntington, West Virginia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496071556652033/results"
+    },
+    {
+      "id": "7319496072567458817",
+      "query": "disaster restoration",
+      "geo_location": "Gastonia, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496072567458817/results"
+    },
+    {
+      "id": "7319496073515387905",
+      "query": "disaster restoration",
+      "geo_location": "High Point, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496073515387905/results"
+    },
+    {
+      "id": "7319496074379415553",
+      "query": "disaster restoration",
+      "geo_location": "Burlington, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496074379415553/results"
+    },
+    {
+      "id": "7319496075260222465",
+      "query": "disaster restoration",
+      "geo_location": "Athens, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496075260222465/results"
+    },
+    {
+      "id": "7319496076136837121",
+      "query": "disaster restoration",
+      "geo_location": "Johnson City, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496076136837121/results"
+    },
+    {
+      "id": "7319496077260897281",
+      "query": "disaster restoration",
+      "geo_location": "Nashville, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496077260897281/results"
+    },
+    {
+      "id": "7319496078145885185",
+      "query": "disaster restoration",
+      "geo_location": "Greensboro, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496078145885185/results"
+    },
+    {
+      "id": "7319496205103295489",
+      "query": "disaster restoration",
+      "geo_location": "Clarksville, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496205103295489/results"
+    },
+    {
+      "id": "7319496206084742145",
+      "query": "disaster restoration",
+      "geo_location": "Murfreesboro, Tennessee, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496206084742145/results"
+    },
+    {
+      "id": "7319496206923612161",
+      "query": "disaster restoration",
+      "geo_location": "Warner Robins, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496206923612161/results"
+    },
+    {
+      "id": "7319496207842158593",
+      "query": "disaster restoration",
+      "geo_location": "Gainesville, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496207842158593/results"
+    },
+    {
+      "id": "7319496208752325633",
+      "query": "disaster restoration",
+      "geo_location": "Mauldin, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496208752325633/results"
+    },
+    {
+      "id": "7319496209670884353",
+      "query": "disaster restoration",
+      "geo_location": "South Fulton, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496209670884353/results"
+    },
+    {
+      "id": "7319496210664929281",
+      "query": "disaster restoration",
+      "geo_location": "Charleston, South Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496210664929281/results"
+    },
+    {
+      "id": "7319496211554128897",
+      "query": "disaster restoration",
+      "geo_location": "Cary, North Carolina, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496211554128897/results"
+    },
+    {
+      "id": "7319496212497852417",
+      "query": "disaster restoration",
+      "geo_location": "Sandy Springs, Georgia, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496212497852417/results"
+    },
+    {
+      "id": "7319496213483500545",
+      "query": "disaster restoration",
+      "geo_location": "Rio Rancho, New Mexico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496213483500545/results"
+    },
+    {
+      "id": "7319496341510447105",
+      "query": "disaster restoration",
+      "geo_location": "Westminster, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496341510447105/results"
+    },
+    {
+      "id": "7319496343322386433",
+      "query": "disaster restoration",
+      "geo_location": "Fort Collins, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496343322386433/results"
+    },
+    {
+      "id": "7319496344219961345",
+      "query": "disaster restoration",
+      "geo_location": "Las Vegas, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496344219961345/results"
+    },
+    {
+      "id": "7319496345222409217",
+      "query": "disaster restoration",
+      "geo_location": "Salt Lake City, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496345222409217/results"
+    },
+    {
+      "id": "7319496347101438977",
+      "query": "disaster restoration",
+      "geo_location": "Provo, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496347101438977/results"
+    },
+    {
+      "id": "7319496348103877633",
+      "query": "disaster restoration",
+      "geo_location": "Colorado Springs, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496348103877633/results"
+    },
+    {
+      "id": "7319496349076953089",
+      "query": "disaster restoration",
+      "geo_location": "Ogden, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496349076953089/results"
+    },
+    {
+      "id": "7319496350100383745",
+      "query": "disaster restoration",
+      "geo_location": "Reno, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496350100383745/results"
+    },
+    {
+      "id": "7319496351123790849",
+      "query": "disaster restoration",
+      "geo_location": "Boise, Idaho, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496351123790849/results"
+    },
+    {
+      "id": "7319496351987808257",
+      "query": "disaster restoration",
+      "geo_location": "Aurora, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496351987808257/results"
+    },
+    {
+      "id": "7319496479888928769",
+      "query": "disaster restoration",
+      "geo_location": "Henderson, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496479888928769/results"
+    },
+    {
+      "id": "7319496481596005377",
+      "query": "disaster restoration",
+      "geo_location": "North Las Vegas, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496481596005377/results"
+    },
+    {
+      "id": "7319496482585851905",
+      "query": "disaster restoration",
+      "geo_location": "Lakewood, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496482585851905/results"
+    },
+    {
+      "id": "7319496483550531585",
+      "query": "disaster restoration",
+      "geo_location": "Greeley, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496483550531585/results"
+    },
+    {
+      "id": "7319496485274388481",
+      "query": "disaster restoration",
+      "geo_location": "Las Cruces, New Mexico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496485274388481/results"
+    },
+    {
+      "id": "7319496486146811905",
+      "query": "disaster restoration",
+      "geo_location": "West Valley City, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496486146811905/results"
+    },
+    {
+      "id": "7319496487036015617",
+      "query": "disaster restoration",
+      "geo_location": "Coeur d'Alene, Idaho, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496487036015617/results"
+    },
+    {
+      "id": "7319496487996499969",
+      "query": "disaster restoration",
+      "geo_location": "Albuquerque, New Mexico, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496487996499969/results"
+    },
+    {
+      "id": "7319496488952799233",
+      "query": "disaster restoration",
+      "geo_location": "Nampa, Idaho, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496488952799233/results"
+    },
+    {
+      "id": "7319496489992991745",
+      "query": "disaster restoration",
+      "geo_location": "St. George, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496489992991745/results"
+    },
+    {
+      "id": "7319496616967170049",
+      "query": "disaster restoration",
+      "geo_location": "Grand Junction, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496616967170049/results"
+    },
+    {
+      "id": "7319496617940245505",
+      "query": "disaster restoration",
+      "geo_location": "Billings, Montana, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496617940245505/results"
+    },
+    {
+      "id": "7319496618888161281",
+      "query": "disaster restoration",
+      "geo_location": "Logan, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496618888161281/results"
+    },
+    {
+      "id": "7319496619886402561",
+      "query": "disaster restoration",
+      "geo_location": "Boulder, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496619886402561/results"
+    },
+    {
+      "id": "7319496620796559361",
+      "query": "disaster restoration",
+      "geo_location": "Pueblo, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496620796559361/results"
+    },
+    {
+      "id": "7319496621794801665",
+      "query": "disaster restoration",
+      "geo_location": "Idaho Falls, Idaho, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496621794801665/results"
+    },
+    {
+      "id": "7319496622679814145",
+      "query": "disaster restoration",
+      "geo_location": "Sparks, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496622679814145/results"
+    },
+    {
+      "id": "7319496623648675841",
+      "query": "disaster restoration",
+      "geo_location": "Longmont, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496623648675841/results"
+    },
+    {
+      "id": "7319496624655330305",
+      "query": "disaster restoration",
+      "geo_location": "Orem, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496624655330305/results"
+    },
+    {
+      "id": "7319496625544497153",
+      "query": "disaster restoration",
+      "geo_location": "Denver, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496625544497153/results"
+    },
+    {
+      "id": "7319496753873442817",
+      "query": "disaster restoration",
+      "geo_location": "Thornton, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496753873442817/results"
+    },
+    {
+      "id": "7319496755639242753",
+      "query": "disaster restoration",
+      "geo_location": "Meridian, Idaho, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496755639242753/results"
+    },
+    {
+      "id": "7319496756868171777",
+      "query": "disaster restoration",
+      "geo_location": "Arvada, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496756868171777/results"
+    },
+    {
+      "id": "7319496757828662273",
+      "query": "disaster restoration",
+      "geo_location": "West Jordan, Utah, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496757828662273/results"
+    },
+    {
+      "id": "7319496758680093697",
+      "query": "disaster restoration",
+      "geo_location": "Centennial, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496758680093697/results"
+    },
+    {
+      "id": "7319496759577702401",
+      "query": "disaster restoration",
+      "geo_location": "Lafayette, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496759577702401/results"
+    },
+    {
+      "id": "7319496760517221377",
+      "query": "disaster restoration",
+      "geo_location": "Highlands Ranch, Colorado, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496760517221377/results"
+    },
+    {
+      "id": "7319496761381225473",
+      "query": "disaster restoration",
+      "geo_location": "Everett, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496761381225473/results"
+    },
+    {
+      "id": "7319496762283024385",
+      "query": "disaster restoration",
+      "geo_location": "Bremerton, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496762283024385/results"
+    },
+    {
+      "id": "7319496763209965569",
+      "query": "disaster restoration",
+      "geo_location": "Tacoma, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496763209965569/results"
+    },
+    {
+      "id": "7319496890209297410",
+      "query": "disaster restoration",
+      "geo_location": "Olympia, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496890209297410/results"
+    },
+    {
+      "id": "7319496891211716609",
+      "query": "disaster restoration",
+      "geo_location": "Medford, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496891211716609/results"
+    },
+    {
+      "id": "7319496892038008833",
+      "query": "disaster restoration",
+      "geo_location": "Gresham, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496892038008833/results"
+    },
+    {
+      "id": "7319496892990100481",
+      "query": "disaster restoration",
+      "geo_location": "Seattle, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496892990100481/results"
+    },
+    {
+      "id": "7319496893900285953",
+      "query": "disaster restoration",
+      "geo_location": "Portland, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496893900285953/results"
+    },
+    {
+      "id": "7319496894797865985",
+      "query": "disaster restoration",
+      "geo_location": "Spokane, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496894797865985/results"
+    },
+    {
+      "id": "7319496895657694209",
+      "query": "disaster restoration",
+      "geo_location": "Eugene, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496895657694209/results"
+    },
+    {
+      "id": "7319496897503170561",
+      "query": "disaster restoration",
+      "geo_location": "Salem, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496897503170561/results"
+    },
+    {
+      "id": "7319496898379785217",
+      "query": "disaster restoration",
+      "geo_location": "Kennewick, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496898379785217/results"
+    },
+    {
+      "id": "7319496899248005121",
+      "query": "disaster restoration",
+      "geo_location": "Vancouver, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319496899248005121/results"
+    },
+    {
+      "id": "7319497026985533441",
+      "query": "disaster restoration",
+      "geo_location": "Yakima, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497026985533441/results"
+    },
+    {
+      "id": "7319497028675833857",
+      "query": "disaster restoration",
+      "geo_location": "Bellingham, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497028675833857/results"
+    },
+    {
+      "id": "7319497030391311361",
+      "query": "disaster restoration",
+      "geo_location": "Spokane Valley, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497030391311361/results"
+    },
+    {
+      "id": "7319497031272116225",
+      "query": "disaster restoration",
+      "geo_location": "Marysville, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497031272116225/results"
+    },
+    {
+      "id": "7319497032211636225",
+      "query": "disaster restoration",
+      "geo_location": "Bellevue, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497032211636225/results"
+    },
+    {
+      "id": "7319497033176337409",
+      "query": "disaster restoration",
+      "geo_location": "Kent, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497033176337409/results"
+    },
+    {
+      "id": "7319497034103271425",
+      "query": "disaster restoration",
+      "geo_location": "Hillsboro, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497034103271425/results"
+    },
+    {
+      "id": "7319497035013434369",
+      "query": "disaster restoration",
+      "geo_location": "Beaverton, Oregon, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497035013434369/results"
+    },
+    {
+      "id": "7319497035864880129",
+      "query": "disaster restoration",
+      "geo_location": "Concord, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497035864880129/results"
+    },
+    {
+      "id": "7319497036833764353",
+      "query": "disaster restoration",
+      "geo_location": "Santa Clarita, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497036833764353/results"
+    },
+    {
+      "id": "7319497164047010817",
+      "query": "disaster restoration",
+      "geo_location": "Santa Barbara, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497164047010817/results"
+    },
+    {
+      "id": "7319497165062025217",
+      "query": "disaster restoration",
+      "geo_location": "Elk Grove, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497165062025217/results"
+    },
+    {
+      "id": "7319497166915911681",
+      "query": "disaster restoration",
+      "geo_location": "Oceanside, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497166915911681/results"
+    },
+    {
+      "id": "7319497167951915009",
+      "query": "disaster restoration",
+      "geo_location": "Santa Cruz, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497167951915009/results"
+    },
+    {
+      "id": "7319497168878860289",
+      "query": "disaster restoration",
+      "geo_location": "Hayward, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497168878860289/results"
+    },
+    {
+      "id": "7319497169843529729",
+      "query": "disaster restoration",
+      "geo_location": "Roseville, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497169843529729/results"
+    },
+    {
+      "id": "7319497170833385473",
+      "query": "disaster restoration",
+      "geo_location": "Fairfield, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497170833385473/results"
+    },
+    {
+      "id": "7319497172007794689",
+      "query": "disaster restoration",
+      "geo_location": "Santa Clara, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497172007794689/results"
+    },
+    {
+      "id": "7319497172934729729",
+      "query": "disaster restoration",
+      "geo_location": "Clovis, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497172934729729/results"
+    },
+    {
+      "id": "7319497173853289473",
+      "query": "disaster restoration",
+      "geo_location": "Richmond, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497173853289473/results"
+    },
+    {
+      "id": "7319497300823269377",
+      "query": "disaster restoration",
+      "geo_location": "San Mateo, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497300823269377/results"
+    },
+    {
+      "id": "7319497301859264513",
+      "query": "disaster restoration",
+      "geo_location": "Daly City, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497301859264513/results"
+    },
+    {
+      "id": "7319497302756849665",
+      "query": "disaster restoration",
+      "geo_location": "Vacaville, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497302756849665/results"
+    },
+    {
+      "id": "7319497303805401089",
+      "query": "disaster restoration",
+      "geo_location": "Los Angeles, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497303805401089/results"
+    },
+    {
+      "id": "7319497304707180545",
+      "query": "disaster restoration",
+      "geo_location": "Riverside, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497304707180545/results"
+    },
+    {
+      "id": "7319497306489756673",
+      "query": "disaster restoration",
+      "geo_location": "Fresno, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497306489756673/results"
+    },
+    {
+      "id": "7319497307513190401",
+      "query": "disaster restoration",
+      "geo_location": "Bakersfield, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497307513190401/results"
+    },
+    {
+      "id": "7319497308360437761",
+      "query": "disaster restoration",
+      "geo_location": "Indio, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497308360437761/results"
+    },
+    {
+      "id": "7319497309396422657",
+      "query": "disaster restoration",
+      "geo_location": "Visalia, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497309396422657/results"
+    },
+    {
+      "id": "7319497310310775809",
+      "query": "disaster restoration",
+      "geo_location": "San Bernardino, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497310310775809/results"
+    },
+    {
+      "id": "7319497437255592962",
+      "query": "disaster restoration",
+      "geo_location": "Salinas, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497437255592962/results"
+    },
+    {
+      "id": "7319497439004606465",
+      "query": "disaster restoration",
+      "geo_location": "Santa Maria, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497439004606465/results"
+    },
+    {
+      "id": "7319497440279666689",
+      "query": "disaster restoration",
+      "geo_location": "Yuba City, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497440279666689/results"
+    },
+    {
+      "id": "7319497441265332225",
+      "query": "disaster restoration",
+      "geo_location": "Redding, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497441265332225/results"
+    },
+    {
+      "id": "7319497442150343681",
+      "query": "disaster restoration",
+      "geo_location": "Seaside, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497442150343681/results"
+    },
+    {
+      "id": "7319497443102451713",
+      "query": "disaster restoration",
+      "geo_location": "Long Beach, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497443102451713/results"
+    },
+    {
+      "id": "7319497444054533121",
+      "query": "disaster restoration",
+      "geo_location": "Stockton, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497444054533121/results"
+    },
+    {
+      "id": "7319497445501570049",
+      "query": "disaster restoration",
+      "geo_location": "Victorville, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497445501570049/results"
+    },
+    {
+      "id": "7319497446428514305",
+      "query": "disaster restoration",
+      "geo_location": "Santa Ana, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497446428514305/results"
+    },
+    {
+      "id": "7319497447435147265",
+      "query": "disaster restoration",
+      "geo_location": "Moreno Valley, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497447435147265/results"
+    },
+    {
+      "id": "7319497574577105921",
+      "query": "disaster restoration",
+      "geo_location": "Vallejo, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497574577105921/results"
+    },
+    {
+      "id": "7319497575596315650",
+      "query": "disaster restoration",
+      "geo_location": "Merced, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497575596315650/results"
+    },
+    {
+      "id": "7319497576649078785",
+      "query": "disaster restoration",
+      "geo_location": "Arden-Arcade, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497576649078785/results"
+    },
+    {
+      "id": "7319497577521486849",
+      "query": "disaster restoration",
+      "geo_location": "Oakland, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497577521486849/results"
+    },
+    {
+      "id": "7319497578549096449",
+      "query": "disaster restoration",
+      "geo_location": "San Jose, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497578549096449/results"
+    },
+    {
+      "id": "7319497579476047873",
+      "query": "disaster restoration",
+      "geo_location": "Chula Vista, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497579476047873/results"
+    },
+    {
+      "id": "7319497580377811969",
+      "query": "disaster restoration",
+      "geo_location": "Fremont, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497580377811969/results"
+    },
+    {
+      "id": "7319497581237652481",
+      "query": "disaster restoration",
+      "geo_location": "San Diego, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497581237652481/results"
+    },
+    {
+      "id": "7319497582298803201",
+      "query": "disaster restoration",
+      "geo_location": "Chico, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497582298803201/results"
+    },
+    {
+      "id": "7319497583297058817",
+      "query": "disaster restoration",
+      "geo_location": "Sacramento, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497583297058817/results"
+    },
+    {
+      "id": "7319497710296380417",
+      "query": "disaster restoration",
+      "geo_location": "Modesto, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497710296380417/results"
+    },
+    {
+      "id": "7319497711164608514",
+      "query": "disaster restoration",
+      "geo_location": "Fontana, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497711164608514/results"
+    },
+    {
+      "id": "7319497712175431681",
+      "query": "disaster restoration",
+      "geo_location": "Thousand Oaks, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497712175431681/results"
+    },
+    {
+      "id": "7319497713068812289",
+      "query": "disaster restoration",
+      "geo_location": "Simi Valley, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497713068812289/results"
+    },
+    {
+      "id": "7319497713932829697",
+      "query": "disaster restoration",
+      "geo_location": "San Francisco, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497713932829697/results"
+    },
+    {
+      "id": "7319497715753182209",
+      "query": "disaster restoration",
+      "geo_location": "Oxnard, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497715753182209/results"
+    },
+    {
+      "id": "7319497716701088769",
+      "query": "disaster restoration",
+      "geo_location": "Anaheim, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497716701088769/results"
+    },
+    {
+      "id": "7319497717577698305",
+      "query": "disaster restoration",
+      "geo_location": "Antioch, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497717577698305/results"
+    },
+    {
+      "id": "7319497718542389249",
+      "query": "disaster restoration",
+      "geo_location": "Santa Rosa, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497718542389249/results"
+    },
+    {
+      "id": "7319497719398011905",
+      "query": "disaster restoration",
+      "geo_location": "Sunnyvale, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497719398011905/results"
+    },
+    {
+      "id": "7319497847341077505",
+      "query": "disaster restoration",
+      "geo_location": "Anchorage, Alaska, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497847341077505/results"
+    },
+    {
+      "id": "7319497848259636225",
+      "query": "disaster restoration",
+      "geo_location": "Honolulu, Hawaii, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497848259636225/results"
+    },
+    {
+      "id": "7319497849199134721",
+      "query": "disaster restoration",
+      "geo_location": "St. Paul, Minnesota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497849199134721/results"
+    },
+    {
+      "id": "7319497850163833857",
+      "query": "disaster restoration",
+      "geo_location": "Rochester, Minnesota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497850163833857/results"
+    },
+    {
+      "id": "7319497851103376386",
+      "query": "disaster restoration",
+      "geo_location": "Fargo, North Dakota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497851103376386/results"
+    },
+    {
+      "id": "7319497851904467969",
+      "query": "disaster restoration",
+      "geo_location": "Sioux Falls, South Dakota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497851904467969/results"
+    },
+    {
+      "id": "7319497852781092865",
+      "query": "disaster restoration",
+      "geo_location": "Bismarck, North Dakota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497852781092865/results"
+    },
+    {
+      "id": "7319497853716418561",
+      "query": "disaster restoration",
+      "geo_location": "Little Rock, Arkansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497853716418561/results"
+    },
+    {
+      "id": "7319497855008268289",
+      "query": "disaster restoration",
+      "geo_location": "Fort Smith, Arkansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497855008268289/results"
+    },
+    {
+      "id": "7319497856014877698",
+      "query": "disaster restoration",
+      "geo_location": "Fayetteville, Arkansas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497856014877698/results"
+    },
+    {
+      "id": "7319497983718870017",
+      "query": "disaster restoration",
+      "geo_location": "Dover, Delaware, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497983718870017/results"
+    },
+    {
+      "id": "7319497985333681153",
+      "query": "disaster restoration",
+      "geo_location": "Minneapolis, Minnesota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497985333681153/results"
+    },
+    {
+      "id": "7319497986243826689",
+      "query": "disaster restoration",
+      "geo_location": "St. Cloud, Minnesota, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497986243826689/results"
+    },
+    {
+      "id": "7319497987095286785",
+      "query": "disaster restoration",
+      "geo_location": "Bronx, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497987095286785/results"
+    },
+    {
+      "id": "7319497988114484225",
+      "query": "disaster restoration",
+      "geo_location": "Brooklyn, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497988114484225/results"
+    },
+    {
+      "id": "7319497988978519041",
+      "query": "disaster restoration",
+      "geo_location": "Queens, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497988978519041/results"
+    },
+    {
+      "id": "7319497990710782977",
+      "query": "disaster restoration",
+      "geo_location": "Manhattan, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497990710782977/results"
+    },
+    {
+      "id": "7319497991591585793",
+      "query": "disaster restoration",
+      "geo_location": "New York, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497991591585793/results"
+    },
+    {
+      "id": "7319497993369950209",
+      "query": "disaster restoration",
+      "geo_location": "Hempstead, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497993369950209/results"
+    },
+    {
+      "id": "7319497994649236481",
+      "query": "disaster restoration",
+      "geo_location": "Brookhaven, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319497994649236481/results"
+    },
+    {
+      "id": "7319498122671967233",
+      "query": "disaster restoration",
+      "geo_location": "Islip, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498122671967233/results"
+    },
+    {
+      "id": "7319498124525834242",
+      "query": "disaster restoration",
+      "geo_location": "Oyster Bay, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498124525834242/results"
+    },
+    {
+      "id": "7319498125381470209",
+      "query": "disaster restoration",
+      "geo_location": "North Hempstead, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498125381470209/results"
+    },
+    {
+      "id": "7319498127105329153",
+      "query": "disaster restoration",
+      "geo_location": "Babylon, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498127105329153/results"
+    },
+    {
+      "id": "7319498128011315201",
+      "query": "disaster restoration",
+      "geo_location": "Amherst, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498128011315201/results"
+    },
+    {
+      "id": "7319498128975991809",
+      "query": "disaster restoration",
+      "geo_location": "Utica, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498128975991809/results"
+    },
+    {
+      "id": "7319498129991030785",
+      "query": "disaster restoration",
+      "geo_location": "Rochester, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498129991030785/results"
+    },
+    {
+      "id": "7319498131001850881",
+      "query": "disaster restoration",
+      "geo_location": "Albany, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498131001850881/results"
+    },
+    {
+      "id": "7319498131949768705",
+      "query": "disaster restoration",
+      "geo_location": "Syracuse, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498131949768705/results"
+    },
+    {
+      "id": "7319498132847331329",
+      "query": "disaster restoration",
+      "geo_location": "Binghamton, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498132847331329/results"
+    },
+    {
+      "id": "7319498260844912641",
+      "query": "disaster restoration",
+      "geo_location": "Buffalo, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498260844912641/results"
+    },
+    {
+      "id": "7319498261805405185",
+      "query": "disaster restoration",
+      "geo_location": "Poughkeepsie, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498261805405185/results"
+    },
+    {
+      "id": "7319498263596378113",
+      "query": "disaster restoration",
+      "geo_location": "Yonkers, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498263596378113/results"
+    },
+    {
+      "id": "7319498265378948098",
+      "query": "disaster restoration",
+      "geo_location": "Ramapo, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498265378948098/results"
+    },
+    {
+      "id": "7319498266230419457",
+      "query": "disaster restoration",
+      "geo_location": "Greece, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498266230419457/results"
+    },
+    {
+      "id": "7319498267115412481",
+      "query": "disaster restoration",
+      "geo_location": "Pittsburgh, Pennsylvania, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498267115412481/results"
+    },
+    {
+      "id": "7319498268004612097",
+      "query": "disaster restoration",
+      "geo_location": "Jersey City, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498268004612097/results"
+    },
+    {
+      "id": "7319498268893792257",
+      "query": "disaster restoration",
+      "geo_location": "Edison, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498268893792257/results"
+    },
+    {
+      "id": "7319498269845908481",
+      "query": "disaster restoration",
+      "geo_location": "Woodbridge, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498269845908481/results"
+    },
+    {
+      "id": "7319498270743484417",
+      "query": "disaster restoration",
+      "geo_location": "Toms River, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498270743484417/results"
+    },
+    {
+      "id": "7319498398623621121",
+      "query": "disaster restoration",
+      "geo_location": "Elizabeth, New Jersey, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498398623621121/results"
+    },
+    {
+      "id": "7319498399626045441",
+      "query": "disaster restoration",
+      "geo_location": "Waterbury, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498399626045441/results"
+    },
+    {
+      "id": "7319498400611725314",
+      "query": "disaster restoration",
+      "geo_location": "New Bedford, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498400611725314/results"
+    },
+    {
+      "id": "7319498402423656450",
+      "query": "disaster restoration",
+      "geo_location": "Manchester, New Hampshire, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498402423656450/results"
+    },
+    {
+      "id": "7319498403375763457",
+      "query": "disaster restoration",
+      "geo_location": "Brockton, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498403375763457/results"
+    },
+    {
+      "id": "7319498404256547841",
+      "query": "disaster restoration",
+      "geo_location": "Lewisville, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498404256547841/results"
+    },
+    {
+      "id": "7319498405183489025",
+      "query": "disaster restoration",
+      "geo_location": "Abilene, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498405183489025/results"
+    },
+    {
+      "id": "7319498406139799553",
+      "query": "disaster restoration",
+      "geo_location": "Longview, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498406139799553/results"
+    },
+    {
+      "id": "7319498406991262721",
+      "query": "disaster restoration",
+      "geo_location": "Rialto, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498406991262721/results"
+    },
+    {
+      "id": "7319498407947546625",
+      "query": "disaster restoration",
+      "geo_location": "Hesperia, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498407947546625/results"
+    },
+    {
+      "id": "7319498534904932353",
+      "query": "disaster restoration",
+      "geo_location": "Pasadena, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498534904932353/results"
+    },
+    {
+      "id": "7319498535894803457",
+      "query": "disaster restoration",
+      "geo_location": "Temecula, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498535894803457/results"
+    },
+    {
+      "id": "7319498536750437377",
+      "query": "disaster restoration",
+      "geo_location": "San Buenaventura, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498536750437377/results"
+    },
+    {
+      "id": "7319498537664777217",
+      "query": "disaster restoration",
+      "geo_location": "West Covina, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498537664777217/results"
+    },
+    {
+      "id": "7319498538721746945",
+      "query": "disaster restoration",
+      "geo_location": "Jurupa Valley, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498538721746945/results"
+    },
+    {
+      "id": "7319498539640297473",
+      "query": "disaster restoration",
+      "geo_location": "Orange, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498539640297473/results"
+    },
+    {
+      "id": "7319498540558852097",
+      "query": "disaster restoration",
+      "geo_location": "Carlsbad, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498540558852097/results"
+    },
+    {
+      "id": "7319498541456451585",
+      "query": "disaster restoration",
+      "geo_location": "Murrieta, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498541456451585/results"
+    },
+    {
+      "id": "7319498542391777281",
+      "query": "disaster restoration",
+      "geo_location": "Boston, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498542391777281/results"
+    },
+    {
+      "id": "7319498543280961537",
+      "query": "disaster restoration",
+      "geo_location": "Nashua, New Hampshire, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498543280961537/results"
+    },
+    {
+      "id": "7319498670288668673",
+      "query": "disaster restoration",
+      "geo_location": "Stamford, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498670288668673/results"
+    },
+    {
+      "id": "7319498671161105409",
+      "query": "disaster restoration",
+      "geo_location": "Cambridge, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498671161105409/results"
+    },
+    {
+      "id": "7319498672905924609",
+      "query": "disaster restoration",
+      "geo_location": "Quincy, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498672905924609/results"
+    },
+    {
+      "id": "7319498673874803713",
+      "query": "disaster restoration",
+      "geo_location": "Leominster, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498673874803713/results"
+    },
+    {
+      "id": "7319498674814346241",
+      "query": "disaster restoration",
+      "geo_location": "Hartford, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498674814346241/results"
+    },
+    {
+      "id": "7319498675737089025",
+      "query": "disaster restoration",
+      "geo_location": "Bridgeport, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498675737089025/results"
+    },
+    {
+      "id": "7319498677389648897",
+      "query": "disaster restoration",
+      "geo_location": "New Haven, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498677389648897/results"
+    },
+    {
+      "id": "7319498678270447617",
+      "query": "disaster restoration",
+      "geo_location": "Worcester, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498678270447617/results"
+    },
+    {
+      "id": "7319498679243533313",
+      "query": "disaster restoration",
+      "geo_location": "Springfield, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498679243533313/results"
+    },
+    {
+      "id": "7319498680183057409",
+      "query": "disaster restoration",
+      "geo_location": "Portland, Maine, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498680183057409/results"
+    },
+    {
+      "id": "7319498808042215425",
+      "query": "disaster restoration",
+      "geo_location": "Danbury, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498808042215425/results"
+    },
+    {
+      "id": "7319498809233396737",
+      "query": "disaster restoration",
+      "geo_location": "Norwich, Connecticut, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498809233396737/results"
+    },
+    {
+      "id": "7319498810911112193",
+      "query": "disaster restoration",
+      "geo_location": "Burlington, Vermont, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498810911112193/results"
+    },
+    {
+      "id": "7319498811854822401",
+      "query": "disaster restoration",
+      "geo_location": "Lowell, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498811854822401/results"
+    },
+    {
+      "id": "7319498812836312065",
+      "query": "disaster restoration",
+      "geo_location": "Providence, Rhode Island, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498812836312065/results"
+    },
+    {
+      "id": "7319498813700317185",
+      "query": "disaster restoration",
+      "geo_location": "Lynn, Massachusetts, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498813700317185/results"
+    },
+    {
+      "id": "7319498814673412098",
+      "query": "disaster restoration",
+      "geo_location": "Huntington, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498814673412098/results"
+    },
+    {
+      "id": "7319498815617112065",
+      "query": "disaster restoration",
+      "geo_location": "Smithtown, New York, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498815617112065/results"
+    },
+    {
+      "id": "7319498816523099137",
+      "query": "disaster restoration",
+      "geo_location": "Davie, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498816523099137/results"
+    },
+    {
+      "id": "7319498817433268225",
+      "query": "disaster restoration",
+      "geo_location": "Mesquite, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498817433268225/results"
+    },
+    {
+      "id": "7319498944680036353",
+      "query": "disaster restoration",
+      "geo_location": "Allen, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498944680036353/results"
+    },
+    {
+      "id": "7319498945707663361",
+      "query": "disaster restoration",
+      "geo_location": "Spring Hill, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498945707663361/results"
+    },
+    {
+      "id": "7319498947410532353",
+      "query": "disaster restoration",
+      "geo_location": "Miramar, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498947410532353/results"
+    },
+    {
+      "id": "7319498948350071810",
+      "query": "disaster restoration",
+      "geo_location": "Grand Prairie, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498948350071810/results"
+    },
+    {
+      "id": "7319498949235064833",
+      "query": "disaster restoration",
+      "geo_location": "Sunrise, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498949235064833/results"
+    },
+    {
+      "id": "7319498950115874817",
+      "query": "disaster restoration",
+      "geo_location": "Pompano Beach, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498950115874817/results"
+    },
+    {
+      "id": "7319498951076349953",
+      "query": "disaster restoration",
+      "geo_location": "Coral Springs, Florida, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498951076349953/results"
+    },
+    {
+      "id": "7319498952053639169",
+      "query": "disaster restoration",
+      "geo_location": "Carrollton, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498952053639169/results"
+    },
+    {
+      "id": "7319498952921858049",
+      "query": "disaster restoration",
+      "geo_location": "Richardson, Texas, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498952921858049/results"
+    },
+    {
+      "id": "7319498953790090241",
+      "query": "disaster restoration",
+      "geo_location": "Sunrise Manor, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319498953790090241/results"
+    },
+    {
+      "id": "7319499080818777089",
+      "query": "disaster restoration",
+      "geo_location": "Paradise, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499080818777089/results"
+    },
+    {
+      "id": "7319499082509059073",
+      "query": "disaster restoration",
+      "geo_location": "Enterprise, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499082509059073/results"
+    },
+    {
+      "id": "7319499084140662785",
+      "query": "disaster restoration",
+      "geo_location": "Spring Valley, Nevada, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499084140662785/results"
+    },
+    {
+      "id": "7319499085809991681",
+      "query": "disaster restoration",
+      "geo_location": "Federal Way, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499085809991681/results"
+    },
+    {
+      "id": "7319499086690787329",
+      "query": "disaster restoration",
+      "geo_location": "Renton, Washington, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499086690787329/results"
+    },
+    {
+      "id": "7319499088045564929",
+      "query": "disaster restoration",
+      "geo_location": "Menifee, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499088045564929/results"
+    },
+    {
+      "id": "7319499088947333121",
+      "query": "disaster restoration",
+      "geo_location": "Inglewood, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499088947333121/results"
+    },
+    {
+      "id": "7319499089891055618",
+      "query": "disaster restoration",
+      "geo_location": "Rancho Cucamonga, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499089891055618/results"
+    },
+    {
+      "id": "7319499091317124097",
+      "query": "disaster restoration",
+      "geo_location": "Garden Grove, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499091317124097/results"
+    },
+    {
+      "id": "7319499092227287041",
+      "query": "disaster restoration",
+      "geo_location": "Corona, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499092227287041/results"
+    },
+    {
+      "id": "7319499220048696321",
+      "query": "disaster restoration",
+      "geo_location": "Torrance, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499220048696321/results"
+    },
+    {
+      "id": "7319499221894176770",
+      "query": "disaster restoration",
+      "geo_location": "Fullerton, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499221894176770/results"
+    },
+    {
+      "id": "7319499222896628737",
+      "query": "disaster restoration",
+      "geo_location": "Berkeley, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499222896628737/results"
+    },
+    {
+      "id": "7319499224599502849",
+      "query": "disaster restoration",
+      "geo_location": "Gilroy, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499224599502849/results"
+    },
+    {
+      "id": "7319499225543242753",
+      "query": "disaster restoration",
+      "geo_location": "Costa Mesa, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499225543242753/results"
+    },
+    {
+      "id": "7319499226407248897",
+      "query": "disaster restoration",
+      "geo_location": "Burbank, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499226407248897/results"
+    },
+    {
+      "id": "7319499227342574593",
+      "query": "disaster restoration",
+      "geo_location": "Norwalk, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499227342574593/results"
+    },
+    {
+      "id": "7319499228370183169",
+      "query": "disaster restoration",
+      "geo_location": "Vista, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499228370183169/results"
+    },
+    {
+      "id": "7319499229246784513",
+      "query": "disaster restoration",
+      "geo_location": "Glendale, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499229246784513/results"
+    },
+    {
+      "id": "7319499230307956737",
+      "query": "disaster restoration",
+      "geo_location": "Hemet, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499230307956737/results"
+    },
+    {
+      "id": "7319499358112580609",
+      "query": "disaster restoration",
+      "geo_location": "Palmdale, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499358112580609/results"
+    },
+    {
+      "id": "7319499359085684737",
+      "query": "disaster restoration",
+      "geo_location": "Escondido, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499359085684737/results"
+    },
+    {
+      "id": "7319499360046156801",
+      "query": "disaster restoration",
+      "geo_location": "Pomona, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499360046156801/results"
+    },
+    {
+      "id": "7319499361010869249",
+      "query": "disaster restoration",
+      "geo_location": "East Los Angeles, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499361010869249/results"
+    },
+    {
+      "id": "7319499362692763649",
+      "query": "disaster restoration",
+      "geo_location": "El Monte, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499362692763649/results"
+    },
+    {
+      "id": "7319499363531627521",
+      "query": "disaster restoration",
+      "geo_location": "Ontario, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499363531627521/results"
+    },
+    {
+      "id": "7319499364445997058",
+      "query": "disaster restoration",
+      "geo_location": "Lancaster, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499364445997058/results"
+    },
+    {
+      "id": "7319499365335186433",
+      "query": "disaster restoration",
+      "geo_location": "Downey, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499365335186433/results"
+    },
+    {
+      "id": "7319499366329248769",
+      "query": "disaster restoration",
+      "geo_location": "El Cajon, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499366329248769/results"
+    },
+    {
+      "id": "7319499367256185857",
+      "query": "disaster restoration",
+      "geo_location": "Huntington Beach, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499367256185857/results"
+    },
+    {
+      "id": "7319499494368740353",
+      "query": "disaster restoration",
+      "geo_location": "Irvine, California, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319499494368740353/results"
+    }
+  ]
+}

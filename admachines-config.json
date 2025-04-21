@@ -1,0 +1,14 @@
+{
+  "queries": [
+    { "query": "plumbers near me", "location": "Boston, Massachusetts, United States" },
+    { "query": "drain cleaning near me", "location": "Denver, Colorado, United States" },
+    { "query": "pest control", "location": "Boston, Massachusetts, United States" },
+    { "query": "auto insurance", "location": "Los Angeles, California, United States" }
+  ],
+  "maxAdsToRender": 6,
+  "renderHtml": true,
+  "renderPng": true,
+  "generateReport": true,
+  "cleanupOldFiles": false,
+  "maxFileAgeDays": 7
+}

@@ -1,0 +1,148 @@
+
+🔁 OVERALL FLOW: runAdvaultAutomation(config)
+This function is the entry point to run a full ad scraping and rendering cycle.
+
+🧩 STEP 1: INITIAL SETUP
+Files involved:
+✅ advault-automation-master.js
+
+What it does:
+Loads config (DEFAULT_CONFIG or from admachines-config.json)
+
+Ensures output/report directories exist
+
+Optionally cleans up old files in scraper-results/
+
+Connects to Supabase and verifies credentials
+
+Fetches initial stats from tables like ads, serps, job_tracking
+
+🔍 STEP 2: FOR EACH QUERY → processQueryWithTracking(query, location, config)
+Key files used:
+✅ CollectAndProcessAds.js
+
+✅ JobTrackingService.js
+
+✅ RenderAdLandingPagesAsHtml.js
+
+✅ AdRenderingProcessor.js
+
+What happens:
+Job record is created in job_tracking (temporary ID first)
+
+Calls collectAndProcessAds(query, location) → [see breakdown below]
+
+SERP ID is returned from processed ads
+
+Job ID is updated from temp → permanent
+
+Job stages are marked:
+
+API call
+
+SERP processing
+
+Ads extracted
+
+Renders HTML and/or PNG if enabled
+
+Updates job tracking accordingly
+
+🧠 Inside CollectAndProcessAds.js
+Calls these modules:
+🔹 GoogleAdsScaper.js → runs ad scraper for keyword + location
+
+🔹 StagingProcessor.js → processes raw scraper output into Supabase
+
+🔹 SerpProcessingHelper.js → waits for serps + serp_ads records to be created
+
+🔹 AdRenderingProcessor.js → renders and stores initial ad content
+
+Output:
+Returns { success, jobId, serpId, adCount }
+
+🖼 STEP 3: PNG & HTML Rendering
+Files involved:
+✅ RenderAdLandingPagesAsHtml.js (HTML)
+
+✅ AdRenderingProcessor.js (PNG)
+
+✅ JobTrackingService.js
+
+What happens:
+Renders HTML for landing pages linked to ads in serp_ads
+
+Then renders full-page PNGs of those same pages
+
+Job tracking updated with rendering success/failure
+
+Failures are non-fatal; logs continue
+
+🧪 STEP 4: Process PNGs to Base64 + Upload to Storage
+Files involved:
+✅ ProcessPngToBase64.js → Reads PNGs → Base64s → stores in Supabase ad_renderings
+
+✅ SupabaseStorageUploader.js
+
+uploadAllPngFiles() → Uploads to GCS or Supabase Storage
+
+updateAdRenderingsWithStorageUrls() → Adds storage URLs to the ad_renderings table
+
+Notes:
+Requires SUPABASE_SERVICE_ROLE_KEY for admin writes
+
+Upload failure is non-fatal but clearly logged
+
+📄 STEP 5: Generate Final Report
+File:
+✅ GenerateSerpReport.js
+
+What happens:
+Aggregates all scraped and rendered ad data into a human-readable report
+
+Saves it to the reports/ folder (CSV, JSON, or HTML depending on implementation)
+
+📊 STEP 6: Final Database Stats + Summary Log
+Fetches post-run stats and diffs vs. initial
+
+Logs how many:
+
+Ads were added
+
+SERPs were processed
+
+Ads were rendered
+
+Shows success/failure count per query
+
+🧭 Optional Scheduling (Command Line)
+File:
+✅ AdMachinesScheduler.js
+
+If you run with:
+
+bash
+Copy
+Edit
+node advault-automation-master.js --schedule="0 * * * *"
+It:
+
+Sets up a cron job via node-cron
+
+Runs runAdvaultAutomation() at the scheduled time
+
+✅ Summary of All File Roles
+
+File	Role
+advault-automation-master.js	Main controller script
+CollectAndProcessAds.js	Runs scraper, stages results, waits for processing
+GoogleAdsScaper.js	Submits scraping job
+StagingProcessor.js	Inserts raw results into staging_serps
+SerpProcessingHelper.js	Waits for trigger to finish creating serps, ads, etc.
+AdRenderingProcessor.js	Renders PNGs from ad landing pages
+RenderAdLandingPagesAsHtml.js	Renders HTML-only versions of landing pages
+SupabaseStorageUploader.js	Uploads PNGs and updates Supabase with storage URLs
+ProcessPngToBase64.js	Converts PNGs to base64 and updates DB
+GenerateSerpReport.js	Creates post-run reports
+JobTrackingService.js	Inserts and updates job_tracking statuses
+AdMachinesScheduler.js	Enables CRON-based automation
