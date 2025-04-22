@@ -2,8 +2,8 @@
 const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-const { validateSupabaseConfig, getSupabaseConfig } = require('../../utils/validateSupabaseConfig');
-const { validateOxylabsConfig, getOxylabsConfig } = require('../../utils/validateOxylabsConfig');
+const { validateSupabaseConfig, getSupabaseConfig } = require('../../utils/active/validateSupabaseConfig');
+const { validateOxylabsConfig, getOxylabsConfig } = require('../../utils/active/validateOxylabsConfig');
 require('dotenv').config();
 
 // Create logs directory if it doesn't exist
