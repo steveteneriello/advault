@@ -1,3 +1,10 @@
 {
-  "queries": []
+  "queries": [
+    {
+      "id": "7319492646462822401",
+      "query": "disaster restoration",
+      "geo_location": "Phoenix, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492646462822401/results"
+    }
+  ]
 }
