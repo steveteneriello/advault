@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdFinder - Google Ads Scraper</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        pre {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            max-height: 500px;
+        }
+        .json-key {
+            color: #7952b3;
+        }
+        .json-string {
+            color: #198754;
+        }
+        .json-number {
+            color: #dc3545;
+        }
+        .json-boolean {
+            color: #0d6efd;
+        }
+        .json-null {
+            color: #6c757d;
+        }
+        .loader {
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 2s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row mb-4">
+            <div class="col">
+                <h1 class="text-center">AdFinder</h1>
+                <p class="text-center">Google Ads Scraping Tool with Location Targeting</p>
+            </div>
+        </div>
+        
+        <div class="card mb-4">
+            <div class="card-header">
+                <h5>Search Configuration</h5>
+            </div>
+            <div class="card-body">
+                <form id="searchForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="keywords" class="form-label">Keywords (one per line)</label>
+                                <textarea class="form-control" id="keywords" rows="3" placeholder="Enter keywords, one per line"></textarea>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label class="form-label">Location</label>
+                                <div class="card p-3 mb-2">
+                                    <h6>Location Builder</h6>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-md-6">
+                                            <label for="city" class="form-label">City</label>
+                                            <input type="text" class="form-control" id="city" placeholder="e.g., boston">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="state" class="form-label">State/Region</label>
+                                            <input type="text" class="form-control" id="state" placeholder="e.g., ma">
+                                        </div>
+                                    </div>
+                                    <div class="row g-2 mb-2">
+                                        <div class="col-md-6">
+                                            <label for="country" class="form-label">Country</label>
+                                            <input type="text" class="form-control" id="country" value="us" placeholder="e.g., us">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label class="form-label">&nbsp;</label>
+                                            <button type="button" class="btn btn-primary form-control" id="buildLocationBtn">Build Location String</button>
+                                        </div>
+                                    </div>
+                                    <div class="mb-0">
+                                        <label for="locationName" class="form-label">Formatted Location String</label>
+                                        <input type="text" class="form-control" id="locationName" readonly>
+                                        <small class="text-muted">This format is used for precise targeting with Bright Data</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            <div class="mb-3">
+                                <label for="browser" class="form-label">Browser</label>
+                                <select class="form-select" id="browser">
+                                    <option value="chrome">Chrome</option>
+                                    <option value="firefox">Firefox</option>
+                                    <option value="safari">Safari</option>
+                                    <option value="edge">Edge</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="deviceType" class="form-label">Device Type</label>
+                                <select class="form-select" id="deviceType">
+                                    <option value="desktop">Desktop</option>
+                                    <option value="mobile">Mobile</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="numResults" class="form-label">Results Per Page</label>
+                                <select class="form-select" id="numResults">
+                                    <option value="10" selected>10</option>
+                                    <option value="20">20</option>
+                                    <option value="30">30</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <label for="searchType" class="form-label">Search Type</label>
+                                <select class="form-select" id="searchType">
+                                    <option value="">Regular Search</option>
+                                    <option value="shop">Shopping</option>
+                                    <option value="nws">News</option>
+                                    <option value="isch">Images</option>
+                                </select>
+                            </div>
+                            
+                            <div class="mb-3 form-check">
+                                <input type="checkbox" class="form-check-input" id="useParallel" checked>
+                                <label class="form-check-label" for="useParallel">Process keywords in parallel</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary btn-lg px-4">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div id="loader" style="display: none;">
+            <div class="loader"></div>
+            <p class="text-center">Scraping Google Ads Data...</p>
+        </div>
+        
+        <div id="resultsContainer"></div>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Location builder functionality
+            document.getElementById('buildLocationBtn').addEventListener('click', function() {
+                const city = document.getElementById('city').value.trim().toLowerCase();
+                const state = document.getElementById('state').value.trim().toLowerCase();
+                const country = document.getElementById('country').value.trim().toLowerCase() || 'us';
+                
+                if (city && state) {
+                    const locationString = `country-${country}-state-${state}-city-${city.replace(/\s+/g, '_')}`;
+                    document.getElementById('locationName').value = locationString;
+                } else if (city) {
+                    const locationString = `country-${country}-city-${city.replace(/\s+/g, '_')}`;
+                    document.getElementById('locationName').value = locationString;
+                } else {
+                    alert('Please enter at least a city name');
+                }
+            });
+            
+            // Form submission
+            document.getElementById('searchForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Get form values
+                const keywordsText = document.getElementById('keywords').value;
+                const keywords = keywordsText.split('\n')
+                    .map(k => k.trim())
+                    .filter(k => k.length > 0);
+                
+                if (keywords.length === 0) {
+                    alert('Please enter at least one keyword');
+                    return;
+                }
+                
+                const locationName = document.getElementById('locationName').value;
+                const browser = document.getElementById('browser').value;
+                const deviceType = document.getElementById('deviceType').value;
+                const useParallel = document.getElementById('useParallel').checked;
+                const numResults = document.getElementById('numResults').value;
+                const searchType = document.getElementById('searchType').value;
+                
+                // Show loader
+                document.getElementById('loader').style.display = 'block';
+                document.getElementById('resultsContainer').innerHTML = '';
+                
+                try {
+                    // Make API request
+                    const response = await fetch('/api/search', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            keywords,
+                            locationName: locationName || undefined,
+                            useParallel,
+                            numResults,
+                            searchType: searchType || undefined,
+                            browser,
+                            deviceType,
+                            page: 1 // Always first page
+                        })
+                    });
+                    
+                    // Hide loader
+                    document.getElementById('loader').style.display = 'none';
+                    
+                    // Process response
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Format and display results
+                    let resultsHTML = '';
+                    
+                    // Single result or array of results?
+                    const results = Array.isArray(data.results) ? data.results : [data.results];
+                    
+                    resultsHTML = `<h2 class="mt-4 mb-3">Search Results (${results.length} keywords)</h2>`;
+                    
+                    // Iterate through results
+                    results.forEach((result, index) => {
+                        resultsHTML += `
+                            <div class="card mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <span><strong>Keyword:</strong> ${result.keyword}</span>
+                                    <span class="badge ${result.data?.serp ? 'bg-success' : 'bg-warning'}">${result.data?.serp ? 'JSON' : 'HTML'} Response</span>
+                                </div>
+                                <div class="card-body">
+                        `;
+                        
+                        // Check if we have an error
+                        if (result.error) {
+                            resultsHTML += `
+                                <div class="alert alert-danger">
+                                    <h5>Error</h5>
+                                    <p>${result.error}</p>
+                                </div>
+                            `;
+                            
+                            resultsHTML += `
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        Location: ${result.locationName || result.country || 'N/A'} | 
+                                        Browser: ${result.browser || 'Chrome'} | 
+                                        Device: ${result.deviceType || 'Desktop'} | 
+                                        Timestamp: ${result.timestamp}
+                                    </div>
+                                </div>
+                            `;
+                            return;
+                        }
+                        
+                        // First, show the full JSON response for debugging
+                        if (result.data && (result.data.serp || result.data.fullResponse)) {
+                            resultsHTML += `
+                                <div class="mb-4">
+                                    <h5>Full JSON Response</h5>
+                                    <button class="btn btn-sm btn-outline-primary mb-2" type="button" 
+                                            onclick="document.getElementById('full-json-${index}').classList.toggle('d-none')">
+                                        Show/Hide Full JSON
+                                    </button>
+                                    <pre id="full-json-${index}" class="d-none">${formatJSON(result.data.serp || result.data.fullResponse)}</pre>
+                                </div>
+                                <hr>
+                            `;
+                        }
+                        
+                        // Display ads data if available
+                        const adsData = result.data?.extractedAdsData;
+                        
+                        if (adsData) {
+                            // Ad metrics
+                            resultsHTML += `
+                                <div class="mb-3">
+                                    <h5>Ad Metrics</h5>
+                                    <p>
+                                        <span class="badge ${adsData.adMetrics.hasAds ? 'bg-success' : 'bg-secondary'}">
+                                            ${adsData.adMetrics.hasAds ? 'Ads Found' : 'No Ads Found'}
+                                        </span>
+                                        <span class="badge bg-info">Total Ads: ${adsData.adMetrics.totalAds}</span>
+                                    </p>
+                                </div>
+                            `;
+                            
+                            // Top ads
+                            if (adsData.topAds && adsData.topAds.length > 0) {
+                                resultsHTML += `
+                                    <div class="mb-3">
+                                        <h5>Top Ads (${adsData.topAds.length})</h5>
+                                        <button class="btn btn-sm btn-outline-primary mb-2" type="button" 
+                                                onclick="document.getElementById('top-ads-${index}').classList.toggle('d-none')">
+                                            Show/Hide Top Ads
+                                        </button>
+                                        <div id="top-ads-${index}" class="d-none">
+                                            <div class="list-group">
+                                `;
+                                
+                                adsData.topAds.forEach(ad => {
+                                    resultsHTML += `
+                                        <div class="list-group-item">
+                                            <h6>${ad.title || 'No Title'}</h6>
+                                            <p class="text-success mb-1">${ad.displayed_link || ad.link || 'No Link'}</p>
+                                            <p class="small mb-1">${ad.description || 'No Description'}</p>
+                                            <p class="small text-muted mb-0">
+                                                <strong>Full Link:</strong> <a href="${ad.link || '#'}" target="_blank">${ad.link || 'N/A'}</a>
+                                            </p>
+                                        </div>
+                                    `;
+                                });
+                                
+                                resultsHTML += `
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Bottom ads
+                            if (adsData.bottomAds && adsData.bottomAds.length > 0) {
+                                resultsHTML += `
+                                    <div class="mb-3">
+                                        <h5>Bottom Ads (${adsData.bottomAds.length})</h5>
+                                        <button class="btn btn-sm btn-outline-primary mb-2" type="button" 
+                                                onclick="document.getElementById('bottom-ads-${index}').classList.toggle('d-none')">
+                                            Show/Hide Bottom Ads
+                                        </button>
+                                        <div id="bottom-ads-${index}" class="d-none">
+                                            <div class="list-group">
+                                `;
+                                
+                                adsData.bottomAds.forEach(ad => {
+                                    resultsHTML += `
+                                        <div class="list-group-item">
+                                            <h6>${ad.title || 'No Title'}</h6>
+                                            <p class="text-success mb-1">${ad.displayed_link || ad.link || 'No Link'}</p>
+                                            <p class="small mb-1">${ad.description || 'No Description'}</p>
+                                            <p class="small text-muted mb-0">
+                                                <strong>Full Link:</strong> <a href="${ad.link || '#'}" target="_blank">${ad.link || 'N/A'}</a>
+                                            </p>
+                                        </div>
+                                    `;
+                                });
+                                
+                                resultsHTML += `
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Shopping ads
+                            if (adsData.shoppingAds && adsData.shoppingAds.length > 0) {
+                                resultsHTML += `
+                                    <div class="mb-3">
+                                        <h5>Shopping Ads (${adsData.shoppingAds.length})</h5>
+                                        <button class="btn btn-sm btn-outline-primary mb-2" type="button" 
+                                                onclick="document.getElementById('shopping-ads-${index}').classList.toggle('d-none')">
+                                            Show/Hide Shopping Ads
+                                        </button>
+                                        <div id="shopping-ads-${index}" class="d-none">
+                                            <div class="list-group">
+                                `;
+                                
+                                adsData.shoppingAds.forEach(ad => {
+                                    resultsHTML += `
+                                        <div class="list-group-item">
+                                            <h6>${ad.title || 'No Title'}</h6>
+                                            <p class="text-success mb-1">${ad.price || 'No Price'}</p>
+                                            <p class="small mb-1">${ad.merchant || 'No Merchant'}</p>
+                                            <p class="small text-muted mb-0">
+                                                <strong>Link:</strong> <a href="${ad.link || '#'}" target="_blank">${ad.link || 'N/A'}</a>
+                                            </p>
+                                        </div>
+                                    `;
+                                });
+                                
+                                resultsHTML += `
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                        }
+                        
+                        // Display SERP data if available
+                        if (result.data && result.data.serp) {
+                            const serp = result.data.serp;
+                            
+                            resultsHTML += `
+                                <div class="mt-3">
+                                    <h5>SERP Data</h5>
+                                    <button class="btn btn-sm btn-outline-primary mb-2" type="button" 
+                                            onclick="document.getElementById('serp-${index}').classList.toggle('d-none')">
+                                        Show/Hide SERP Data
+                                    </button>
+                                    <div id="serp-${index}" class="d-none">
+                            `;
+                            
+                            // Organic results
+                            if (serp.organic_results && serp.organic_results.length > 0) {
+                                resultsHTML += `
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">Organic Results (${serp.organic_results.length})</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-sm btn-outline-secondary mb-2" type="button" 
+                                                    onclick="document.getElementById('organic-${index}').classList.toggle('d-none')">
+                                                Show/Hide Details
+                                            </button>
+                                            <div id="organic-${index}" class="d-none">
+                                                <ol>
+                                                    ${serp.organic_results.map(r => 
+                                                        `<li>
+                                                            <a href="${r.link || r.href || '#'}" target="_blank">${r.title || 'Untitled'}</a>
+                                                            <p class="small text-muted mb-0">${r.displayed_link || r.snippet || ''}</p>
+                                                        </li>`
+                                                    ).join('')}
+                                                </ol>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Local results / Snack pack
+                            if (serp.local_results || serp.snack_pack) {
+                                const localResults = serp.local_results || serp.snack_pack || [];
+                                if (localResults.length > 0) {
+                                    resultsHTML += `
+                                        <div class="card mb-3">
+                                            <div class="card-header">
+                                                <h6 class="mb-0">Local Results (${localResults.length})</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <button class="btn btn-sm btn-outline-secondary mb-2" type="button" 
+                                                        onclick="document.getElementById('local-${index}').classList.toggle('d-none')">
+                                                    Show/Hide Details
+                                                </button>
+                                                <div id="local-${index}" class="d-none">
+                                                    <ul>
+                                                        ${localResults.map(r => 
+                                                            `<li>
+                                                                <strong>${r.title || r.name || 'Unnamed Location'}</strong>
+                                                                <p class="small text-muted mb-0">${r.address || r.description || ''}</p>
+                                                            </li>`
+                                                        ).join('')}
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    `;
+                                }
+                            }
+                            
+                            // People also ask
+                            if (serp.people_also_ask && serp.people_also_ask.length > 0) {
+                                resultsHTML += `
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">People Also Ask (${serp.people_also_ask.length})</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-sm btn-outline-secondary mb-2" type="button" 
+                                                    onclick="document.getElementById('paa-${index}').classList.toggle('d-none')">
+                                                Show/Hide Details
+                                            </button>
+                                            <div id="paa-${index}" class="d-none">
+                                                <ul>
+                                                    ${serp.people_also_ask.map(q => 
+                                                        `<li>${q.question || q.title || 'Unknown question'}</li>`
+                                                    ).join('')}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Related searches
+                            if (serp.related && serp.related.length > 0) {
+                                resultsHTML += `
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">Related Searches (${serp.related.length})</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <button class="btn btn-sm btn-outline-secondary mb-2" type="button" 
+                                                    onclick="document.getElementById('related-${index}').classList.toggle('d-none')">
+                                                Show/Hide Details
+                                            </button>
+                                            <div id="related-${index}" class="d-none">
+                                                <ul>
+                                                    ${serp.related.map(s => 
+                                                        `<li>${s.query || s.title || 'Unknown search'}</li>`
+                                                    ).join('')}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            // Search metadata / general info
+                            if (serp.search_metadata || serp.general) {
+                                const metadata = serp.search_metadata || {};
+                                const general = serp.general || {};
+                                
+                                resultsHTML += `
+                                    <div class="card mb-3">
+                                        <div class="card-header">
+                                            <h6 class="mb-0">Search Info</h6>
+                                        </div>
+                                        <div class="card-body">
+                                            <ul>
+                                                <li><strong>Query:</strong> ${general.query || metadata.query || ''}</li>
+                                                <li><strong>Results count:</strong> ${(general.results_cnt || metadata.total_results || '').toLocaleString()}</li>
+                                                <li><strong>Search time:</strong> ${general.search_time || metadata.time_taken || '0'} seconds</li>
+                                                <li><strong>Location:</strong> ${general.location || metadata.location || 'Unknown'}</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                `;
+                            }
+                            
+                            resultsHTML += `
+                                    </div>
+                                </div>
+                            `;
+                        }
+                        
+                        // If we have HTML but not JSON
+                        if (result.data && result.data.html && !result.data.serp) {
+                            resultsHTML += `
+                                <div class="alert alert-warning">
+                                    <h5>HTML Response</h5>
+                                    <p>The response was HTML instead of JSON. HTML extraction is less reliable.</p>
+                                    ${result.data.htmlFilename ? `<p>HTML has been saved to ${result.data.htmlFilename} for debugging.</p>` : ''}
+                                </div>
+                            `;
+                        }
+                        
+                        resultsHTML += `
+                                </div>
+                                <div class="card-footer text-muted">
+                                    Location: ${result.locationName || result.country || 'N/A'} | 
+                                    Browser: ${result.browser || 'Chrome'} | 
+                                    Device: ${result.deviceType || 'Desktop'} | 
+                                    Timestamp: ${result.timestamp}
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    document.getElementById('resultsContainer').innerHTML = resultsHTML;
+                } catch (error) {
+                    document.getElementById('loader').style.display = 'none';
+                    document.getElementById('resultsContainer').innerHTML = `
+                        <div class="alert alert-danger">
+                            <h4>Error</h4>
+                            <p>${error.message}</p>
+                        </div>
+                    `;
+                }
+            });
+        });
+        
+        // Utility function to format JSON with colors
+        function formatJSON(obj) {
+            if (!obj) return 'null';
+            
+            const json = JSON.stringify(obj, null, 2);
+            return json.replace(/("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g, function (match) {
+                let cls = 'json-number';
+                if (/^"/.test(match)) {
+                    if (/:$/.test(match)) {
+                        cls = 'json-key';
+                    } else {
+                        cls = 'json-string';
+                    }
+                } else if (/true|false/.test(match)) {
+                    cls = 'json-boolean';
+                } else if (/null/.test(match)) {
+                    cls = 'json-null';
+                }
+                return '<span class="' + cls + '">' + match + '</span>';
+            });
+        }
+    </script>
+</body>
+</html>
