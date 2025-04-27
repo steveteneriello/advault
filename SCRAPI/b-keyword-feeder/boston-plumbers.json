@@ -1,0 +1,17 @@
+[ {
+    "query": "plumber near me",
+    "geo_location": "Scottsdale, Arizona, United States"
+  },
+  {
+    "query": "plumber near me",
+    "geo_location": "Chandler, Arizona, United States"
+  },
+  {
+    "query": "plumber near me",
+    "geo_location": "San Tan Valley, Arizona, United States"
+  },
+  {
+    "query": "plumber near me",
+    "geo_location": "Gilbert, Arizona, United States"
+  }
+]

@@ -1,10 +1,14 @@
 {
+  "name": "scrapi-scheduler",
+  "version": "1.0.0",
+  "description": "Oxylabs Scheduler system for SCRAPI",
+  "main": "index.js",
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
     "axios": "^1.6.7",
     "cheerio": "^1.0.0",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0",
+    "express": "^4.18.2",
     "node-cron": "^3.0.3",
     "sanitize-html": "^2.16.0"
   },
@@ -14,6 +18,15 @@
     "fix-serp-ads": "node SCRAPI/utils/serp-ad-linker.js",
     "archive-files": "node SCRAPI/utils/file-archiver.js",
     "view-backups": "node SCRAPI/utils/view-file-backups.js",
-    "job-status": "node SCRAPI/utils/active/job-status-dashboard.js"
-  }
+    "job-status": "node SCRAPI/utils/active/job-status-dashboard.js",
+    "scheduler": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js",
+    "scheduler-check": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js check",
+    "scheduler-quick-start": "node SCRAPI/z-scrapi-scheduler/quick-start.js",
+    "scheduler-web": "node SCRAPI/z-scrapi-scheduler/super-simple-web.js" 
+   },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "author": "",
+  "license": "ISC"
 }

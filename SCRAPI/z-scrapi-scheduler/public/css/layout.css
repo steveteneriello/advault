@@ -1,0 +1,96 @@
+/* SCRAPI/z-scrapi-scheduler/public/css/layout.css */
+/* Layout-related styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+  
+  header {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    box-shadow: var(--shadow-md);
+  }
+  
+  header h1 {
+    display: inline-block;
+    margin-right: 2rem;
+    font-size: var(--font-size-xl);
+  }
+  
+  nav {
+    display: inline-block;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+  }
+  
+  nav ul li {
+    margin-right: 1rem;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: color var(--transition-speed);
+  }
+  
+  nav ul li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  main {
+    padding: 2rem 0;
+    flex: 1;
+  }
+  
+  main h2 {
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    font-size: var(--font-size-xl);
+  }
+  
+  footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 1rem 0;
+    margin-top: 2rem;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .two-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  
+  .actions {
+    margin-bottom: var(--spacing-lg);
+  }

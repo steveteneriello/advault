@@ -1,0 +1,17 @@
+{
+  "timestamp": "2025-04-25T21:37:40.321Z",
+  "name": "--cron",
+  "totalQueries": 4,
+  "totalBatches": 1,
+  "cronExpression": "0 12 * * *",
+  "endDate": "2025-05-25 21:37:39",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 3288528470679489500,
+      "error": null
+    }
+  ]
+}
