@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-04-28T12:29:40.594Z",
+  "name": "COUNTY-EAS-2-ac-repair-near-me",
+  "totalQueries": 654,
+  "totalBatches": 14,
+  "cronExpression": "0 13 * * 1",
+  "endDate": "2025-05-28 12:29:22",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2211217316097954800,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1404626448922654500,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3517433331545292300,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1833934807278634800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4357808203296597000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 917185339917014800,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2259608936290279000,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4608523489276225000,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 410981890474327000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1808153285546075000,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3819356477796368400,
+      "error": null
+    },
+    {
+      "batchNumber": 12,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3933384779520959500,
+      "error": null
+    },
+    {
+      "batchNumber": 13,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2910281277792827000,
+      "error": null
+    },
+    {
+      "batchNumber": 14,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 1337768699633006000,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-28T12:50:04.505Z",
+  "name": "COUNTY-CEN-2-plumbers-near-me",
+  "totalQueries": 124,
+  "totalBatches": 3,
+  "cronExpression": "0 14 * * 1",
+  "endDate": "2025-05-28 12:50:00",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 450725712228021440,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3958581122164347000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 24,
+      "success": true,
+      "scheduleId": 1071795533583012100,
+      "error": null
+    }
+  ]
+}

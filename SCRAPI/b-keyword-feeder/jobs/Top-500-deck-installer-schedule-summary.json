@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-28T15:44:22.791Z",
+  "name": "Top-500-deck-installer",
+  "totalQueries": 501,
+  "totalBatches": 11,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2026-12-19 15:44:09",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1983586967590034700,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1597825532593407500,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 346404756628868300,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2204197935566615800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2397368877449611300,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 89110518065226940,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4072539368316316700,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 231680017307362050,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4033555242519627300,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2561090153853011000,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 1,
+      "success": true,
+      "scheduleId": 3577335223408667600,
+      "error": null
+    }
+  ]
+}

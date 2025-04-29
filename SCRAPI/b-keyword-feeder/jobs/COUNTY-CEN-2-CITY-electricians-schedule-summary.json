@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-28T12:49:08.560Z",
+  "name": "COUNTY-CEN-2-CITY-electricians",
+  "totalQueries": 124,
+  "totalBatches": 3,
+  "cronExpression": "0 14 * * 1",
+  "endDate": "2025-05-28 12:49:04",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1756469814281780200,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2552919419231618000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 24,
+      "success": true,
+      "scheduleId": 2716058312642003500,
+      "error": null
+    }
+  ]
+}

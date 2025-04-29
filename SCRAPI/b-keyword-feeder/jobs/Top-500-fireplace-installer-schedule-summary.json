@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-28T15:37:03.209Z",
+  "name": "Top-500-fireplace-installer",
+  "totalQueries": 501,
+  "totalBatches": 11,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2026-12-19 15:36:48",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 931810630382725400,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4207497137220044300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4304947974101375000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 807830054856117800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 969045995167653600,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4377101712782440000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3850725715503180300,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1427176367865990400,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3044304039649304000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1149747666191529700,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 1,
+      "success": true,
+      "scheduleId": 359044733487554900,
+      "error": null
+    }
+  ]
+}

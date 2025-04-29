@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-28T15:17:12.269Z",
+  "name": "Top-500-roof-replacement",
+  "totalQueries": 501,
+  "totalBatches": 11,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2026-12-19 15:16:58",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2089979428486460700,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1391163518435697400,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2112248552799092200,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3121742570988292600,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2895986745251085300,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1183292932001896700,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3054021040355741000,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1607338417242698000,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2548559803973885000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4598354254538710500,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 1,
+      "success": true,
+      "scheduleId": 2705603942350976000,
+      "error": null
+    }
+  ]
+}

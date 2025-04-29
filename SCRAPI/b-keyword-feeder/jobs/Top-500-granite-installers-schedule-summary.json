@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-28T15:39:07.396Z",
+  "name": "Top-500-granite-installers",
+  "totalQueries": 501,
+  "totalBatches": 11,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2026-12-19 15:38:42",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 933020254234075300,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4131394194909593000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3147865655229060600,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3435450738056724500,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 508395608534395460,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3124247891422300700,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 32750611519943070,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 497332178190367300,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 860299593373240600,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 233689095411353150,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 1,
+      "success": true,
+      "scheduleId": 3175924346166558000,
+      "error": null
+    }
+  ]
+}

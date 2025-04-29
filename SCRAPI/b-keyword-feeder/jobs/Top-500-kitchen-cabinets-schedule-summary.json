@@ -1,0 +1,87 @@
+{
+  "timestamp": "2025-04-28T15:27:48.470Z",
+  "name": "Top-500-kitchen-cabinets",
+  "totalQueries": 501,
+  "totalBatches": 11,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2026-12-19 15:27:26",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1452752074446405600,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3387344394615891500,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3006033774543847400,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2293362188868270800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2237000780434560000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3365523341141358600,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 397541254302806900,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3474511037615910400,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1736786786058207700,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4096408383134742500,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 1,
+      "success": true,
+      "scheduleId": 2177767933001726200,
+      "error": null
+    }
+  ]
+}

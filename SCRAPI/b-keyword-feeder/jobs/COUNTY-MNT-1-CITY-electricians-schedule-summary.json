@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-04-28T13:00:30.669Z",
+  "name": "COUNTY-MNT-1-CITY-electricians",
+  "totalQueries": 239,
+  "totalBatches": 5,
+  "cronExpression": "0 15 * * 1",
+  "endDate": "2025-05-28 13:00:24",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 222198807996291460,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3627835716318201300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 837533039375893500,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3108741109847967000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 39,
+      "success": true,
+      "scheduleId": 2962555980720294000,
+      "error": null
+    }
+  ]
+}

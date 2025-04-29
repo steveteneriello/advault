@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-04-28T13:04:05.566Z",
+  "name": "COUNTY-PAC-1-plumbers-near-me",
+  "totalQueries": 270,
+  "totalBatches": 6,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2025-05-28 13:03:57",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4453514223197508000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2215057317528293400,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3951525027021412400,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 873327347243328800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4502252050371635700,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 20,
+      "success": true,
+      "scheduleId": 927352661643658800,
+      "error": null
+    }
+  ]
+}

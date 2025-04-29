@@ -1,0 +1,108 @@
+{
+  "timestamp": "2025-04-28T12:30:45.484Z",
+  "name": "COUNTY-EAS-2-electricians-near",
+  "totalQueries": 654,
+  "totalBatches": 14,
+  "cronExpression": "0 13 * * 1",
+  "endDate": "2025-05-28 12:30:27",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4487557324352812500,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3995255322275275300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2998647576235817000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 258336232755643840,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2566098125607578600,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3593750115999180300,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 342343496518920400,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2987835977356263000,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2906703796073588000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1630424138845520100,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 782278902548017500,
+      "error": null
+    },
+    {
+      "batchNumber": 12,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2419670696540709400,
+      "error": null
+    },
+    {
+      "batchNumber": 13,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2073692977766681600,
+      "error": null
+    },
+    {
+      "batchNumber": 14,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 2482478619429450000,
+      "error": null
+    }
+  ]
+}

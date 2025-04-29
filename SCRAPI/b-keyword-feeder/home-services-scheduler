@@ -1,0 +1,87 @@
+// batch-scheduler.js (Node.js version)
+
+const { exec } = require('child_process');
+
+const keywords = [
+  "window replacement",
+  "water heater replacement",
+  "tankless water heaters",
+  "generator sales",
+  "generator rentals",
+  "bobcat rentals",
+  "dumpster rentals",
+  "junk removal",
+  "ac contractor",
+  "plumbing company",
+  "electricians",
+  "ac repair near me",
+  "plumbers near me",
+  "electricians near me",
+  "drain cleaning",
+  "sewer repair",
+  "trenchless sewer",
+  "roto rooter",
+  "disaster restoration",
+  "door replacement",
+  "roof replacement",
+  "roof repair",
+  "furnace replacement",
+  "water filtration",
+  "water softener system",
+  "basement waterproofing",
+  "basement remodeling",
+  "bathroom remodeling",
+  "home remodeling",
+  "rebath",
+  "walk in bathtub",
+  "gutters",
+  "ductless",
+  "Mitsubishi ductless",
+  "kitchen cabinets",
+  "kitchen remodeling",
+  "hardwood flooring",
+  "carpet installation",
+  "Andersen windows",
+  "vinyl windows",
+  "siding installer",
+  "painters",
+  "driveway replacement",
+  "paving installation",
+  "sealcoating",
+  "garage door installer",
+  "fireplace installer",
+  "mason near me",
+  "granite installers",
+  "foundation repair",
+  "duct cleaning",
+  "carpet cleaning",
+  "maid service",
+  "solar installers",
+  "sheds",
+  "deck installer",
+  "ev charger installer",
+  "retaining wall installer"
+];
+
+async function runBatchJobs() {
+  for (const keyword of keywords) {
+    console.log(`Running batch for: ${keyword}`);
+    await new Promise((resolve, reject) => {
+      exec(`node /workspaces/advault/SCRAPI/z-scrapi-scheduler/run-batch-job.js Top-500 "${keyword}" "0 16 * * 1" 600 50`, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`❌ Error running batch for ${keyword}:`, error.message);
+          return reject(error);
+        }
+        console.log(stdout);
+        if (stderr) console.error(stderr);
+        resolve();
+      });
+    });
+    console.log("Waiting 30 seconds...");
+    await new Promise(resolve => setTimeout(resolve, 30000));
+  }
+
+  console.log("✅ All batch jobs scheduled.");
+}
+
+runBatchJobs();

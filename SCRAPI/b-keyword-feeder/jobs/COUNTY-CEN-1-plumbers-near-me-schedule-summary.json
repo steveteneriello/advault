@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-04-28T12:49:56.797Z",
+  "name": "COUNTY-CEN-1-plumbers-near-me",
+  "totalQueries": 1000,
+  "totalBatches": 20,
+  "cronExpression": "0 14 * * 1",
+  "endDate": "2025-05-28 12:49:30",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 650852961967985000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1848767599945529600,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3806209798130247000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1042898428643836500,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2109560792764965000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2822128821584940000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3211973370592453600,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 584423869034698500,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3672418577427493000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2273934724935056100,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1538553214442591700,
+      "error": null
+    },
+    {
+      "batchNumber": 12,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 156066044983253060,
+      "error": null
+    },
+    {
+      "batchNumber": 13,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 612686892732251900,
+      "error": null
+    },
+    {
+      "batchNumber": 14,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1367447460329034200,
+      "error": null
+    },
+    {
+      "batchNumber": 15,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2748837463455276000,
+      "error": null
+    },
+    {
+      "batchNumber": 16,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3657362247275005000,
+      "error": null
+    },
+    {
+      "batchNumber": 17,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3960445281746781700,
+      "error": null
+    },
+    {
+      "batchNumber": 18,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3517752804252103000,
+      "error": null
+    },
+    {
+      "batchNumber": 19,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1821719072747595300,
+      "error": null
+    },
+    {
+      "batchNumber": 20,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3477303354646849000,
+      "error": null
+    }
+  ]
+}

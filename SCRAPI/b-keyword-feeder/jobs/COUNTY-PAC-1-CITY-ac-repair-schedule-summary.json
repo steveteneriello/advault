@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-04-28T13:03:25.090Z",
+  "name": "COUNTY-PAC-1-CITY-ac-repair",
+  "totalQueries": 270,
+  "totalBatches": 6,
+  "cronExpression": "0 16 * * 1",
+  "endDate": "2025-05-28 13:03:17",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4275776574518771000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2070323854566231300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 314855177094389570,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 767801481294683900,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3351254995857074700,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 20,
+      "success": true,
+      "scheduleId": 1848745927854710800,
+      "error": null
+    }
+  ]
+}

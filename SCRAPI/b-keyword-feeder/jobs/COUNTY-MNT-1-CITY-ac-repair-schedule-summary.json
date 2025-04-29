@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-04-28T13:00:07.835Z",
+  "name": "COUNTY-MNT-1-CITY-ac-repair",
+  "totalQueries": 239,
+  "totalBatches": 5,
+  "cronExpression": "0 15 * * 1",
+  "endDate": "2025-05-28 13:00:01",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1044718680303690800,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3791807343999296000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3470296679623846000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4159456831404614000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 39,
+      "success": true,
+      "scheduleId": 3042911953280353000,
+      "error": null
+    }
+  ]
+}

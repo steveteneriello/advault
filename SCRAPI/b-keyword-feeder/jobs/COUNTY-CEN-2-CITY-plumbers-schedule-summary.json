@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-28T12:47:07.928Z",
+  "name": "COUNTY-CEN-2-CITY-plumbers",
+  "totalQueries": 124,
+  "totalBatches": 3,
+  "cronExpression": "0 14 * * 1",
+  "endDate": "2025-05-28 12:47:04",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2273777494816318200,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1145557263285671200,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 24,
+      "success": true,
+      "scheduleId": 3478893125873444400,
+      "error": null
+    }
+  ]
+}

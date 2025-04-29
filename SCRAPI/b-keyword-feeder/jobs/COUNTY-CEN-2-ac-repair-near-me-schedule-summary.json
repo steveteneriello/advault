@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-28T12:51:08.872Z",
+  "name": "COUNTY-CEN-2-ac-repair-near-me",
+  "totalQueries": 124,
+  "totalBatches": 3,
+  "cronExpression": "0 14 * * 1",
+  "endDate": "2025-05-28 12:51:05",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3857155397449510000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1516932073091875600,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 24,
+      "success": true,
+      "scheduleId": 755835462630450000,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-04-28T13:01:39.370Z",
+  "name": "COUNTY-MNT-1-electricians-near",
+  "totalQueries": 239,
+  "totalBatches": 5,
+  "cronExpression": "0 15 * * 1",
+  "endDate": "2025-05-28 13:01:32",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2812680895053478000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2093021823113879600,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2188421505828002000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 254364306695239400,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 39,
+      "success": true,
+      "scheduleId": 4200198562984711000,
+      "error": null
+    }
+  ]
+}
