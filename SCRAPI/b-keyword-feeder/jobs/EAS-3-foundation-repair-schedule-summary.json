@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-05-01T16:55:30.852Z",
+  "name": "EAS-3-foundation-repair",
+  "totalQueries": 482,
+  "totalBatches": 10,
+  "cronExpression": "00 18 1 * *",
+  "endDate": "2025-05-31 16:55:18",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2778891663082540500,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2027772249505362200,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 344206840062000960,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 562228321300480100,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2507880131593084000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 934727952024195000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2264673057840027600,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3324838142152580600,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3122040033084803600,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 32,
+      "success": true,
+      "scheduleId": 658446279415669400,
+      "error": null
+    }
+  ]
+}

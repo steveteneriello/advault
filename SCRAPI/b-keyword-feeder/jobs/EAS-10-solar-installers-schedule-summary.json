@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-05-01T18:44:16.861Z",
+  "name": "EAS-10-solar-installers",
+  "totalQueries": 348,
+  "totalBatches": 7,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 18:44:07",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2891191867373131000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 943677933583819800,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4425421734406514700,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2243264933354955300,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2514797757554407400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2674019708232705500,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 48,
+      "success": true,
+      "scheduleId": 2319224096549971500,
+      "error": null
+    }
+  ]
+}

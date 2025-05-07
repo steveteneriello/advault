@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-05-01T16:52:27.819Z",
+  "name": "EAS-3-kitchen-remodeling",
+  "totalQueries": 482,
+  "totalBatches": 10,
+  "cronExpression": "00 18 1 * *",
+  "endDate": "2025-05-31 16:52:15",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2625321593694197000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2339501256128802300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1784844804990818600,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2719560091498244000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 992698215607172100,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 426045597955636030,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 25607242392914016,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3731893457935344600,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1654644185543844000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 32,
+      "success": true,
+      "scheduleId": 3284335404913140700,
+      "error": null
+    }
+  ]
+}

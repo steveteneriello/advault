@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-06T20:58:35.525Z",
+  "name": "MOU-3-solar-installers",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "00 16 3 * *",
+  "endDate": "2025-06-05 20:58:29",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3773804341130922500,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4563396974238817300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2135318169544776000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 1802176886336949800,
+      "error": null
+    }
+  ]
+}

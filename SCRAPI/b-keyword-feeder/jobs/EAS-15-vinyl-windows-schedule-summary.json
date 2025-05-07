@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-05-01T20:04:19.215Z",
+  "name": "EAS-15-vinyl-windows",
+  "totalQueries": 254,
+  "totalBatches": 6,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 20:04:04",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 873701486810991400,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1370230100872085000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3851544839835183600,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 119898930244528940,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3036672023623332400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 3646201391376659500,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-05-01T16:47:26.289Z",
+  "name": "EAS-3-plumbers-near-me",
+  "totalQueries": 482,
+  "totalBatches": 10,
+  "cronExpression": "00 18 1 * *",
+  "endDate": "2025-05-31 16:47:13",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 529529802591099600,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2686351056054957000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 890242757359521800,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 949549872824119600,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1863683843435081200,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2878897670313426000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4596842640907130400,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2986870390537784300,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4220843858528039400,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 32,
+      "success": true,
+      "scheduleId": 756324176631484900,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-06T20:58:18.094Z",
+  "name": "MOU-3-duct-cleaning",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "00 16 3 * *",
+  "endDate": "2025-06-05 20:58:13",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3241280416831166500,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4467507829612153000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 837543869767921000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 3971832356417338400,
+      "error": null
+    }
+  ]
+}

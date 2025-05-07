@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-05-01T16:47:13.356Z",
+  "name": "EAS-3-ac-repair-near-me",
+  "totalQueries": 482,
+  "totalBatches": 10,
+  "cronExpression": "00 18 1 * *",
+  "endDate": "2025-05-31 16:47:00",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3336346013594571000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2021384865690360000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1928573778463698000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4414699156756412000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 970165237641343100,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3107810560030127000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1464466980845631200,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1287409699527644200,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2231382414391604700,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 32,
+      "success": true,
+      "scheduleId": 2560582192416106000,
+      "error": null
+    }
+  ]
+}

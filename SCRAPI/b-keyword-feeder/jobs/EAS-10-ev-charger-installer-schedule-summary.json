@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-05-01T18:44:45.606Z",
+  "name": "EAS-10-ev-charger-installer",
+  "totalQueries": 348,
+  "totalBatches": 7,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 18:44:36",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 133374223508403380,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3156208388557443600,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1590258077389638700,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 493348351342987460,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2661826745336880000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1114977726586487800,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 48,
+      "success": true,
+      "scheduleId": 3899632998656127500,
+      "error": null
+    }
+  ]
+}

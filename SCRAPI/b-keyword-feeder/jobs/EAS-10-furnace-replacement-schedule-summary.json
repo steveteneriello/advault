@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-05-01T18:39:04.290Z",
+  "name": "EAS-10-furnace-replacement",
+  "totalQueries": 348,
+  "totalBatches": 7,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 18:38:54",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1114901789321562200,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2994899705776866300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3525985021584053000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 663919988979619200,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3775596272193445400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 960984975019916500,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 48,
+      "success": true,
+      "scheduleId": 690677762110416800,
+      "error": null
+    }
+  ]
+}

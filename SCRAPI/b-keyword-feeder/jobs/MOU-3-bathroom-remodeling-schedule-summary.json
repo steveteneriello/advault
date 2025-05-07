@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-06T20:55:51.657Z",
+  "name": "MOU-3-bathroom-remodeling",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "00 16 3 * *",
+  "endDate": "2025-06-05 20:55:46",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3032127416966838300,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1641959399301277200,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 328379609931739460,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 3468678119129838000,
+      "error": null
+    }
+  ]
+}

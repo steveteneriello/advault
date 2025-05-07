@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-06T20:55:13.710Z",
+  "name": "MOU-3-roof-replacement",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "00 16 3 * *",
+  "endDate": "2025-06-05 20:55:08",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3831576789123355600,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4132750293719422500,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2940211285091762000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 2831124519661388300,
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-05-01T16:54:24.030Z",
+  "name": "EAS-3-sealcoating",
+  "totalQueries": 482,
+  "totalBatches": 10,
+  "cronExpression": "00 18 1 * *",
+  "endDate": "2025-05-31 16:54:11",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3454550269964686000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1024829029617248400,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4553028706916765700,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1309698364715083000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3697779107201217500,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1921365163905718300,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1288785287870994700,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2029323479984878800,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4607637218836209000,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 32,
+      "success": true,
+      "scheduleId": 3053669078749622000,
+      "error": null
+    }
+  ]
+}

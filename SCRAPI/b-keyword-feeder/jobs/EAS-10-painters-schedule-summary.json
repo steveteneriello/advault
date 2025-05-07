@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-05-01T18:42:19.637Z",
+  "name": "EAS-10-painters",
+  "totalQueries": 348,
+  "totalBatches": 7,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 18:42:08",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2424537417757761000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2001217995081449000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3693337516287470600,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 927646881082989800,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2918546238158696400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2930349746994154000,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 48,
+      "success": true,
+      "scheduleId": 1590701341306542800,
+      "error": null
+    }
+  ]
+}

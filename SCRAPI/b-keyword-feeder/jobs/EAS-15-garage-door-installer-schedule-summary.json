@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-05-01T20:06:24.540Z",
+  "name": "EAS-15-garage-door-installer",
+  "totalQueries": 254,
+  "totalBatches": 6,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 20:05:59",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1222294248984423400,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 564142349659953300,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 18971890819960176,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1863498560329532200,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4418181799514475000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 2261866985599346200,
+      "error": null
+    }
+  ]
+}

@@ -16,24 +16,24 @@ const keyword = keywordParts.join(' ');
 
 if (!batchId || !keyword) {
   console.error('❌ Usage: node SCRAPI/b-keyword-feeder/keyword-feeder.js <batch_id> "<keyword>"');
-  console.error('   Example: node SCRAPI/b-keyword-feeder/keyword-feeder.js COUNTY-CEN-1 "CITY plumber"');
-  console.error('   Example: node SCRAPI/b-keyword-feeder/keyword-feeder.js TOP-500 "CITY disaster restoration"');
   process.exit(1);
 }
 
 async function runKeywordFeeder(batchId, keyword) {
   console.log(`🔍 Fetching locations for batch "${batchId}" using keyword "${keyword}"...`);
 
-  // Detect filter type based on batchId prefix
-  let filterColumn = 'county_assignment';
+  let filterColumn;
   if (batchId.toUpperCase().startsWith('TOP-')) {
     filterColumn = 'city_class';
+  } else if (batchId.toUpperCase().startsWith('COUNTY-')) {
+    filterColumn = 'county_assignment';
+  } else {
+    filterColumn = 'batch_id';
   }
 
-  // Step 1: Fetch matching rows from location_data
   const { data, error } = await supabase
     .from('location_data')
-    .select('city, state_name, county_assignment, city_class')
+    .select('city, state_name, county_assignment, city_class, batch_id')
     .ilike(filterColumn, `${batchId}%`);
 
   if (error) {
@@ -46,14 +46,18 @@ async function runKeywordFeeder(batchId, keyword) {
     process.exit(1);
   }
 
-  // Step 2: Build query objects
-  const formatted = data.map(row => ({
-    query: keyword.replace(/CITY/g, row.city),
-    geo_location: `${row.city}, ${row.state_name}, United States`
-  }));
+  const formatted = data.map(row => {
+    const replacedQuery = keyword
+      .replace(/\bCITY\b/g, row.city)
+      .replace(/\bcity\b/g, row.city)
+      .replace(/\bCity\b/g, row.city);
+    return {
+      query: replacedQuery,
+      geo_location: `${row.city}, ${row.state_name}, United States`
+    };
+  });
 
-  // Step 3: Save to master-queries.json
-  const outputPath = path.join(__dirname, '../b-keyword-feeder/master-queries.json');
+  const outputPath = path.join(__dirname, 'master-queries.json');
   fs.writeFileSync(outputPath, JSON.stringify(formatted, null, 2));
 
   console.log(`✅ Saved ${formatted.length} queries to ${outputPath}`);

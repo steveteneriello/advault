@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-05-01T20:03:47.439Z",
+  "name": "EAS-15-hardwood-flooring",
+  "totalQueries": 254,
+  "totalBatches": 6,
+  "cronExpression": "00 14 2 * *",
+  "endDate": "2025-05-31 20:03:40",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2096370860178166800,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 967789297017111200,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 371697002256630460,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3526918034500978700,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4367194407116118500,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 3841319055197372400,
+      "error": null
+    }
+  ]
+}

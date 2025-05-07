@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-06T20:58:54.068Z",
+  "name": "MOU-3-ev-charger-installer",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "00 16 3 * *",
+  "endDate": "2025-06-05 20:58:48",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2290092731229954800,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2624845613707539000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1885360208064873200,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 736232722810886100,
+      "error": null
+    }
+  ]
+}

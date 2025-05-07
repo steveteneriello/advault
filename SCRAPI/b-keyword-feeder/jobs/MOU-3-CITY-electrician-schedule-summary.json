@@ -1,0 +1,38 @@
+{
+  "timestamp": "2025-05-01T12:18:15.324Z",
+  "name": "MOU-3-CITY-electrician",
+  "totalQueries": 185,
+  "totalBatches": 4,
+  "cronExpression": "0 15 * * 4",
+  "endDate": "2025-05-31 12:18:10",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3345840750933422600,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3955986942017405400,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1959123610530852400,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 35,
+      "success": true,
+      "scheduleId": 214094386008410560,
+      "error": null
+    }
+  ]
+}

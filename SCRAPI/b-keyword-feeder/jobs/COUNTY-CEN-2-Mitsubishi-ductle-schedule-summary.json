@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-04-29T21:53:48.677Z",
+  "name": "COUNTY-CEN-2-Mitsubishi-ductle",
+  "totalQueries": 124,
+  "totalBatches": 3,
+  "cronExpression": "0 15 * * 3",
+  "endDate": "2025-05-29 21:53:45",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3155224982118817300,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4382960925522461700,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 24,
+      "success": true,
+      "scheduleId": 414514860537317440,
+      "error": null
+    }
+  ]
+}

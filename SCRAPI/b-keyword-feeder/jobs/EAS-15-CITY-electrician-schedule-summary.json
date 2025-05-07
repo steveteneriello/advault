@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-05-01T11:56:15.925Z",
+  "name": "EAS-15-CITY-electrician",
+  "totalQueries": 254,
+  "totalBatches": 6,
+  "cronExpression": "0 13 * * 4",
+  "endDate": "2025-05-31 11:56:08",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4561765490812670500,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2187284492923633400,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1961334908235770400,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4584038475587154000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 902870433100487400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 4,
+      "success": true,
+      "scheduleId": 3906957132810317000,
+      "error": null
+    }
+  ]
+}

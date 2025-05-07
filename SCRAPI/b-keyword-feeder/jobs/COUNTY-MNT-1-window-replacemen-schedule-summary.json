@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-04-29T13:35:25.767Z",
+  "name": "COUNTY-MNT-1-window-replacemen",
+  "totalQueries": 239,
+  "totalBatches": 5,
+  "cronExpression": "0 14 * * 2",
+  "endDate": "2025-05-29 13:35:17",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3958659015297865700,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4587515207639808500,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2475146550711283000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4133432315403282000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 39,
+      "success": true,
+      "scheduleId": 2886768572095804400,
+      "error": null
+    }
+  ]
+}

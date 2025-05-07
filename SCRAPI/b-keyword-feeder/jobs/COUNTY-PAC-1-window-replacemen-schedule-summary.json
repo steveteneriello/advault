@@ -1,0 +1,52 @@
+{
+  "timestamp": "2025-04-29T13:36:24.653Z",
+  "name": "COUNTY-PAC-1-window-replacemen",
+  "totalQueries": 270,
+  "totalBatches": 6,
+  "cronExpression": "0 16 * * 2",
+  "endDate": "2025-05-29 13:36:17",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2820817742055033300,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1681955859060509200,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4406053082597570600,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2917792402818217000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2917457277513804000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 20,
+      "success": true,
+      "scheduleId": 3752618108977507000,
+      "error": null
+    }
+  ]
+}

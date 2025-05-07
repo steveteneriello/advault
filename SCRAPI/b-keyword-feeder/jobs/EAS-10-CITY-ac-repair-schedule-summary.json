@@ -1,0 +1,59 @@
+{
+  "timestamp": "2025-05-01T11:51:11.414Z",
+  "name": "EAS-10-CITY-ac-repair",
+  "totalQueries": 348,
+  "totalBatches": 7,
+  "cronExpression": "0 13 * * 4",
+  "endDate": "2025-05-31 11:51:02",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3336084941208414000,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1805424124959238100,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 785192864177061900,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3097370827572084700,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1955766609015660000,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2513491890367770600,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 48,
+      "success": true,
+      "scheduleId": 735048059544790700,
+      "error": null
+    }
+  ]
+}
