@@ -1,0 +1,8 @@
+{
+  "build": {
+    "root": "UNBLOCKER"
+  },
+  "start": {
+    "cmd": "node server.js"
+  }
+}
