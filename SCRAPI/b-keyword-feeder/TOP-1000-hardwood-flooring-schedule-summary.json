@@ -1,0 +1,150 @@
+{
+  "timestamp": "2025-05-08T16:05:12.789Z",
+  "name": "TOP-1000-hardwood-flooring",
+  "totalQueries": 1000,
+  "totalBatches": 20,
+  "cronExpression": "0 17 * * 4",
+  "endDate": "2026-12-29 16:04:46",
+  "results": [
+    {
+      "batchNumber": 1,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 384651789826935800,
+      "error": null
+    },
+    {
+      "batchNumber": 2,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2533597619231608000,
+      "error": null
+    },
+    {
+      "batchNumber": 3,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3271563120274846000,
+      "error": null
+    },
+    {
+      "batchNumber": 4,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2597221862860981000,
+      "error": null
+    },
+    {
+      "batchNumber": 5,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 609073862910727400,
+      "error": null
+    },
+    {
+      "batchNumber": 6,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2592593018889006600,
+      "error": null
+    },
+    {
+      "batchNumber": 7,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 537484983885753200,
+      "error": null
+    },
+    {
+      "batchNumber": 8,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1930882524893219000,
+      "error": null
+    },
+    {
+      "batchNumber": 9,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1393670111196355800,
+      "error": null
+    },
+    {
+      "batchNumber": 10,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4475144960619485700,
+      "error": null
+    },
+    {
+      "batchNumber": 11,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 566699410170789950,
+      "error": null
+    },
+    {
+      "batchNumber": 12,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 2957296849177489400,
+      "error": null
+    },
+    {
+      "batchNumber": 13,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3201362093703909400,
+      "error": null
+    },
+    {
+      "batchNumber": 14,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4285336309984788500,
+      "error": null
+    },
+    {
+      "batchNumber": 15,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 3064100469789698600,
+      "error": null
+    },
+    {
+      "batchNumber": 16,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 703088405883573000,
+      "error": null
+    },
+    {
+      "batchNumber": 17,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 1668144132955202600,
+      "error": null
+    },
+    {
+      "batchNumber": 18,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 766505786072452400,
+      "error": null
+    },
+    {
+      "batchNumber": 19,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 4135272097837138000,
+      "error": null
+    },
+    {
+      "batchNumber": 20,
+      "batchSize": 50,
+      "success": true,
+      "scheduleId": 165459416263109760,
+      "error": null
+    }
+  ]
+}

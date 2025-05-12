@@ -5,6 +5,8 @@ const { scrapeGoogle } = require('./google-scraper');
 const yargs = require('yargs/yargs');
 const { hideBin } = require('yargs/helpers');
 
+
+
 // Configure CLI options
 const argv = yargs(hideBin(process.argv))
   .usage('Usage: $0 [options]')

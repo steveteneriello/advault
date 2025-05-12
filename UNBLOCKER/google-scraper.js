@@ -919,6 +919,7 @@ async function uploadToGoogleCloudStorage(bucketName, jsonPath, screenshotPath) 
   }
 }
 
+
 // Export the main function
 module.exports = {
   scrapeGoogle

@@ -8,9 +8,9 @@ const batches = [
   //'CEN-1', 'CEN-2', 'CEN-3', 'CEN-4', 'CEN-5', 'CEN-6', 'CEN-7', 'CEN-8', 'CEN-9',
   //'CEN-10', 'CEN-11', 'CEN-12', 'CEN-13', 'CEN-14', 'CEN-15',
   // Mountain
-  'MOU-1', 'MOU-2', 'MOU-3',
+  //'MOU-1', 'MOU-2', 'MOU-3',
   // Pacific
-  'PAC-1', 'PAC-2', 'PAC-3'
+  //'PAC-1', 'PAC-2', 'PAC-3'
 ];
 
 const keywords = [
