@@ -4,7 +4,6 @@ const port = 8080;
 
 app.use(express.json());
 
-// Import your scraping function
 const { scrapeAndInsert } = require('./scrape-ads-to-supabase');
 
 app.post('/scrape-ads', async (req, res) => {
@@ -18,10 +17,11 @@ app.post('/scrape-ads', async (req, res) => {
     await scrapeAndInsert({ keyword, location, debug });
     res.json({ success: true });
   } catch (err) {
+    console.error('Scraper error:', err.message);
     res.status(500).json({ error: err.message });
   }
 });
 
 app.listen(port, () => {
-  console.log(`🚀 Server listening on port ${port}`);
+  console.log(`🚀 Listening on port ${port}`);
 });
