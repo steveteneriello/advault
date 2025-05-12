@@ -4,18 +4,8 @@ require('dotenv').config();
 const https = require('https');
 const fs = require('fs');
 const cheerio = require('cheerio');
-const yargs = require('yargs/yargs');
-const { hideBin } = require('yargs/helpers');
 const { createClient } = require('@supabase/supabase-js');
 
-// CLI setup
-const argv = yargs(hideBin(process.argv))
-  .option('keyword', { alias: 'k', type: 'string', demandOption: true })
-  .option('location', { alias: 'l', type: 'string', default: 'United States' })
-  .option('debug', { alias: 'd', type: 'boolean', default: false })
-  .help().argv;
-
-// Supabase setup
 const supabase = createClient(
   process.env.SUPABASE_URL,
   process.env.SUPABASE_SERVICE_ROLE_KEY
@@ -109,10 +99,9 @@ function extractAds($, position) {
   return ads;
 }
 
-// Scrape & insert into Supabase
-async function scrapeAndInsert() {
+// Core scraper function
+async function scrapeAndInsert({ keyword, location, debug = false }) {
   try {
-    const { keyword, location, debug } = argv;
     const timestamp = new Date().toISOString();
     const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}&gl=us&hl=en&pws=0`;
     const headers = { 'x-oxylabs-geo-location': location };
@@ -127,7 +116,6 @@ async function scrapeAndInsert() {
     const bottomAds = extractAds($, 'bottom');
     const allAds = [...topAds, ...bottomAds];
 
-    // Build raw SERP snapshot
     const rawJson = {
       keyword,
       location,
@@ -142,7 +130,6 @@ async function scrapeAndInsert() {
       }
     };
 
-    // Upload screenshot to Supabase Storage
     let screenshotPath = null;
     try {
       const screenshotHeaders = {
@@ -209,8 +196,20 @@ async function scrapeAndInsert() {
   }
 }
 
-async function scrapeAndInsert({ keyword, location, debug = false }) {
-  // Your scraping logic...
-}
+// Export function for Express server
 module.exports = { scrapeAndInsert };
 
+// If run as a CLI script, parse yargs args and invoke
+if (require.main === module) {
+  const yargs = require('yargs/yargs');
+  const { hideBin } = require('yargs/helpers');
+
+  const argv = yargs(hideBin(process.argv))
+    .option('keyword', { alias: 'k', type: 'string', demandOption: true })
+    .option('location', { alias: 'l', type: 'string', default: 'United States' })
+    .option('debug', { alias: 'd', type: 'boolean', default: false })
+    .help()
+    .argv;
+
+  scrapeAndInsert(argv);
+}
