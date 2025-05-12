@@ -1,3 +1,7 @@
+app.get("/", (req, res) => {
+  res.send("✅ AdVault server is live!");
+});
+
 const express = require('express');
 const app = express();
 const port = 8080;
