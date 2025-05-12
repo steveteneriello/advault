@@ -209,4 +209,8 @@ async function scrapeAndInsert() {
   }
 }
 
-scrapeAndInsert();
+async function scrapeAndInsert({ keyword, location, debug = false }) {
+  // Your scraping logic...
+}
+module.exports = { scrapeAndInsert };
+
