@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "description": "Oxylabs Scheduler system for SCRAPI",
   "main": "index.js",
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.7",
-    "axios": "^1.6.7",
-    "cheerio": "^1.0.0",
-    "dotenv": "^16.5.0",
-    "express": "^4.18.2",
-    "node-cron": "^3.0.3",
-    "sanitize-html": "^2.16.0"
+  "type": "module",
+  "bin": {
+    "oxylabs": "./JOB-MANAGER/cli/job-cli.js"
   },
   "scripts": {
     "scrapi": "node SCRAPI/d-automations/1-automation-triggers/scrapi-automation.js",
@@ -22,11 +17,18 @@
     "scheduler": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js",
     "scheduler-check": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js check",
     "scheduler-quick-start": "node SCRAPI/z-scrapi-scheduler/quick-start.js",
-    "scheduler-web": "node SCRAPI/z-scrapi-scheduler/super-simple-web.js" 
-   },
-  "engines": {
-    "node": ">=14.0.0"
+    "scheduler-web": "node SCRAPI/z-scrapi-scheduler/super-simple-web.js"
   },
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7",
+    "axios": "^1.6.7",
+    "cheerio": "^1.0.0",
+    "commander": "^11.1.0",
+    "dotenv": "^16.5.0",
+    "express": "^4.18.2",
+    "node-cron": "^3.0.3",
+    "node-fetch": "^3.3.2",
+    "sanitize-html": "^2.16.0",
+    "supabase": "^2.23.4"
+  }
 }
