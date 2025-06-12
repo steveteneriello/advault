@@ -1,3 +1,100 @@
 {
-  "queries": []
+  "queries": [
+    {
+      "id": "7319492648278977537",
+      "query": "disaster restoration",
+      "geo_location": "Glendale, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492648278977537/results",
+      "movedToInProgressAt": "2025-06-11T22:46:37.866Z",
+      "completedAt": "2025-06-11T22:46:39.874Z"
+    },
+    {
+      "id": "7319492649176535041",
+      "query": "disaster restoration",
+      "geo_location": "Tempe, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492649176535041/results",
+      "movedToInProgressAt": "2025-06-11T22:46:39.878Z",
+      "completedAt": "2025-06-11T22:46:41.884Z"
+    },
+    {
+      "id": "7319492650862647297",
+      "query": "disaster restoration",
+      "geo_location": "Yuma, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492650862647297/results",
+      "movedToInProgressAt": "2025-06-11T23:20:36.249Z",
+      "completedAt": "2025-06-11T23:20:38.256Z"
+    },
+    {
+      "id": "7319492651709916161",
+      "query": "disaster restoration",
+      "geo_location": "Mesa, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492651709916161/results",
+      "movedToInProgressAt": "2025-06-11T23:20:38.259Z",
+      "completedAt": "2025-06-11T23:20:40.266Z"
+    },
+    {
+      "id": "7319492652666202113",
+      "query": "disaster restoration",
+      "geo_location": "Prescott Valley, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492652666202113/results",
+      "movedToInProgressAt": "2025-06-11T23:20:40.268Z",
+      "completedAt": "2025-06-11T23:20:42.275Z"
+    },
+    {
+      "id": "7319492653488279553",
+      "query": "disaster restoration",
+      "geo_location": "Scottsdale, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492653488279553/results",
+      "movedToInProgressAt": "2025-06-11T23:20:42.278Z",
+      "completedAt": "2025-06-11T23:20:44.284Z"
+    },
+    {
+      "id": "7319492655170193409",
+      "query": "disaster restoration",
+      "geo_location": "Chandler, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492655170193409/results",
+      "movedToInProgressAt": "2025-06-11T23:20:44.286Z",
+      "completedAt": "2025-06-11T23:20:46.294Z"
+    },
+    {
+      "id": "7319492656063603713",
+      "query": "disaster restoration",
+      "geo_location": "San Tan Valley, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492656063603713/results",
+      "movedToInProgressAt": "2025-06-11T23:26:54.404Z",
+      "completedAt": "2025-06-11T23:26:56.411Z"
+    },
+    {
+      "id": "7319492656977948673",
+      "query": "disaster restoration",
+      "geo_location": "Gilbert, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492656977948673/results",
+      "movedToInProgressAt": "2025-06-11T23:26:56.414Z",
+      "completedAt": "2025-06-11T23:26:58.421Z"
+    },
+    {
+      "id": "7319492784732265473",
+      "query": "disaster restoration",
+      "geo_location": "Peoria, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492784732265473/results",
+      "movedToInProgressAt": "2025-06-11T23:26:58.424Z",
+      "completedAt": "2025-06-11T23:27:00.431Z"
+    },
+    {
+      "id": "7319492786414161921",
+      "query": "disaster restoration",
+      "geo_location": "Goodyear, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492786414161921/results",
+      "movedToInProgressAt": "2025-06-11T23:27:00.434Z",
+      "completedAt": "2025-06-11T23:27:02.442Z"
+    },
+    {
+      "id": "7319492787265613825",
+      "query": "disaster restoration",
+      "geo_location": "Buckeye, Arizona, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492787265613825/results",
+      "movedToInProgressAt": "2025-06-11T23:27:02.445Z",
+      "completedAt": "2025-06-11T23:27:04.451Z"
+    }
+  ]
 }

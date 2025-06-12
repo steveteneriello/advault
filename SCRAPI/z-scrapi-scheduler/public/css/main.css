@@ -1,8 +1,0 @@
-/* SCRAPI/z-scrapi-scheduler/public/css/main.css */
-/* Main CSS file that imports all other style modules */
-
-@import 'variables.css';
-@import 'layout.css';
-@import 'components.css';
-@import 'utilities.css';
-@import 'responsive.css';

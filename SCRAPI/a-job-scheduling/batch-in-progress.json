@@ -5,6 +5,13 @@
       "query": "disaster restoration",
       "geo_location": "Phoenix, Arizona, United States",
       "resultUrl": "http://data.oxylabs.io/v1/queries/7319492646462822401/results"
+    },
+    {
+      "id": "7319492788142227457",
+      "query": "disaster restoration",
+      "geo_location": "Kailua, Hawaii, United States",
+      "resultUrl": "http://data.oxylabs.io/v1/queries/7319492788142227457/results",
+      "started_at": "2025-06-12T11:48:42.104Z"
     }
   ]
 }

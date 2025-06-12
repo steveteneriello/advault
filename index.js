@@ -1,11 +1,40 @@
 // Main entry point for the application
+
 console.log(`
 ╔════════════════════════════════════════════════════════╗
 ║                                                        ║
-║   Ad Data Collection and Processing System             ║
+║   SCRAPI - Automated Search & Ad Intelligence Platform ║
 ║                                                        ║
-║   Available commands:                                  ║
+║   🚀 New Modernized Entry Points Available!           ║
 ║                                                        ║
+║   Run the main CLI for all available commands:        ║
+║     node SCRAPI/cli/main-cli.cjs                       ║
+║                                                        ║
+╚════════════════════════════════════════════════════════╝
+`);
+
+console.log('\n📋 Quick Start - New Entry Points:');
+console.log('');
+console.log('🔍 Single Query:');
+console.log('   node SCRAPI/entry-points/single-query/scrapi-automation.cjs "disaster restoration" "Phoenix, AZ, United States"');
+console.log('');
+console.log('📦 Batch Processing:');
+console.log('   node SCRAPI/entry-points/batch-processing/scrapi-batch-automation.cjs');
+console.log('');
+console.log('📊 Monitor Jobs:');
+console.log('   node SCRAPI/entry-points/monitoring/batch-status-dashboard.cjs');
+console.log('');
+console.log('⏰ Scheduled Jobs:');
+console.log('   node SCRAPI/z-scrapi-scheduler/scheduler-cli.js');
+console.log('');
+console.log('📖 Full Menu:');
+console.log('   node SCRAPI/cli/main-cli.cjs');
+console.log('');
+
+// Also display the legacy menu for backward compatibility
+console.log('\n📋 Legacy Commands (still supported):');
+console.log(`
+╔════════════════════════════════════════════════════════╗
 ║   Data Collection:                                     ║
 ║     npm run collect:ads                                ║
 ║     npm run collect:html                               ║
@@ -42,11 +71,15 @@ console.log(`
 ╚════════════════════════════════════════════════════════╝
 `);
 
-console.log('To start collecting data with HTML rendering, run:');
-console.log('  npm run collect:html "your search query" "location"');
-console.log('\nTo view HTML renderings, run:');
-console.log('  npm run view:html-renderings');
-console.log('\nTo run SCRAPI automation, run:');
-console.log('  npm run scrapi "your search query" "location"');
-console.log('\nTo organize output files into output-staging folder, run:');
-console.log('  npm run organize:output');
+console.log('\n💡 Getting Started Tips:');
+console.log('');
+console.log('🔧 For comprehensive help and all available commands:');
+console.log('   node SCRAPI/cli/main-cli.js');
+console.log('');
+console.log('📖 Legacy commands for backward compatibility:');
+console.log('   npm run collect:html "your search query" "location"  # Collect with HTML rendering');
+console.log('   npm run view:html-renderings                        # View HTML renderings');
+console.log('   npm run scrapi "your search query" "location"       # Run SCRAPI automation');
+console.log('   npm run organize:output                             # Organize output files');
+console.log('');
+console.log('🆕 Try the new modernized entry points for better error handling and logging!');
