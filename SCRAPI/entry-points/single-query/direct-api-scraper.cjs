@@ -6,6 +6,7 @@
 const axios = require('axios');
 const { createClient } = require('@supabase/supabase-js');
 const path = require('path');
+const { mapAndInsertOxylabsResponse } = require('../../utils/staging-serps-mapper.cjs');
 require('dotenv').config();
 
 // Configuration
@@ -98,14 +99,17 @@ async function submitSingleQuery(query, location) {
           console.log(`  ${index + 1}. ${ad.url || ad.link || 'No URL'} - ${ad.title || 'No title'}`);
         });
         
-        // Stage the SERP for processing
-        const stagingResult = await stageSerpForProcessing(
-          `realtime-${Date.now()}`,
-          query,
-          location,
-          new Date().toISOString(),
-          JSON.stringify(content)
-        );
+        // Stage the SERP for processing using the new mapper
+        const requestParams = {
+          query: query,
+          location: location,
+          source: "google_ads",
+          device: "desktop",
+          locale: "en-US",
+          jobId: `realtime-${Date.now()}`
+        };
+        
+        const stagingResult = await mapAndInsertOxylabsResponse(response.data, requestParams);
         
         if (stagingResult.success) {
           console.log(`✅ SERP staged successfully with ID: ${stagingResult.stagingId}`);
@@ -251,7 +255,7 @@ async function debugDatabaseProcessing(stagingId) {
         const latestSerpId = serpData[0].id;
         const { data: adsData, error: adsError } = await supabase
           .from('ads')
-          .select('id, title, url, advertiser_name')
+          .select('id, title, url')
           .eq('serp_id', latestSerpId)
           .limit(10);
           
@@ -261,7 +265,7 @@ async function debugDatabaseProcessing(stagingId) {
           console.log(`🎯 Ads created: ${adsData?.length || 0}`);
           if (adsData && adsData.length > 0) {
             adsData.forEach((ad, index) => {
-              console.log(`  ${index + 1}. Ad ID: ${ad.id} - "${ad.title}" - ${ad.url} - ${ad.advertiser_name || 'Unknown advertiser'}`);
+              console.log(`  ${index + 1}. Ad ID: ${ad.id} - "${ad.title}" - ${ad.url}`);
             });
           }
         }

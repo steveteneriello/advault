@@ -41,6 +41,9 @@ node test-basic-automation.cjs
 # Search for restaurants in your city
 node entry-points/single-query/single-query-handler.cjs "restaurants near me" "New York, NY"
 
+# Or use the convenient npm shortcut
+npm run one "restaurants near me" "New York, NY"
+
 # Or try a different business type
 node entry-points/single-query/single-query-handler.cjs "dental clinics" "Los Angeles, CA"
 ```
@@ -144,8 +147,12 @@ node config/environment.cjs
 # Navigate to SCRAPI directory
 cd /workspaces/advault/SCRAPI
 
-# Run single query
+# Run single query (direct command)
 node entry-points/single-query/single-query-handler.cjs "plumbers near me" "New York, NY"
+
+# Or use convenient npm shortcuts
+npm run one "plumbers near me" "New York, NY"
+npm run search "plumbers near me" "New York, NY"
 ```
 
 ### Pattern 2: Batch Processing

@@ -9,6 +9,11 @@
   },
   "scripts": {
     "scrapi": "node SCRAPI/d-automations/1-automation-triggers/scrapi-automation.js",
+    "one": "node SCRAPI/entry-points/single-query/single-query-handler.cjs",
+    "search": "node SCRAPI/entry-points/single-query/single-query-handler.cjs",
+    "test": "node SCRAPI/test-basic-automation.cjs",
+    "demo": "node SCRAPI/quick-demo.cjs",
+    "validate": "node SCRAPI/config/validation/supabase-validator.cjs && node SCRAPI/config/validation/oxylabs-validator.cjs",
     "dev": "node index.js",
     "fix-serp-ads": "node SCRAPI/utils/serp-ad-linker.js",
     "archive-files": "node SCRAPI/utils/file-archiver.js",

@@ -197,13 +197,14 @@ node demo.cjs  # Interactive experience
 ### **Quick Start Guide**
 ```bash
 # Step 1: Environment Check (30 seconds)
-node config/validation/validate-all.cjs
+node config/validation/supabase-validator.cjs && node config/validation/oxylabs-validator.cjs
 
 # Step 2: Run Your First Search (2 minutes)  
 node test-basic-automation.cjs
 
 # Step 3: Try a Real Search (2 minutes)
 node entry-points/single-query/single-query-handler.cjs "restaurants" "Miami, FL"
+# OR use npm shortcut: npm run one "restaurants" "Miami, FL"
 
 # Step 4: Verify Results (30 seconds)
 ls -la output-staging/jobs/
