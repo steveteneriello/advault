@@ -9,7 +9,7 @@ import { Campaign, Category, Keyword } from '@/lib/campaign-manager-types';
 import { Card, CardContent } from "@/components/ui/card";
 import { BarChart3, Layers, Tag, Ban } from 'lucide-react';
 
-const CampaignManager: React.FC = () => {
+const CampaignBuilder: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('campaigns');
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -381,7 +381,7 @@ const CampaignManager: React.FC = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-bold mb-6">Campaign Manager</h1>
+      <h1 className="text-2xl font-bold mb-6">Campaign Builder</h1>
       
       {/* Stats Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
@@ -393,7 +393,7 @@ const CampaignManager: React.FC = () => {
                 <p className="text-3xl font-semibold">{stats.activeCampaigns}</p>
               </div>
               <div className="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center">
-                <BarChart3 className="h-6 w-6 text-blue-500" />
+                <BarChart3 className="h-6 w-6 text-white" />
               </div>
             </div>
           </CardContent>
@@ -407,7 +407,7 @@ const CampaignManager: React.FC = () => {
                 <p className="text-3xl font-semibold">{stats.totalCategories}</p>
               </div>
               <div className="h-12 w-12 bg-purple-500/10 rounded-full flex items-center justify-center">
-                <Layers className="h-6 w-6 text-purple-500" />
+                <Layers className="h-6 w-6 text-white" />
               </div>
             </div>
           </CardContent>
@@ -421,7 +421,7 @@ const CampaignManager: React.FC = () => {
                 <p className="text-3xl font-semibold">{stats.totalKeywords}</p>
               </div>
               <div className="h-12 w-12 bg-green-500/10 rounded-full flex items-center justify-center">
-                <Tag className="h-6 w-6 text-green-500" />
+                <Tag className="h-6 w-6 text-white" />
               </div>
             </div>
           </CardContent>
@@ -435,7 +435,7 @@ const CampaignManager: React.FC = () => {
                 <p className="text-3xl font-semibold">{stats.totalNegativeKeywords}</p>
               </div>
               <div className="h-12 w-12 bg-red-500/10 rounded-full flex items-center justify-center">
-                <Ban className="h-6 w-6 text-red-500" />
+                <Ban className="h-6 w-6 text-white" />
               </div>
             </div>
           </CardContent>
@@ -509,4 +509,4 @@ const CampaignManager: React.FC = () => {
   );
 };
 
-export default CampaignManager;
+export default CampaignBuilder;

@@ -41,7 +41,7 @@ const navigation: NavSection[] = [
     items: [
       { icon: Layout, label: 'Dashboard', path: '/' },
       { icon: Target, label: 'Campaigns', path: '/campaigns' },
-      { icon: Layers, label: 'Campaign Manager', path: '/campaign-manager' },
+      { icon: Layers, label: 'Campaign Builder', path: '/campaign-builder' },
       { icon: Calendar, label: 'Schedule', path: '/schedule' },
       { icon: MapPin, label: 'Locations', path: '/locations' },
       { icon: Search, label: 'SCRAPI', path: '/scrapi' }
@@ -104,7 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
                       : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
                   }`}
                 >
-                  <item.icon className="w-5 h-5" />
+                  <item.icon className="w-5 h-5 text-white" />
                   {!collapsed && item.label}
                 </button>
               );
@@ -121,12 +121,12 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
         >
           {isDark ? (
             <>
-              <Sun className="w-5 h-5" />
+              <Sun className="w-5 h-5 text-white" />
               {!collapsed && <span>Light Mode</span>}
             </>
           ) : (
             <>
-              <Moon className="w-5 h-5" />
+              <Moon className="w-5 h-5 text-white" />
               {!collapsed && <span>Dark Mode</span>}
             </>
           )}

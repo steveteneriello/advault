@@ -6,7 +6,7 @@ import MainLayout from './components/layout/MainLayout';
 // Pages
 import Dashboard from './pages/Dashboard';
 import Campaigns from './pages/Campaigns';
-import CampaignManager from './pages/CampaignManager';
+import CampaignBuilder from './pages/CampaignManager';
 import Locations from './pages/Locations';
 import Scrapi from './pages/Scrapi';
 import Preview from './pages/Preview';
@@ -23,7 +23,7 @@ const App: React.FC = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/campaigns" element={<Campaigns />} />
-          <Route path="/campaign-manager" element={<CampaignManager />} />
+          <Route path="/campaign-builder" element={<CampaignBuilder />} />
           <Route path="/locations" element={<Locations />} />
           <Route path="/scrapi" element={<Scrapi />} />
           
