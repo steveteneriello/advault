@@ -1,25 +1,23 @@
-// Supabase Edge Function for SCRAPI Monitoring
-import { serve } from 'https://deno.land/std@0.168.0/http/server.ts';
-import { createClient } from 'npm:@supabase/supabase-js';
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
+};
 
-// Create a Supabase client with the Auth context of the function
-const supabaseClient = createClient(
-  Deno.env.get('SUPABASE_URL') ?? '',
-  Deno.env.get('SUPABASE_ANON_KEY') ?? '',
-  {
-    global: {
-      headers: { Authorization: `Bearer ${Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')}` },
-    },
-  }
-);
-
-serve(async (req) => {
-  // This is needed if you're planning to invoke your function from a browser.
+Deno.serve(async (req) => {
+  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response('ok', { headers: corsHeaders });
   }
 
   try {
+    // Create a Supabase client with the Auth context of the function
+    const { createClient } = await import('npm:@supabase/supabase-js');
+    const supabaseClient = createClient(
+      Deno.env.get('SUPABASE_URL') ?? '',
+      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') ?? ''
+    );
+
     // Get the request URL
     const url = new URL(req.url);
     const path = url.pathname.split('/').pop();
@@ -36,7 +34,7 @@ serve(async (req) => {
           }),
           { 
             status: 400,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
           }
         );
       }
@@ -56,7 +54,7 @@ serve(async (req) => {
           }),
           { 
             status: 404,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
           }
         );
       }
@@ -75,7 +73,7 @@ serve(async (req) => {
         }),
         { 
           status: 200,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       );
     }
@@ -100,7 +98,7 @@ serve(async (req) => {
           }),
           { 
             status: 500,
-            headers: { 'Content-Type': 'application/json' }
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
           }
         );
       }
@@ -112,77 +110,36 @@ serve(async (req) => {
         }),
         { 
           status: 200,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       );
     }
     
     // Get system status
     if (path === 'system-status') {
-      // Get batch counts
-      const { data: batchCounts, error: batchCountsError } = await supabaseClient
-        .rpc('get_batch_counts');
+      // Get basic counts from tables directly since RPC functions may not exist
+      const { count: batchCount } = await supabaseClient
+        .from('scrapi_batch_jobs')
+        .select('*', { count: 'exact', head: true });
         
-      if (batchCountsError) {
-        console.error('Error fetching batch counts:', batchCountsError);
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: 'Failed to fetch batch counts' 
-          }),
-          { 
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-          }
-        );
-      }
-      
-      // Get query counts
-      const { data: queryCounts, error: queryCountsError } = await supabaseClient
-        .rpc('get_query_counts');
+      const { count: queryCount } = await supabaseClient
+        .from('scrapi_search_queries')
+        .select('*', { count: 'exact', head: true });
         
-      if (queryCountsError) {
-        console.error('Error fetching query counts:', queryCountsError);
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: 'Failed to fetch query counts' 
-          }),
-          { 
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-          }
-        );
-      }
-      
-      // Get ad counts
-      const { data: adCounts, error: adCountsError } = await supabaseClient
-        .rpc('get_ad_counts');
-        
-      if (adCountsError) {
-        console.error('Error fetching ad counts:', adCountsError);
-        return new Response(
-          JSON.stringify({ 
-            success: false, 
-            error: 'Failed to fetch ad counts' 
-          }),
-          { 
-            status: 500,
-            headers: { 'Content-Type': 'application/json' }
-          }
-        );
-      }
+      const { count: adCount } = await supabaseClient
+        .from('scrapi_google_ads')
+        .select('*', { count: 'exact', head: true });
       
       return new Response(
         JSON.stringify({
-          batches: batchCounts,
-          queries: queryCounts,
-          ads: adCounts,
+          batches: { total: batchCount || 0 },
+          queries: { total: queryCount || 0 },
+          ads: { total: adCount || 0 },
           timestamp: new Date().toISOString()
         }),
         { 
           status: 200,
-          headers: { 'Content-Type': 'application/json' }
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         }
       );
     }
@@ -195,7 +152,7 @@ serve(async (req) => {
       }),
       { 
         status: 404,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     );
   } catch (error) {
@@ -207,15 +164,8 @@ serve(async (req) => {
       }),
       { 
         status: 500,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { ...corsHeaders, 'Content-Type': 'application/json' }
       }
     );
   }
 });
-
-// CORS headers for browser requests
-const corsHeaders = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-};
