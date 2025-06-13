@@ -6,15 +6,24 @@ import CategoryManager from '@/components/campaign-manager/CategoryManager';
 import KeywordManager from '@/components/campaign-manager/KeywordManager';
 import { supabase } from '@/lib/supabase';
 import { Campaign, Category, Keyword } from '@/lib/campaign-manager-types';
+import { Card, CardContent } from "@/components/ui/card";
+import { BarChart3, Layers, Tag, Ban } from 'lucide-react';
 
 const CampaignManager: React.FC = () => {
   const [activeTab, setActiveTab] = useState<string>('campaigns');
   const [campaigns, setCampaigns] = useState<Campaign[]>([]);
   const [categories, setCategories] = useState<Category[]>([]);
   const [keywords, setKeywords] = useState<Keyword[]>([]);
+  const [negativeKeywords, setNegativeKeywords] = useState<any[]>([]);
   const [selectedCampaign, setSelectedCampaign] = useState<Campaign | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  const [stats, setStats] = useState({
+    activeCampaigns: 0,
+    totalCategories: 0,
+    totalKeywords: 0,
+    totalNegativeKeywords: 0
+  });
 
   useEffect(() => {
     fetchData();
@@ -46,9 +55,30 @@ const CampaignManager: React.FC = () => {
       
       if (keywordError) throw keywordError;
       
+      // Fetch negative keywords
+      const { data: negativeKeywordData, error: negativeKeywordError } = await supabase
+        .from('campaign_manager_negative_keywords')
+        .select('*, campaign:campaign_id(id, name)');
+      
+      if (negativeKeywordError) throw negativeKeywordError;
+      
       setCampaigns(campaignData || []);
       setCategories(categoryData || []);
       setKeywords(keywordData || []);
+      setNegativeKeywords(negativeKeywordData || []);
+      
+      // Calculate stats
+      const activeCampaigns = campaignData ? campaignData.filter(c => c.status === 'active').length : 0;
+      const totalCategories = categoryData ? categoryData.length : 0;
+      const totalKeywords = keywordData ? keywordData.length : 0;
+      const totalNegativeKeywords = negativeKeywordData ? negativeKeywordData.length : 0;
+      
+      setStats({
+        activeCampaigns,
+        totalCategories,
+        totalKeywords,
+        totalNegativeKeywords
+      });
     } catch (err: any) {
       console.error('Error fetching data:', err);
       setError(err.message || 'Failed to load data');
@@ -122,6 +152,13 @@ const CampaignManager: React.FC = () => {
       
       setSelectedCampaign(savedCampaign);
       setActiveTab('campaigns');
+      
+      // Update stats
+      const activeCampaigns = campaigns.filter(c => c.status === 'active').length;
+      setStats(prev => ({
+        ...prev,
+        activeCampaigns: campaign.status === 'active' ? activeCampaigns + 1 : activeCampaigns
+      }));
     } catch (err: any) {
       console.error('Error saving campaign:', err);
       setError(err.message || 'Failed to save campaign');
@@ -170,6 +207,12 @@ const CampaignManager: React.FC = () => {
       } else {
         setCategories([...categories, savedCategory]);
       }
+      
+      // Update stats
+      setStats(prev => ({
+        ...prev,
+        totalCategories: category.id ? prev.totalCategories : prev.totalCategories + 1
+      }));
     } catch (err: any) {
       console.error('Error saving category:', err);
       setError(err.message || 'Failed to save category');
@@ -217,6 +260,12 @@ const CampaignManager: React.FC = () => {
       } else {
         setKeywords([...keywords, savedKeyword]);
       }
+      
+      // Update stats
+      setStats(prev => ({
+        ...prev,
+        totalKeywords: keyword.id ? prev.totalKeywords : prev.totalKeywords + 1
+      }));
     } catch (err: any) {
       console.error('Error saving keyword:', err);
       setError(err.message || 'Failed to save keyword');
@@ -269,6 +318,15 @@ const CampaignManager: React.FC = () => {
       if (selectedCampaign && selectedCampaign.id === campaignId) {
         setSelectedCampaign(null);
       }
+      
+      // Update stats
+      const deletedCampaign = campaigns.find(c => c.id === campaignId);
+      if (deletedCampaign && deletedCampaign.status === 'active') {
+        setStats(prev => ({
+          ...prev,
+          activeCampaigns: prev.activeCampaigns - 1
+        }));
+      }
     } catch (err: any) {
       console.error('Error deleting campaign:', err);
       setError(err.message || 'Failed to delete campaign');
@@ -286,6 +344,12 @@ const CampaignManager: React.FC = () => {
       
       // Update categories list
       setCategories(categories.filter(c => c.id !== categoryId));
+      
+      // Update stats
+      setStats(prev => ({
+        ...prev,
+        totalCategories: prev.totalCategories - 1
+      }));
     } catch (err: any) {
       console.error('Error deleting category:', err);
       setError(err.message || 'Failed to delete category');
@@ -303,6 +367,12 @@ const CampaignManager: React.FC = () => {
       
       // Update keywords list
       setKeywords(keywords.filter(k => k.id !== keywordId));
+      
+      // Update stats
+      setStats(prev => ({
+        ...prev,
+        totalKeywords: prev.totalKeywords - 1
+      }));
     } catch (err: any) {
       console.error('Error deleting keyword:', err);
       setError(err.message || 'Failed to delete keyword');
@@ -312,6 +382,65 @@ const CampaignManager: React.FC = () => {
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-6">Campaign Manager</h1>
+      
+      {/* Stats Cards */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-zinc-400 mb-1">Active Campaigns</p>
+                <p className="text-3xl font-semibold">{stats.activeCampaigns}</p>
+              </div>
+              <div className="h-12 w-12 bg-blue-500/10 rounded-full flex items-center justify-center">
+                <BarChart3 className="h-6 w-6 text-blue-500" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-zinc-400 mb-1">Categories</p>
+                <p className="text-3xl font-semibold">{stats.totalCategories}</p>
+              </div>
+              <div className="h-12 w-12 bg-purple-500/10 rounded-full flex items-center justify-center">
+                <Layers className="h-6 w-6 text-purple-500" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-zinc-400 mb-1">Keywords</p>
+                <p className="text-3xl font-semibold">{stats.totalKeywords}</p>
+              </div>
+              <div className="h-12 w-12 bg-green-500/10 rounded-full flex items-center justify-center">
+                <Tag className="h-6 w-6 text-green-500" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+        
+        <Card>
+          <CardContent className="pt-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm text-zinc-400 mb-1">Negative Keywords</p>
+                <p className="text-3xl font-semibold">{stats.totalNegativeKeywords}</p>
+              </div>
+              <div className="h-12 w-12 bg-red-500/10 rounded-full flex items-center justify-center">
+                <Ban className="h-6 w-6 text-red-500" />
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
       
       {error && (
         <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-lg mb-6">
