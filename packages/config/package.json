@@ -1,0 +1,14 @@
+{
+  "name": "@perimeter360/config",
+  "version": "0.0.0",
+  "private": true,
+  "main": "src/index.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "lint": "eslint . --ext js,ts --report-unused-disable-directives --max-warnings 0"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
