@@ -1,12 +1,9 @@
 [build]
 builder = "nixpacks"
-buildCommand = "npm run build"
+buildCommand = "npm install"
 
 [deploy]
-startCommand = "cd apps/serp-dashboard && npm run preview"
+startCommand = "node index.js"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "on_failure"
-
-[nixpacks]
-node-version = "18"
