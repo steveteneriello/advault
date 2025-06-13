@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Plus, Edit, Trash2, RefreshCw, BarChart } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Keyword, Campaign, KeywordStats } from '@/lib/campaign-manager-types';
+import { supabase } from '@/lib/supabase';
 
 interface KeywordManagerProps {
   keywords: Keyword[];
@@ -31,6 +32,7 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
   const [editingKeyword, setEditingKeyword] = useState<Keyword | null>(null);
   const [editingStats, setEditingStats] = useState<KeywordStats | null>(null);
   const [showStatsModal, setShowStatsModal] = useState(false);
+  const [displayKeywords, setDisplayKeywords] = useState<Keyword[]>([]);
   
   const [formData, setFormData] = useState<{
     keyword: string;
@@ -47,16 +49,49 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
     market_volume: 0,
     keyword_difficulty: 0,
     cpc: 0,
-    competitive_density: 0
+    competitive_density: 0,
+    api_source: '',
+    api_function: '',
+    search_engine: '',
+    bid: 0,
+    match_type: '',
+    location_code: 0,
+    date_interval: '',
+    search_partners: false,
+    impressions: 0,
+    ctr: 0,
+    average_cpc: 0,
+    total_cost: 0,
+    clicks: 0
   });
 
-  const filteredKeywords = keywords.filter(keyword => {
-    const matchesSearch = keyword.keyword.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesCampaign = campaignFilter === 'all' || keyword.campaign_id === campaignFilter;
-    const matchesType = matchTypeFilter === 'all' || keyword.match_type === matchTypeFilter;
+  useEffect(() => {
+    filterKeywords();
+  }, [keywords, searchTerm, campaignFilter, matchTypeFilter]);
+
+  const filterKeywords = () => {
+    let filtered = [...keywords];
     
-    return matchesSearch && matchesCampaign && matchesType;
-  });
+    // Apply search filter
+    if (searchTerm) {
+      const searchLower = searchTerm.toLowerCase();
+      filtered = filtered.filter(keyword => 
+        keyword.keyword.toLowerCase().includes(searchLower)
+      );
+    }
+    
+    // Apply campaign filter
+    if (campaignFilter !== 'all') {
+      filtered = filtered.filter(keyword => keyword.campaign_id === campaignFilter);
+    }
+    
+    // Apply match type filter
+    if (matchTypeFilter !== 'all') {
+      filtered = filtered.filter(keyword => keyword.match_type === matchTypeFilter);
+    }
+    
+    setDisplayKeywords(filtered);
+  };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -66,12 +101,26 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
     }));
   };
 
-  const handleStatsInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setStatsFormData(prev => ({
-      ...prev,
-      [name]: name === 'competitive_density' ? parseFloat(value) : parseInt(value) || 0
-    }));
+  const handleStatsInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value, type } = e.target;
+    
+    if (type === 'checkbox') {
+      const checked = (e.target as HTMLInputElement).checked;
+      setStatsFormData(prev => ({
+        ...prev,
+        [name]: checked
+      }));
+    } else if (type === 'number' || name === 'cpc' || name === 'bid' || name === 'average_cpc' || name === 'total_cost') {
+      setStatsFormData(prev => ({
+        ...prev,
+        [name]: parseFloat(value) || 0
+      }));
+    } else {
+      setStatsFormData(prev => ({
+        ...prev,
+        [name]: value
+      }));
+    }
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -123,24 +172,48 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
   };
 
   const handleEditStats = (keyword: Keyword) => {
-    setEditingStats({
+    // Initialize with existing stats or defaults
+    const initialStats: KeywordStats = {
       keyword_id: keyword.id,
       local_volume: keyword.stats?.local_volume || 0,
       market_volume: keyword.stats?.market_volume || 0,
       keyword_difficulty: keyword.stats?.keyword_difficulty || 0,
       cpc: keyword.stats?.cpc || 0,
-      competitive_density: keyword.stats?.competitive_density || 0
-    });
+      competitive_density: keyword.stats?.competitive_density || 0,
+      api_source: keyword.stats?.api_source || 'keywords_data',
+      api_function: keyword.stats?.api_function || 'ad_traffic_by_keywords',
+      search_engine: keyword.stats?.search_engine || 'google_ads',
+      bid: keyword.stats?.bid || 0,
+      match_type: keyword.stats?.match_type || 'exact',
+      location_code: keyword.stats?.location_code || 0,
+      date_interval: keyword.stats?.date_interval || 'next_month',
+      search_partners: keyword.stats?.search_partners || false,
+      impressions: keyword.stats?.impressions || 0,
+      ctr: keyword.stats?.ctr || 0,
+      average_cpc: keyword.stats?.average_cpc || 0,
+      total_cost: keyword.stats?.total_cost || 0,
+      clicks: keyword.stats?.clicks || 0
+    };
     
-    setStatsFormData({
-      local_volume: keyword.stats?.local_volume || 0,
-      market_volume: keyword.stats?.market_volume || 0,
-      keyword_difficulty: keyword.stats?.keyword_difficulty || 0,
-      cpc: keyword.stats?.cpc || 0,
-      competitive_density: keyword.stats?.competitive_density || 0
-    });
-    
+    setEditingStats(initialStats);
+    setStatsFormData(initialStats);
     setShowStatsModal(true);
+  };
+
+  const fetchKeywordData = async () => {
+    try {
+      // Fetch keywords with stats
+      const { data, error } = await supabase
+        .from('campaign_manager_keywords')
+        .select('*, campaign:campaign_id(id, name), stats:campaign_manager_keyword_stats(*)');
+        
+      if (error) throw error;
+      
+      return data;
+    } catch (error) {
+      console.error('Error fetching keyword data:', error);
+      return null;
+    }
   };
 
   return (
@@ -258,7 +331,7 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
             <div className="flex justify-center items-center h-64">
               <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
             </div>
-          ) : filteredKeywords.length === 0 ? (
+          ) : displayKeywords.length === 0 ? (
             <div className="text-center py-12 border border-dashed border-zinc-700 rounded-lg">
               <p className="text-zinc-400 mb-4">No keywords found</p>
             </div>
@@ -277,7 +350,7 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredKeywords.map((keyword) => {
+                  {displayKeywords.map((keyword) => {
                     const campaign = campaigns.find(c => c.id === keyword.campaign_id);
                     
                     return (
@@ -339,68 +412,169 @@ const KeywordManager: React.FC<KeywordManagerProps> = ({
           <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6 w-full max-w-md">
             <h3 className="text-xl font-semibold mb-4">Edit Keyword Stats</h3>
             <form onSubmit={handleStatsSubmit} className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="local_volume">Local Volume</Label>
-                <Input
-                  id="local_volume"
-                  name="local_volume"
-                  type="number"
-                  min="0"
-                  value={statsFormData.local_volume || 0}
-                  onChange={handleStatsInputChange}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="local_volume">Local Volume</Label>
+                  <Input
+                    id="local_volume"
+                    name="local_volume"
+                    type="number"
+                    min="0"
+                    value={statsFormData.local_volume || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="market_volume">Market Volume</Label>
+                  <Input
+                    id="market_volume"
+                    name="market_volume"
+                    type="number"
+                    min="0"
+                    value={statsFormData.market_volume || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="market_volume">Market Volume</Label>
-                <Input
-                  id="market_volume"
-                  name="market_volume"
-                  type="number"
-                  min="0"
-                  value={statsFormData.market_volume || 0}
-                  onChange={handleStatsInputChange}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="keyword_difficulty">Difficulty (0-100)</Label>
+                  <Input
+                    id="keyword_difficulty"
+                    name="keyword_difficulty"
+                    type="number"
+                    min="0"
+                    max="100"
+                    value={statsFormData.keyword_difficulty || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="cpc">CPC ($)</Label>
+                  <Input
+                    id="cpc"
+                    name="cpc"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.cpc || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="keyword_difficulty">Keyword Difficulty (0-100)</Label>
-                <Input
-                  id="keyword_difficulty"
-                  name="keyword_difficulty"
-                  type="number"
-                  min="0"
-                  max="100"
-                  value={statsFormData.keyword_difficulty || 0}
-                  onChange={handleStatsInputChange}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="competitive_density">Competitive Density (0-1)</Label>
+                  <Input
+                    id="competitive_density"
+                    name="competitive_density"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    max="1"
+                    value={statsFormData.competitive_density || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="bid">Bid Amount ($)</Label>
+                  <Input
+                    id="bid"
+                    name="bid"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.bid || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="cpc">CPC ($)</Label>
-                <Input
-                  id="cpc"
-                  name="cpc"
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  value={statsFormData.cpc || 0}
-                  onChange={handleStatsInputChange}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="impressions">Impressions</Label>
+                  <Input
+                    id="impressions"
+                    name="impressions"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.impressions || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="ctr">CTR (%)</Label>
+                  <Input
+                    id="ctr"
+                    name="ctr"
+                    type="number"
+                    step="0.0001"
+                    min="0"
+                    max="1"
+                    value={statsFormData.ctr || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
               </div>
               
-              <div className="space-y-2">
-                <Label htmlFor="competitive_density">Competitive Density (0-1)</Label>
-                <Input
-                  id="competitive_density"
-                  name="competitive_density"
-                  type="number"
-                  step="0.01"
-                  min="0"
-                  max="1"
-                  value={statsFormData.competitive_density || 0}
-                  onChange={handleStatsInputChange}
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="average_cpc">Average CPC ($)</Label>
+                  <Input
+                    id="average_cpc"
+                    name="average_cpc"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.average_cpc || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="total_cost">Total Cost ($)</Label>
+                  <Input
+                    id="total_cost"
+                    name="total_cost"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.total_cost || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label htmlFor="clicks">Clicks</Label>
+                  <Input
+                    id="clicks"
+                    name="clicks"
+                    type="number"
+                    step="0.01"
+                    min="0"
+                    value={statsFormData.clicks || 0}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label htmlFor="api_source">API Source</Label>
+                  <Input
+                    id="api_source"
+                    name="api_source"
+                    value={statsFormData.api_source || ''}
+                    onChange={handleStatsInputChange}
+                  />
+                </div>
               </div>
               
               <div className="flex justify-between pt-4">

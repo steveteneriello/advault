@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, Plus, Edit, Trash2, RefreshCw, Play, Pause, CheckCircle } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
 import { Campaign, Category } from '@/lib/campaign-manager-types';
+import { supabase } from '@/lib/supabase';
 
 interface CampaignListProps {
   campaigns: Campaign[];
@@ -28,17 +29,38 @@ const CampaignList: React.FC<CampaignListProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
   const [statusFilter, setStatusFilter] = useState<string>('all');
+  const [displayCampaigns, setDisplayCampaigns] = useState<Campaign[]>([]);
 
-  const filteredCampaigns = campaigns.filter(campaign => {
-    const matchesSearch = campaign.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      campaign.description?.toLowerCase().includes(searchTerm.toLowerCase());
+  useEffect(() => {
+    filterCampaigns();
+  }, [campaigns, searchTerm, categoryFilter, statusFilter]);
+
+  const filterCampaigns = () => {
+    let filtered = [...campaigns];
     
-    const matchesCategory = categoryFilter === 'all' || campaign.category_id === categoryFilter;
+    // Apply search filter
+    if (searchTerm) {
+      filtered = filtered.filter(campaign => {
+        const searchLower = searchTerm.toLowerCase();
+        return (
+          campaign.name.toLowerCase().includes(searchLower) ||
+          (campaign.description?.toLowerCase().includes(searchLower) || false)
+        );
+      });
+    }
     
-    const matchesStatus = statusFilter === 'all' || campaign.status === statusFilter;
+    // Apply category filter
+    if (categoryFilter !== 'all') {
+      filtered = filtered.filter(campaign => campaign.category_id === categoryFilter);
+    }
     
-    return matchesSearch && matchesCategory && matchesStatus;
-  });
+    // Apply status filter
+    if (statusFilter !== 'all') {
+      filtered = filtered.filter(campaign => campaign.status === statusFilter);
+    }
+    
+    setDisplayCampaigns(filtered);
+  };
 
   const getCategoryName = (categoryId?: string) => {
     if (!categoryId) return 'Uncategorized';
@@ -142,7 +164,7 @@ const CampaignList: React.FC<CampaignListProps> = ({
           <div className="flex justify-center items-center h-64">
             <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
           </div>
-        ) : filteredCampaigns.length === 0 ? (
+        ) : displayCampaigns.length === 0 ? (
           <div className="text-center py-12 border border-dashed border-zinc-700 rounded-lg">
             <p className="text-zinc-400 mb-4">No campaigns found</p>
             <Button onClick={onCreate}>
@@ -164,7 +186,7 @@ const CampaignList: React.FC<CampaignListProps> = ({
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredCampaigns.map((campaign) => (
+                {displayCampaigns.map((campaign) => (
                   <TableRow key={campaign.id} className="cursor-pointer hover:bg-zinc-800/50" onClick={() => onSelect(campaign)}>
                     <TableCell>
                       <div className="font-medium">{campaign.name}</div>
