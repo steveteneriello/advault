@@ -13,7 +13,9 @@ import {
   Settings,
   Sun,
   Moon,
-  Search // Add Search icon for SCRAPI
+  Search,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -28,6 +30,10 @@ interface NavSection {
   items: NavItem[];
 }
 
+interface SidebarProps {
+  collapsed: boolean;
+}
+
 const navigation: NavSection[] = [
   {
     title: 'Main',
@@ -36,7 +42,7 @@ const navigation: NavSection[] = [
       { icon: Target, label: 'Campaigns', path: '/campaigns' },
       { icon: Calendar, label: 'Schedule', path: '/schedule' },
       { icon: MapPin, label: 'Locations', path: '/locations' },
-      { icon: Search, label: 'SCRAPI', path: '/scrapi' } // Add SCRAPI to navigation
+      { icon: Search, label: 'SCRAPI', path: '/scrapi' }
     ]
   },
   {
@@ -57,24 +63,31 @@ const navigation: NavSection[] = [
   }
 ];
 
-const Sidebar: React.FC = () => {
+const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
   const navigate = useNavigate();
   const location = useLocation();
   const { theme, toggleTheme } = useTheme();
   const isDark = theme === 'dark';
 
   return (
-    <aside className="w-60 bg-zinc-900 border-r border-zinc-800 h-screen flex flex-col">
-      <div className="p-6">
-        <h1 className="text-xl font-semibold text-blue-500">SERP Analytics</h1>
+    <aside 
+      className={`bg-black transition-all duration-300 ease-in-out ${
+        collapsed ? 'w-16' : 'w-60'
+      } h-screen flex flex-col`}
+    >
+      <div className={`p-6 ${collapsed ? 'flex justify-center' : ''}`}>
+        <h1 className={`text-xl font-semibold text-blue-500 ${collapsed ? 'hidden' : ''}`}>SERP Analytics</h1>
+        {collapsed && <Layout className="text-blue-500 w-6 h-6" />}
       </div>
       
-      <nav className="px-3 flex-1 overflow-y-auto">
+      <nav className={`px-3 flex-1 overflow-y-auto ${collapsed ? 'py-3' : ''}`}>
         {navigation.map((section, idx) => (
           <div key={idx} className="mb-6">
-            <h3 className="px-3 mb-2 text-xs font-medium text-zinc-400 uppercase tracking-wider">
-              {section.title}
-            </h3>
+            {!collapsed && (
+              <h3 className="px-3 mb-2 text-xs font-medium text-zinc-400 uppercase tracking-wider">
+                {section.title}
+              </h3>
+            )}
             {section.items.map((item, itemIdx) => {
               const isActive = location.pathname === item.path || 
                 (item.path !== '/' && location.pathname.startsWith(item.path));
@@ -83,14 +96,14 @@ const Sidebar: React.FC = () => {
                 <button
                   key={itemIdx}
                   onClick={() => navigate(item.path)}
-                  className={`flex items-center gap-3 px-3 py-2 rounded-lg text-sm transition-colors w-full ${
+                  className={`flex items-center ${collapsed ? 'justify-center' : 'gap-3'} px-3 py-2 rounded-lg text-sm transition-colors w-full ${
                     isActive
-                      ? 'bg-blue-500/10 text-blue-500 border-l-2 border-blue-500'
+                      ? 'bg-blue-500/10 text-blue-500'
                       : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
                   }`}
                 >
                   <item.icon className="w-5 h-5" />
-                  {item.label}
+                  {!collapsed && item.label}
                 </button>
               );
             })}
@@ -99,20 +112,20 @@ const Sidebar: React.FC = () => {
       </nav>
 
       {/* Theme Toggle */}
-      <div className="p-4 border-t border-zinc-800">
+      <div className={`p-4 ${collapsed ? 'flex justify-center' : ''}`}>
         <button
           onClick={toggleTheme}
-          className="flex items-center gap-3 px-3 py-2 rounded-lg text-sm text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors w-full"
+          className={`flex items-center ${collapsed ? 'justify-center' : 'gap-3'} px-3 py-2 rounded-lg text-sm text-zinc-400 hover:bg-zinc-800 hover:text-white transition-colors w-full`}
         >
           {isDark ? (
             <>
               <Sun className="w-5 h-5" />
-              <span>Light Mode</span>
+              {!collapsed && <span>Light Mode</span>}
             </>
           ) : (
             <>
               <Moon className="w-5 h-5" />
-              <span>Dark Mode</span>
+              {!collapsed && <span>Dark Mode</span>}
             </>
           )}
         </button>

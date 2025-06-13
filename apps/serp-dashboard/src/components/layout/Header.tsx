@@ -1,12 +1,14 @@
 import React from 'react';
-import { ChevronRight, Bell, User } from 'lucide-react';
+import { ChevronRight, Bell, User, Menu } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 interface HeaderProps {
   title?: string;
+  toggleSidebar: () => void;
+  sidebarCollapsed: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({ title }) => {
+const Header: React.FC<HeaderProps> = ({ title, toggleSidebar, sidebarCollapsed }) => {
   const location = useLocation();
   
   // Generate breadcrumbs based on current path
@@ -32,25 +34,33 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
   const breadcrumbs = generateBreadcrumbs();
 
   return (
-    <header className="h-16 bg-zinc-900 border-b border-zinc-800 px-8 flex items-center justify-between">
-      <div className="flex items-center gap-2 text-sm text-zinc-400">
-        {breadcrumbs.map((crumb, index) => (
-          <React.Fragment key={crumb.path}>
-            <span className={index === breadcrumbs.length - 1 ? 'text-white' : ''}>
-              {crumb.label}
-            </span>
-            {index < breadcrumbs.length - 1 && (
-              <ChevronRight className="w-4 h-4" />
-            )}
-          </React.Fragment>
-        ))}
+    <header className="h-16 bg-black px-8 flex items-center justify-between">
+      <div className="flex items-center gap-2">
+        <button 
+          onClick={toggleSidebar} 
+          className="p-2 rounded-lg hover:bg-zinc-800 transition-colors mr-2"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+        <div className="flex items-center gap-2 text-sm text-zinc-400">
+          {breadcrumbs.map((crumb, index) => (
+            <React.Fragment key={crumb.path}>
+              <span className={index === breadcrumbs.length - 1 ? 'text-white' : ''}>
+                {crumb.label}
+              </span>
+              {index < breadcrumbs.length - 1 && (
+                <ChevronRight className="w-4 h-4" />
+              )}
+            </React.Fragment>
+          ))}
+        </div>
       </div>
       
       <div className="flex items-center gap-3">
-        <button className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center hover:bg-zinc-700 transition-colors">
+        <button className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center hover:bg-zinc-700 transition-colors">
           <Bell className="w-5 h-5" />
         </button>
-        <button className="w-10 h-10 rounded-lg bg-zinc-800 border border-zinc-700 flex items-center justify-center hover:bg-zinc-700 transition-colors">
+        <button className="w-10 h-10 rounded-lg bg-zinc-800 flex items-center justify-center hover:bg-zinc-700 transition-colors">
           <User className="w-5 h-5" />
         </button>
       </div>
