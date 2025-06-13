@@ -7,3 +7,7 @@ startCommand = "node index.js"
 healthcheckPath = "/"
 healthcheckTimeout = 100
 restartPolicyType = "on_failure"
+
+[nixpacks]
+# Skip building the SERP dashboard
+skip_frontend_build = true

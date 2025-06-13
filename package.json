@@ -1,20 +1,29 @@
 {
-  "name": "perimeter360-monorepo",
+  "name": "scrapi-monorepo",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "npm run dev:serp",
     "dev:serp": "cd apps/serp-dashboard && npm run dev",
     "build": "node index.js",
     "build:serp": "cd apps/serp-dashboard && npm run build",
     "lint": "eslint .",
-    "clean": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules"
+    "clean": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules",
+    "start": "node index.js",
+    "scrapi": "node SCRAPI/entry-points/single-query/scrapi-automation.cjs",
+    "batch": "node SCRAPI/entry-points/batch-processing/scrapi-batch-automation.cjs",
+    "monitor": "node SCRAPI/monitoring/job-status-dashboard.cjs"
   },
   "devDependencies": {
     "eslint": "^8.0.0",
     "typescript": "^5.0.0"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
     "axios": "^1.6.2",
     "dotenv": "^16.3.1",
     "node-fetch": "^3.3.2"
