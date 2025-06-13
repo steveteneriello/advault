@@ -39,14 +39,16 @@ import {
   Bell,
   User
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
-const Preview = () => {
+const Preview: React.FC = () => {
+  const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(true);
   const [activeView, setActiveView] = useState('dashboard');
   const [activeSection, setActiveSection] = useState(1);
-  const [selectedLocations, setSelectedLocations] = useState([]);
-  const [selectedCampaigns, setSelectedCampaigns] = useState([]);
-  const [selectedKeywords, setSelectedKeywords] = useState([]);
+  const [selectedLocations, setSelectedLocations] = useState<number[]>([]);
+  const [selectedCampaigns, setSelectedCampaigns] = useState<number[]>([]);
+  const [selectedKeywords, setSelectedKeywords] = useState<number[]>([]);
   const [selectedDays, setSelectedDays] = useState(['mon', 'tue', 'wed', 'thu', 'fri']);
   const [campaignData, setCampaignData] = useState({
     name: '',
@@ -123,11 +125,11 @@ const Preview = () => {
     { id: 3, name: 'Market Intel - Roofing', client: 'Internal', keywords: 45, schedule: 'Monthly @ 12:00 AM', status: 'completed' }
   ];
 
-  const handleInputChange = (field, value) => {
+  const handleInputChange = (field: string, value: any) => {
     setCampaignData(prev => ({ ...prev, [field]: value }));
   };
 
-  const toggleLocation = (locationId) => {
+  const toggleLocation = (locationId: number) => {
     setSelectedLocations(prev => 
       prev.includes(locationId) 
         ? prev.filter(id => id !== locationId)
@@ -135,7 +137,7 @@ const Preview = () => {
     );
   };
 
-  const toggleCampaign = (campaignId) => {
+  const toggleCampaign = (campaignId: number) => {
     setSelectedCampaigns(prev => 
       prev.includes(campaignId) 
         ? prev.filter(id => id !== campaignId)
@@ -143,7 +145,7 @@ const Preview = () => {
     );
   };
 
-  const toggleKeyword = (keywordId) => {
+  const toggleKeyword = (keywordId: number) => {
     setSelectedKeywords(prev => 
       prev.includes(keywordId) 
         ? prev.filter(id => id !== keywordId)
@@ -151,7 +153,7 @@ const Preview = () => {
     );
   };
 
-  const toggleDay = (day) => {
+  const toggleDay = (day: string) => {
     setSelectedDays(prev => 
       prev.includes(day) 
         ? prev.filter(d => d !== day)
@@ -188,12 +190,12 @@ const Preview = () => {
 
   // Location Builder Component (from previous implementation)
   const LocationBuilder = () => {
-    const [searchResults, setSearchResults] = useState([]);
-    const [centerCoords, setCenterCoords] = useState(null);
+    const [searchResults, setSearchResults] = useState<any[]>([]);
+    const [centerCoords, setCenterCoords] = useState<{lat: number, lng: number} | null>(null);
     const [savedLists, setSavedLists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSearchResults = (results, coords) => {
+    const handleSearchResults = (results: any[], coords: {lat: number, lng: number}) => {
       setSearchResults(results);
       setCenterCoords(coords);
     };
@@ -950,7 +952,7 @@ const Preview = () => {
 };
 
 // Location Components (simplified versions - would be imported in real app)
-const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }) => {
+const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }: any) => {
   const [filters, setFilters] = useState({
     centerZipCode: '',
     radiusMiles: 50
@@ -1014,7 +1016,7 @@ const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }) => {
   );
 };
 
-const LocationMap = ({ searchResults, centerCoords, darkMode }) => {
+const LocationMap = ({ searchResults, centerCoords, darkMode }: any) => {
   if (!centerCoords) {
     return (
       <div className={`h-full flex items-center justify-center ${darkMode ? 'bg-zinc-950' : 'bg-gray-50'}`}>
@@ -1038,7 +1040,7 @@ const LocationMap = ({ searchResults, centerCoords, darkMode }) => {
   );
 };
 
-const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, darkMode }) => {
+const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, darkMode }: any) => {
   const [selectedCities, setSelectedCities] = useState(new Set());
 
   if (searchResults.length === 0) return null;
@@ -1059,7 +1061,7 @@ const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, dark
 
       <div className="flex-1 overflow-y-auto p-4">
         <div className="space-y-4">
-          {searchResults.map((location, index) => (
+          {searchResults.map((location: any, index: number) => (
             <div key={index} className={`border rounded-lg p-4 ${theme.bgSecondary} ${theme.border}`}>
               <h3 className="font-semibold">{location.city}, {location.state_name}</h3>
               <p className={`text-sm ${theme.textMuted}`}>
