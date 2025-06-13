@@ -2,14 +2,10 @@
   "name": "perimeter360-monorepo",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
   "scripts": {
     "dev": "npm run dev:serp",
     "dev:serp": "cd apps/serp-dashboard && npm run dev",
-    "build": "npm run build:serp",
+    "build": "node index.js",
     "build:serp": "cd apps/serp-dashboard && npm run build",
     "lint": "eslint .",
     "clean": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules"
@@ -17,5 +13,13 @@
   "devDependencies": {
     "eslint": "^8.0.0",
     "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
