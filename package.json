@@ -1,39 +1,21 @@
 {
-  "name": "scrapi-scheduler",
-  "version": "1.0.0",
-  "description": "Oxylabs Scheduler system for SCRAPI",
-  "main": "index.js",
-  "type": "module",
-  "bin": {
-    "oxylabs": "./JOB-MANAGER/cli/job-cli.js"
-  },
+  "name": "perimeter360-monorepo",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "scrapi": "node SCRAPI/d-automations/1-automation-triggers/scrapi-automation.js",
-    "one": "node SCRAPI/entry-points/single-query/single-query-handler.cjs",
-    "search": "node SCRAPI/entry-points/single-query/single-query-handler.cjs",
-    "test": "node SCRAPI/test-basic-automation.cjs",
-    "demo": "node SCRAPI/quick-demo.cjs",
-    "validate": "node SCRAPI/config/validation/supabase-validator.cjs && node SCRAPI/config/validation/oxylabs-validator.cjs",
-    "dev": "node index.js",
-    "fix-serp-ads": "node SCRAPI/utils/serp-ad-linker.js",
-    "archive-files": "node SCRAPI/utils/file-archiver.js",
-    "view-backups": "node SCRAPI/utils/view-file-backups.js",
-    "job-status": "node SCRAPI/utils/active/job-status-dashboard.js",
-    "scheduler": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js",
-    "scheduler-check": "node SCRAPI/z-scrapi-scheduler/scheduler-cli.js check",
-    "scheduler-quick-start": "node SCRAPI/z-scrapi-scheduler/quick-start.js",
-    "scheduler-web": "node SCRAPI/z-scrapi-scheduler/super-simple-web.js"
+    "dev": "npm run dev:serp",
+    "dev:serp": "cd apps/serp-dashboard && npm run dev",
+    "build": "npm run build:serp",
+    "build:serp": "cd apps/serp-dashboard && npm run build",
+    "lint": "eslint .",
+    "clean": "rm -rf node_modules && rm -rf apps/*/node_modules && rm -rf packages/*/node_modules"
   },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.39.7",
-    "axios": "^1.6.7",
-    "cheerio": "^1.0.0",
-    "commander": "^11.1.0",
-    "dotenv": "^16.5.0",
-    "express": "^4.18.2",
-    "node-cron": "^3.0.3",
-    "node-fetch": "^3.3.2",
-    "sanitize-html": "^2.16.0",
-    "supabase": "^2.23.4"
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "typescript": "^5.0.0"
   }
 }
