@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, Edit, Trash2, RefreshCw, Play, Pause, CheckCircle } from 'lucide-react';
+import { Search, Plus, Edit, Trash2, RefreshCw, Copy, ToggleLeft, ToggleRight } from 'lucide-react';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -28,12 +28,13 @@ const CampaignList: React.FC<CampaignListProps> = ({
 }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [categoryFilter, setCategoryFilter] = useState<string>('all');
-  const [statusFilter, setStatusFilter] = useState<string>('all');
   const [displayCampaigns, setDisplayCampaigns] = useState<Campaign[]>([]);
+  const [keywordCounts, setKeywordCounts] = useState<Record<string, { keywords: number, negativeKeywords: number }>>({});
 
   useEffect(() => {
     filterCampaigns();
-  }, [campaigns, searchTerm, categoryFilter, statusFilter]);
+    fetchKeywordCounts();
+  }, [campaigns, searchTerm, categoryFilter]);
 
   const filterCampaigns = () => {
     let filtered = [...campaigns];
@@ -54,12 +55,49 @@ const CampaignList: React.FC<CampaignListProps> = ({
       filtered = filtered.filter(campaign => campaign.category_id === categoryFilter);
     }
     
-    // Apply status filter
-    if (statusFilter !== 'all') {
-      filtered = filtered.filter(campaign => campaign.status === statusFilter);
-    }
-    
     setDisplayCampaigns(filtered);
+  };
+
+  const fetchKeywordCounts = async () => {
+    try {
+      // Get all campaign IDs
+      const campaignIds = campaigns.map(c => c.id).filter(Boolean);
+      
+      if (campaignIds.length === 0) return;
+      
+      // Fetch keyword counts
+      const { data: keywordData, error: keywordError } = await supabase
+        .from('campaign_manager_keywords')
+        .select('campaign_id')
+        .in('campaign_id', campaignIds);
+      
+      // Fetch negative keyword counts
+      const { data: negKeywordData, error: negKeywordError } = await supabase
+        .from('campaign_manager_negative_keywords')
+        .select('campaign_id')
+        .in('campaign_id', campaignIds);
+      
+      if (keywordError || negKeywordError) {
+        console.warn("Database count failed:", keywordError || negKeywordError);
+        return;
+      }
+      
+      // Calculate counts for each campaign
+      const counts: Record<string, { keywords: number, negativeKeywords: number }> = {};
+      
+      campaignIds.forEach(id => {
+        if (id) {
+          counts[id] = { 
+            keywords: keywordData?.filter(k => k.campaign_id === id).length || 0,
+            negativeKeywords: negKeywordData?.filter(k => k.campaign_id === id).length || 0
+          };
+        }
+      });
+      
+      setKeywordCounts(counts);
+    } catch (error) {
+      console.error("Error fetching keyword counts:", error);
+    }
   };
 
   const getCategoryName = (categoryId?: string) => {
@@ -68,35 +106,91 @@ const CampaignList: React.FC<CampaignListProps> = ({
     return category ? category.name : 'Unknown';
   };
 
-  const getStatusBadge = (status?: string) => {
-    switch (status) {
-      case 'active':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200">
-            <Play className="w-3 h-3 mr-1" />
-            Active
-          </span>
-        );
-      case 'paused':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200">
-            <Pause className="w-3 h-3 mr-1" />
-            Paused
-          </span>
-        );
-      case 'completed':
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
-            <CheckCircle className="w-3 h-3 mr-1" />
-            Completed
-          </span>
-        );
-      default:
-        return (
-          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200">
-            Draft
-          </span>
-        );
+  const handleToggleStatus = async (campaign: Campaign) => {
+    try {
+      const newStatus = campaign.status === 'active' ? 'paused' : 'active';
+      
+      // Update in database
+      const { error } = await supabase
+        .from('campaign_manager_campaigns')
+        .update({ status: newStatus })
+        .eq('id', campaign.id);
+      
+      if (error) {
+        console.error("Error updating campaign status:", error);
+        return;
+      }
+      
+      // Update local state
+      onRefresh();
+    } catch (error) {
+      console.error("Error toggling campaign status:", error);
+    }
+  };
+
+  const handleCloneCampaign = async (campaign: Campaign) => {
+    try {
+      // Create a clone of the campaign
+      const { data: clonedCampaign, error: campaignError } = await supabase
+        .from('campaign_manager_campaigns')
+        .insert({
+          name: `${campaign.name} (Clone)`,
+          category_id: campaign.category_id,
+          description: campaign.description,
+          status: 'draft'
+        })
+        .select()
+        .single();
+      
+      if (campaignError || !clonedCampaign) {
+        console.error("Error cloning campaign:", campaignError);
+        return;
+      }
+      
+      // Clone keywords
+      const { data: keywords, error: keywordsError } = await supabase
+        .from('campaign_manager_keywords')
+        .select('*')
+        .eq('campaign_id', campaign.id);
+      
+      if (!keywordsError && keywords && keywords.length > 0) {
+        // Prepare keywords for the cloned campaign
+        const clonedKeywords = keywords.map(k => ({
+          campaign_id: clonedCampaign.id,
+          keyword: k.keyword,
+          match_type: k.match_type
+        }));
+        
+        // Insert cloned keywords
+        await supabase
+          .from('campaign_manager_keywords')
+          .insert(clonedKeywords);
+      }
+      
+      // Clone negative keywords
+      const { data: negKeywords, error: negKeywordsError } = await supabase
+        .from('campaign_manager_negative_keywords')
+        .select('*')
+        .eq('campaign_id', campaign.id);
+      
+      if (!negKeywordsError && negKeywords && negKeywords.length > 0) {
+        // Prepare negative keywords for the cloned campaign
+        const clonedNegKeywords = negKeywords.map(k => ({
+          campaign_id: clonedCampaign.id,
+          keyword: k.keyword,
+          match_type: k.match_type
+        }));
+        
+        // Insert cloned negative keywords
+        await supabase
+          .from('campaign_manager_negative_keywords')
+          .insert(clonedNegKeywords);
+      }
+      
+      // Refresh the campaign list
+      onRefresh();
+    } catch (error) {
+      console.error("Error cloning campaign:", error);
     }
   };
 
@@ -146,17 +240,6 @@ const CampaignList: React.FC<CampaignListProps> = ({
                 </option>
               ))}
             </select>
-            <select
-              value={statusFilter}
-              onChange={(e) => setStatusFilter(e.target.value)}
-              className="px-3 py-2 bg-zinc-800 border border-zinc-700 rounded-md text-sm"
-            >
-              <option value="all">All Statuses</option>
-              <option value="draft">Draft</option>
-              <option value="active">Active</option>
-              <option value="paused">Paused</option>
-              <option value="completed">Completed</option>
-            </select>
           </div>
         </div>
 
@@ -177,11 +260,11 @@ const CampaignList: React.FC<CampaignListProps> = ({
             <Table>
               <TableHeader>
                 <TableRow>
+                  <TableHead>Status</TableHead>
                   <TableHead>Name</TableHead>
                   <TableHead>Category</TableHead>
-                  <TableHead>Status</TableHead>
-                  <TableHead>Dates</TableHead>
-                  <TableHead>Budget</TableHead>
+                  <TableHead>Keywords</TableHead>
+                  <TableHead>Negative Keywords</TableHead>
                   <TableHead className="text-right">Actions</TableHead>
                 </TableRow>
               </TableHeader>
@@ -189,27 +272,33 @@ const CampaignList: React.FC<CampaignListProps> = ({
                 {displayCampaigns.map((campaign) => (
                   <TableRow key={campaign.id} className="cursor-pointer hover:bg-zinc-800/50" onClick={() => onSelect(campaign)}>
                     <TableCell>
+                      <Button 
+                        variant="ghost" 
+                        size="sm"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleToggleStatus(campaign);
+                        }}
+                      >
+                        {campaign.status === 'active' ? (
+                          <ToggleRight className="h-5 w-5 text-green-500" />
+                        ) : (
+                          <ToggleLeft className="h-5 w-5 text-zinc-500" />
+                        )}
+                      </Button>
+                    </TableCell>
+                    <TableCell>
                       <div className="font-medium">{campaign.name}</div>
                       {campaign.description && (
                         <div className="text-sm text-zinc-400 truncate max-w-xs">{campaign.description}</div>
                       )}
                     </TableCell>
                     <TableCell>{getCategoryName(campaign.category_id)}</TableCell>
-                    <TableCell>{getStatusBadge(campaign.status)}</TableCell>
                     <TableCell>
-                      {campaign.start_date && (
-                        <div className="text-sm">
-                          Start: {new Date(campaign.start_date).toLocaleDateString()}
-                        </div>
-                      )}
-                      {campaign.end_date && (
-                        <div className="text-sm">
-                          End: {new Date(campaign.end_date).toLocaleDateString()}
-                        </div>
-                      )}
+                      {keywordCounts[campaign.id!]?.keywords || 0} keywords
                     </TableCell>
                     <TableCell>
-                      {campaign.budget ? `$${campaign.budget.toFixed(2)}` : '-'}
+                      {keywordCounts[campaign.id!]?.negativeKeywords || 0} negative keywords
                     </TableCell>
                     <TableCell className="text-right">
                       <div className="flex justify-end gap-2">
@@ -222,6 +311,16 @@ const CampaignList: React.FC<CampaignListProps> = ({
                           }}
                         >
                           <Edit className="h-4 w-4" />
+                        </Button>
+                        <Button 
+                          variant="ghost" 
+                          size="sm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleCloneCampaign(campaign);
+                          }}
+                        >
+                          <Copy className="h-4 w-4" />
                         </Button>
                         <Button 
                           variant="ghost" 

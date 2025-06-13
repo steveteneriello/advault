@@ -31,11 +31,7 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
     name: '',
     description: '',
     category_id: '',
-    start_date: '',
-    end_date: '',
-    status: 'draft',
-    budget: 0,
-    target_locations: []
+    status: 'draft'
   });
   
   const [newKeyword, setNewKeyword] = useState<Keyword>({
@@ -53,11 +49,7 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
         name: campaign.name,
         description: campaign.description || '',
         category_id: campaign.category_id || '',
-        start_date: campaign.start_date || '',
-        end_date: campaign.end_date || '',
-        status: campaign.status || 'draft',
-        budget: campaign.budget || 0,
-        target_locations: campaign.target_locations || []
+        status: campaign.status || 'draft'
       });
     } else {
       // Reset form for new campaign
@@ -65,11 +57,7 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
         name: '',
         description: '',
         category_id: '',
-        start_date: '',
-        end_date: '',
-        status: 'draft',
-        budget: 0,
-        target_locations: []
+        status: 'draft'
       });
     }
   }, [campaign]);
@@ -78,7 +66,7 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: name === 'budget' ? parseFloat(value) || 0 : value
+      [name]: value
     }));
     
     // Clear error for this field
@@ -106,10 +94,6 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
       newErrors.name = 'Campaign name is required';
     }
     
-    if (formData.start_date && formData.end_date && new Date(formData.start_date) > new Date(formData.end_date)) {
-      newErrors.end_date = 'End date must be after start date';
-    }
-    
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -131,7 +115,10 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
       return;
     }
     
-    onKeywordSave(newKeyword);
+    onKeywordSave({
+      ...newKeyword,
+      campaign_id: campaign?.id
+    });
     
     // Reset form
     setNewKeyword({
@@ -153,7 +140,6 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
           <TabsList className="mb-6">
             <TabsTrigger value="details">Campaign Details</TabsTrigger>
             <TabsTrigger value="keywords">Keywords</TabsTrigger>
-            <TabsTrigger value="locations">Locations</TabsTrigger>
           </TabsList>
           
           <TabsContent value="details">
@@ -191,30 +177,6 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
                 </div>
                 
                 <div className="space-y-2">
-                  <Label htmlFor="start_date">Start Date</Label>
-                  <Input
-                    id="start_date"
-                    name="start_date"
-                    type="date"
-                    value={formData.start_date || ''}
-                    onChange={handleInputChange}
-                  />
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="end_date">End Date</Label>
-                  <Input
-                    id="end_date"
-                    name="end_date"
-                    type="date"
-                    value={formData.end_date || ''}
-                    onChange={handleInputChange}
-                    className={errors.end_date ? 'border-red-500' : ''}
-                  />
-                  {errors.end_date && <p className="text-red-500 text-sm">{errors.end_date}</p>}
-                </div>
-                
-                <div className="space-y-2">
                   <Label htmlFor="status">Status</Label>
                   <select
                     id="status"
@@ -228,20 +190,6 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
                     <option value="paused">Paused</option>
                     <option value="completed">Completed</option>
                   </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <Label htmlFor="budget">Budget</Label>
-                  <Input
-                    id="budget"
-                    name="budget"
-                    type="number"
-                    step="0.01"
-                    min="0"
-                    value={formData.budget || ''}
-                    onChange={handleInputChange}
-                    placeholder="0.00"
-                  />
                 </div>
                 
                 <div className="space-y-2 md:col-span-2">
@@ -354,28 +302,6 @@ const CampaignEditor: React.FC<CampaignEditorProps> = ({
                       </table>
                     </div>
                   )}
-                </div>
-              </div>
-            )}
-          </TabsContent>
-          
-          <TabsContent value="locations">
-            {!campaign?.id ? (
-              <div className="text-center py-12 border border-dashed border-zinc-700 rounded-lg">
-                <p className="text-zinc-400 mb-4">Save the campaign first to add locations</p>
-              </div>
-            ) : (
-              <div className="space-y-6">
-                <div className="border border-zinc-800 rounded-lg p-6">
-                  <h3 className="text-lg font-medium mb-4">Target Locations</h3>
-                  <p className="text-zinc-400 mb-6">
-                    Define the geographic areas where your campaign will run.
-                  </p>
-                  
-                  <div className="text-center py-8">
-                    <p className="text-zinc-400 mb-4">Location targeting will be implemented in a future update</p>
-                    <Button disabled>Add Location</Button>
-                  </div>
                 </div>
               </div>
             )}

@@ -4,6 +4,7 @@ import CampaignList from '@/components/campaign-manager/CampaignList';
 import CampaignEditor from '@/components/campaign-manager/CampaignEditor';
 import CategoryManager from '@/components/campaign-manager/CategoryManager';
 import KeywordManager from '@/components/campaign-manager/KeywordManager';
+import NegativeKeywordManager from '@/components/campaign-manager/NegativeKeywordManager';
 import { supabase } from '@/lib/supabase';
 import { Campaign, Category, Keyword } from '@/lib/campaign-manager-types';
 import { Card, CardContent } from "@/components/ui/card";
@@ -23,28 +24,21 @@ const SAMPLE_CAMPAIGNS: Campaign[] = [
     name: 'Drain Cleaning Campaign', 
     category_id: '1', 
     description: 'Targeted drain cleaning services campaign',
-    start_date: '2025-06-01',
-    status: 'active',
-    budget: 1500
+    status: 'active'
   },
   { 
     id: '2', 
     name: 'Emergency Plumbing', 
     category_id: '1', 
     description: 'Campaign for emergency plumbing services',
-    start_date: '2025-06-15',
-    status: 'draft',
-    budget: 2000
+    status: 'draft'
   },
   { 
     id: '3', 
     name: 'Summer AC Maintenance', 
     category_id: '2', 
     description: 'Seasonal campaign for AC maintenance services',
-    start_date: '2025-07-01',
-    end_date: '2025-08-31',
-    status: 'paused',
-    budget: 3500
+    status: 'paused'
   }
 ];
 
@@ -186,11 +180,7 @@ const CampaignBuilder: React.FC = () => {
             name: campaign.name,
             category_id: campaign.category_id,
             description: campaign.description,
-            start_date: campaign.start_date,
-            end_date: campaign.end_date,
             status: campaign.status,
-            target_locations: campaign.target_locations,
-            budget: campaign.budget,
             updated_at: new Date().toISOString()
           })
           .eq('id', campaign.id)
@@ -217,11 +207,7 @@ const CampaignBuilder: React.FC = () => {
             name: campaign.name,
             category_id: campaign.category_id,
             description: campaign.description,
-            start_date: campaign.start_date,
-            end_date: campaign.end_date,
-            status: campaign.status || 'draft',
-            target_locations: campaign.target_locations,
-            budget: campaign.budget
+            status: campaign.status || 'draft'
           })
           .select('*, category:category_id(id, name)')
           .single();
@@ -557,6 +543,64 @@ const CampaignBuilder: React.FC = () => {
     }
   };
 
+  const handleCloneCampaign = async (campaignId: string) => {
+    try {
+      const campaignToClone = campaigns.find(c => c.id === campaignId);
+      if (!campaignToClone) return;
+      
+      // Create a new campaign with similar data
+      const { data: newCampaign, error } = await supabase
+        .from('campaign_manager_campaigns')
+        .insert({
+          name: `${campaignToClone.name} (Clone)`,
+          category_id: campaignToClone.category_id,
+          description: campaignToClone.description,
+          status: 'draft'
+        })
+        .select()
+        .single();
+      
+      if (error || !newCampaign) {
+        console.error("Error cloning campaign:", error);
+        return;
+      }
+      
+      // Clone keywords
+      const campaignKeywords = keywords.filter(k => k.campaign_id === campaignId);
+      if (campaignKeywords.length > 0) {
+        const keywordsToInsert = campaignKeywords.map(k => ({
+          campaign_id: newCampaign.id,
+          keyword: k.keyword,
+          match_type: k.match_type
+        }));
+        
+        await supabase
+          .from('campaign_manager_keywords')
+          .insert(keywordsToInsert);
+      }
+      
+      // Clone negative keywords
+      const campaignNegKeywords = negativeKeywords.filter(k => k.campaign_id === campaignId);
+      if (campaignNegKeywords.length > 0) {
+        const negKeywordsToInsert = campaignNegKeywords.map(k => ({
+          campaign_id: newCampaign.id,
+          keyword: k.keyword,
+          match_type: k.match_type
+        }));
+        
+        await supabase
+          .from('campaign_manager_negative_keywords')
+          .insert(negKeywordsToInsert);
+      }
+      
+      // Refresh data
+      fetchData();
+    } catch (err: any) {
+      console.error('Error cloning campaign:', err);
+      setError(err.message || 'Failed to clone campaign');
+    }
+  };
+
   return (
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-6">Campaign Builder</h1>
@@ -635,6 +679,7 @@ const CampaignBuilder: React.FC = () => {
           </TabsTrigger>
           <TabsTrigger value="categories">Categories</TabsTrigger>
           <TabsTrigger value="keywords">Keywords</TabsTrigger>
+          <TabsTrigger value="negative-keywords">Negative Keywords</TabsTrigger>
         </TabsList>
         
         <TabsContent value="campaigns">
@@ -679,6 +724,14 @@ const CampaignBuilder: React.FC = () => {
             onSave={handleKeywordSave}
             onDelete={handleKeywordDelete}
             onStatsSave={handleKeywordStatsSave}
+            onRefresh={fetchData}
+          />
+        </TabsContent>
+        
+        <TabsContent value="negative-keywords">
+          <NegativeKeywordManager 
+            campaigns={campaigns}
+            isLoading={isLoading}
             onRefresh={fetchData}
           />
         </TabsContent>
