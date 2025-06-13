@@ -12,55 +12,55 @@ import { BarChart3, Layers, Tag, Ban } from 'lucide-react';
 
 // Sample data for development/demo purposes
 const SAMPLE_CATEGORIES: Category[] = [
-  { id: '1', name: 'Plumbing', description: 'Plumbing services and related categories' },
-  { id: '2', name: 'HVAC', description: 'Heating, ventilation, and air conditioning services' },
-  { id: '3', name: 'Electrical', description: 'Electrical services and contractors' },
-  { id: '4', name: 'Roofing', description: 'Roofing services and contractors' }
+  { id: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', name: 'Plumbing', description: 'Plumbing services and related categories' },
+  { id: 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', name: 'HVAC', description: 'Heating, ventilation, and air conditioning services' },
+  { id: 'c0eebc99-9c0b-4ef8-bb6d-6bb9bd380a13', name: 'Electrical', description: 'Electrical services and contractors' },
+  { id: 'd0eebc99-9c0b-4ef8-bb6d-6bb9bd380a14', name: 'Roofing', description: 'Roofing services and contractors' }
 ];
 
 const SAMPLE_CAMPAIGNS: Campaign[] = [
   { 
-    id: '1', 
+    id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', 
     name: 'Drain Cleaning Campaign', 
-    category_id: '1', 
+    category_id: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 
     description: 'Targeted drain cleaning services campaign',
     status: 'active'
   },
   { 
-    id: '2', 
+    id: 'f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', 
     name: 'Emergency Plumbing', 
-    category_id: '1', 
+    category_id: 'a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11', 
     description: 'Campaign for emergency plumbing services',
     status: 'draft'
   },
   { 
-    id: '3', 
+    id: 'g0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', 
     name: 'Summer AC Maintenance', 
-    category_id: '2', 
+    category_id: 'b0eebc99-9c0b-4ef8-bb6d-6bb9bd380a12', 
     description: 'Seasonal campaign for AC maintenance services',
     status: 'paused'
   }
 ];
 
 const SAMPLE_KEYWORDS: Keyword[] = [
-  { id: '1', campaign_id: '1', keyword: 'drain cleaning', match_type: 'broad', stats: { keyword_id: '1', local_volume: 1200, market_volume: 3500, keyword_difficulty: 55, cpc: 12.50, competitive_density: 0.75 } },
-  { id: '2', campaign_id: '1', keyword: 'drain cleaning near me', match_type: 'phrase', stats: { keyword_id: '2', local_volume: 850, market_volume: 2700, keyword_difficulty: 62, cpc: 15.75, competitive_density: 0.85 } },
-  { id: '3', campaign_id: '1', keyword: 'emergency drain cleaning', match_type: 'exact', stats: { keyword_id: '3', local_volume: 450, market_volume: 1200, keyword_difficulty: 70, cpc: 18.25, competitive_density: 0.90 } },
-  { id: '4', campaign_id: '1', keyword: 'roto rooter', match_type: 'broad', stats: { keyword_id: '4', local_volume: 600, market_volume: 1800, keyword_difficulty: 45, cpc: 10.90, competitive_density: 0.65 } },
-  { id: '5', campaign_id: '2', keyword: 'emergency plumber', match_type: 'exact', stats: { keyword_id: '5', local_volume: 1800, market_volume: 5200, keyword_difficulty: 75, cpc: 22.50, competitive_density: 0.95 } },
-  { id: '6', campaign_id: '2', keyword: '24 hour plumber', match_type: 'phrase', stats: { keyword_id: '6', local_volume: 1200, market_volume: 3800, keyword_difficulty: 68, cpc: 19.75, competitive_density: 0.88 } },
-  { id: '7', campaign_id: '3', keyword: 'ac maintenance', match_type: 'broad', stats: { keyword_id: '7', local_volume: 950, market_volume: 2900, keyword_difficulty: 50, cpc: 14.25, competitive_density: 0.72 } },
-  { id: '8', campaign_id: '3', keyword: 'air conditioner tune up', match_type: 'phrase', stats: { keyword_id: '8', local_volume: 750, market_volume: 2200, keyword_difficulty: 45, cpc: 12.50, competitive_density: 0.68 } }
+  { id: 'h0eebc99-9c0b-4ef8-bb6d-6bb9bd380a18', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'drain cleaning', match_type: 'broad', stats: { keyword_id: 'h0eebc99-9c0b-4ef8-bb6d-6bb9bd380a18', local_volume: 1200, market_volume: 3500, keyword_difficulty: 55, cpc: 12.50, competitive_density: 0.75 } },
+  { id: 'i0eebc99-9c0b-4ef8-bb6d-6bb9bd380a19', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'drain cleaning near me', match_type: 'phrase', stats: { keyword_id: 'i0eebc99-9c0b-4ef8-bb6d-6bb9bd380a19', local_volume: 850, market_volume: 2700, keyword_difficulty: 62, cpc: 15.75, competitive_density: 0.85 } },
+  { id: 'j0eebc99-9c0b-4ef8-bb6d-6bb9bd380a20', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'emergency drain cleaning', match_type: 'exact', stats: { keyword_id: 'j0eebc99-9c0b-4ef8-bb6d-6bb9bd380a20', local_volume: 450, market_volume: 1200, keyword_difficulty: 70, cpc: 18.25, competitive_density: 0.90 } },
+  { id: 'k0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'roto rooter', match_type: 'broad', stats: { keyword_id: 'k0eebc99-9c0b-4ef8-bb6d-6bb9bd380a21', local_volume: 600, market_volume: 1800, keyword_difficulty: 45, cpc: 10.90, competitive_density: 0.65 } },
+  { id: 'l0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', campaign_id: 'f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', keyword: 'emergency plumber', match_type: 'exact', stats: { keyword_id: 'l0eebc99-9c0b-4ef8-bb6d-6bb9bd380a22', local_volume: 1800, market_volume: 5200, keyword_difficulty: 75, cpc: 22.50, competitive_density: 0.95 } },
+  { id: 'm0eebc99-9c0b-4ef8-bb6d-6bb9bd380a23', campaign_id: 'f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', keyword: '24 hour plumber', match_type: 'phrase', stats: { keyword_id: 'm0eebc99-9c0b-4ef8-bb6d-6bb9bd380a23', local_volume: 1200, market_volume: 3800, keyword_difficulty: 68, cpc: 19.75, competitive_density: 0.88 } },
+  { id: 'n0eebc99-9c0b-4ef8-bb6d-6bb9bd380a24', campaign_id: 'g0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', keyword: 'ac maintenance', match_type: 'broad', stats: { keyword_id: 'n0eebc99-9c0b-4ef8-bb6d-6bb9bd380a24', local_volume: 950, market_volume: 2900, keyword_difficulty: 50, cpc: 14.25, competitive_density: 0.72 } },
+  { id: 'o0eebc99-9c0b-4ef8-bb6d-6bb9bd380a25', campaign_id: 'g0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', keyword: 'air conditioner tune up', match_type: 'phrase', stats: { keyword_id: 'o0eebc99-9c0b-4ef8-bb6d-6bb9bd380a25', local_volume: 750, market_volume: 2200, keyword_difficulty: 45, cpc: 12.50, competitive_density: 0.68 } }
 ];
 
 const SAMPLE_NEGATIVE_KEYWORDS = [
-  { id: '1', campaign_id: '1', keyword: 'draino', match_type: 'exact' },
-  { id: '2', campaign_id: '1', keyword: 'how to unclog drain', match_type: 'broad' },
-  { id: '3', campaign_id: '1', keyword: 'best drain cleaning treatments', match_type: 'phrase' },
-  { id: '4', campaign_id: '2', keyword: 'diy plumbing', match_type: 'broad' },
-  { id: '5', campaign_id: '2', keyword: 'plumbing tools', match_type: 'phrase' },
-  { id: '6', campaign_id: '3', keyword: 'ac repair', match_type: 'exact' },
-  { id: '7', campaign_id: '3', keyword: 'how to fix ac', match_type: 'broad' }
+  { id: 'p0eebc99-9c0b-4ef8-bb6d-6bb9bd380a26', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'draino', match_type: 'exact' },
+  { id: 'q0eebc99-9c0b-4ef8-bb6d-6bb9bd380a27', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'how to unclog drain', match_type: 'broad' },
+  { id: 'r0eebc99-9c0b-4ef8-bb6d-6bb9bd380a28', campaign_id: 'e0eebc99-9c0b-4ef8-bb6d-6bb9bd380a15', keyword: 'best drain cleaning treatments', match_type: 'phrase' },
+  { id: 's0eebc99-9c0b-4ef8-bb6d-6bb9bd380a29', campaign_id: 'f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', keyword: 'diy plumbing', match_type: 'broad' },
+  { id: 't0eebc99-9c0b-4ef8-bb6d-6bb9bd380a30', campaign_id: 'f0eebc99-9c0b-4ef8-bb6d-6bb9bd380a16', keyword: 'plumbing tools', match_type: 'phrase' },
+  { id: 'u0eebc99-9c0b-4ef8-bb6d-6bb9bd380a31', campaign_id: 'g0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', keyword: 'ac repair', match_type: 'exact' },
+  { id: 'v0eebc99-9c0b-4ef8-bb6d-6bb9bd380a32', campaign_id: 'g0eebc99-9c0b-4ef8-bb6d-6bb9bd380a17', keyword: 'how to fix ac', match_type: 'broad' }
 ];
 
 const CampaignBuilder: React.FC = () => {
