@@ -39,10 +39,8 @@ import {
   Bell,
   User
 } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
 
 const Preview: React.FC = () => {
-  const navigate = useNavigate();
   const [darkMode, setDarkMode] = useState(true);
   const [activeView, setActiveView] = useState('dashboard');
   const [activeSection, setActiveSection] = useState(1);
@@ -190,12 +188,12 @@ const Preview: React.FC = () => {
 
   // Location Builder Component (from previous implementation)
   const LocationBuilder = () => {
-    const [searchResults, setSearchResults] = useState<any[]>([]);
-    const [centerCoords, setCenterCoords] = useState<{lat: number, lng: number} | null>(null);
+    const [searchResults, setSearchResults] = useState([]);
+    const [centerCoords, setCenterCoords] = useState(null);
     const [savedLists, setSavedLists] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleSearchResults = (results: any[], coords: {lat: number, lng: number}) => {
+    const handleSearchResults = (results: any, coords: any) => {
       setSearchResults(results);
       setCenterCoords(coords);
     };
@@ -217,12 +215,35 @@ const Preview: React.FC = () => {
                 
                 {/* Search bar */}
                 <div className="flex-1 max-w-4xl mx-8">
-                  <LocationFilters 
-                    onSearchResults={handleSearchResults}
-                    onListSaved={handleListSaved}
-                    theme={theme}
-                    darkMode={darkMode}
-                  />
+                  <div className="flex items-center gap-4">
+                    <div>
+                      <input
+                        type="text"
+                        placeholder="ZIP code"
+                        className={`px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${theme.input}`}
+                      />
+                    </div>
+                    
+                    <div className="flex-1">
+                      <label className={`text-sm ${theme.textMuted} block mb-1`}>
+                        Radius: 50 miles
+                      </label>
+                      <input
+                        type="range"
+                        min="5"
+                        max="250"
+                        step="5"
+                        className="w-full"
+                      />
+                    </div>
+
+                    <button
+                      className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
+                    >
+                      <Search className="h-4 w-4 mr-2 inline-block" />
+                      Search
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -232,25 +253,13 @@ const Preview: React.FC = () => {
           <div className="flex" style={{ height: 'calc(100vh - 180px)' }}>
             {/* Map */}
             <div className={`flex-1 h-full ${darkMode ? 'bg-zinc-950' : 'bg-gray-100'}`}>
-              <LocationMap 
-                searchResults={searchResults}
-                centerCoords={centerCoords}
-                darkMode={darkMode}
-              />
-            </div>
-            
-            {/* Search Results */}
-            {searchResults.length > 0 && (
-              <div className={`w-[480px] border-l ${theme.bgSecondary} ${theme.border} h-full`}>
-                <LocationResults 
-                  searchResults={searchResults}
-                  centerCoords={centerCoords}
-                  onListSaved={handleListSaved}
-                  theme={theme}
-                  darkMode={darkMode}
-                />
+              <div className="h-full flex items-center justify-center">
+                <div className={`text-center ${darkMode ? 'text-zinc-500' : 'text-gray-500'}`}>
+                  <MapPin className="h-16 w-16 mx-auto mb-4 opacity-30" />
+                  <p className="text-lg">Enter a ZIP code and search to see locations on the map</p>
+                </div>
               </div>
-            )}
+            </div>
           </div>
         </div>
       </div>
@@ -947,134 +956,6 @@ const Preview: React.FC = () => {
           </>
         )}
       </main>
-    </div>
-  );
-};
-
-// Location Components (simplified versions - would be imported in real app)
-const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }: any) => {
-  const [filters, setFilters] = useState({
-    centerZipCode: '',
-    radiusMiles: 50
-  });
-  const [isSearching, setIsSearching] = useState(false);
-
-  const handleSearch = () => {
-    if (!filters.centerZipCode.trim()) {
-      alert('Please enter a ZIP code');
-      return;
-    }
-    
-    setIsSearching(true);
-    // Simulate search
-    setTimeout(() => {
-      const mockResults = [
-        { id: 1, city: 'Phoenix', state_name: 'AZ', county_name: 'Maricopa', postal_code: '85001', latitude: 33.4484, longitude: -112.0740, distance_miles: 0, population: 1608000, age_median: 34, income_household_median: 57000, housing_units: 590000, home_value: 285000, home_ownership: 54.2 },
-        { id: 2, city: 'Scottsdale', state_name: 'AZ', county_name: 'Maricopa', postal_code: '85250', latitude: 33.4942, longitude: -111.9261, distance_miles: 12.3, population: 255000, age_median: 45, income_household_median: 88000, housing_units: 122000, home_value: 475000, home_ownership: 70.1 },
-      ];
-      onSearchResults(mockResults, { lat: 33.4484, lng: -112.0740 });
-      setIsSearching(false);
-    }, 1000);
-  };
-
-  return (
-    <div className="flex items-center gap-4">
-      <div>
-        <input
-          type="text"
-          value={filters.centerZipCode}
-          onChange={(e) => setFilters(prev => ({ ...prev, centerZipCode: e.target.value }))}
-          placeholder="ZIP code"
-          className={`px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 ${theme.input}`}
-        />
-      </div>
-      
-      <div className="flex-1">
-        <label className={`text-sm ${theme.textMuted} block mb-1`}>
-          Radius: {filters.radiusMiles} miles
-        </label>
-        <input
-          type="range"
-          min="5"
-          max="250"
-          step="5"
-          value={filters.radiusMiles}
-          onChange={(e) => setFilters(prev => ({ ...prev, radiusMiles: parseInt(e.target.value) }))}
-          className="w-full"
-        />
-      </div>
-
-      <button
-        onClick={handleSearch}
-        disabled={isSearching}
-        className="px-6 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50"
-      >
-        <Search className="h-4 w-4 mr-2 inline-block" />
-        {isSearching ? 'Searching...' : 'Search'}
-      </button>
-    </div>
-  );
-};
-
-const LocationMap = ({ searchResults, centerCoords, darkMode }: any) => {
-  if (!centerCoords) {
-    return (
-      <div className={`h-full flex items-center justify-center ${darkMode ? 'bg-zinc-950' : 'bg-gray-50'}`}>
-        <div className={`text-center ${darkMode ? 'text-zinc-500' : 'text-gray-500'}`}>
-          <MapPin className="h-16 w-16 mx-auto mb-4 opacity-30" />
-          <p className="text-lg">Enter a ZIP code and search to see locations on the map</p>
-        </div>
-      </div>
-    );
-  }
-
-  return (
-    <div className="h-full w-full relative">
-      <div className={`h-full flex items-center justify-center ${darkMode ? 'bg-zinc-950' : 'bg-gray-100'}`}>
-        <div className={`text-center ${darkMode ? 'text-zinc-500' : 'text-gray-500'}`}>
-          <MapPin className="h-16 w-16 mx-auto mb-4 opacity-30" />
-          <p className="text-lg">Map showing {searchResults.length} locations</p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, darkMode }: any) => {
-  const [selectedCities, setSelectedCities] = useState(new Set());
-
-  if (searchResults.length === 0) return null;
-
-  return (
-    <div className="h-full flex flex-col">
-      <div className={`p-4 border-b ${theme.border}`}>
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <MapPin className="w-5 h-5" />
-            <span className="font-semibold">Locations</span>
-            <span className={`px-2 py-1 rounded-full text-xs ${theme.bgTertiary}`}>
-              {searchResults.length} cities
-            </span>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex-1 overflow-y-auto p-4">
-        <div className="space-y-4">
-          {searchResults.map((location: any, index: number) => (
-            <div key={index} className={`border rounded-lg p-4 ${theme.bgSecondary} ${theme.border}`}>
-              <h3 className="font-semibold">{location.city}, {location.state_name}</h3>
-              <p className={`text-sm ${theme.textMuted}`}>
-                {location.county_name} County • {location.postal_code}
-              </p>
-              <div className="grid grid-cols-2 gap-2 mt-2 text-sm">
-                <div>Pop: {location.population?.toLocaleString()}</div>
-                <div>Income: ${location.income_household_median?.toLocaleString()}</div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
     </div>
   );
 };
