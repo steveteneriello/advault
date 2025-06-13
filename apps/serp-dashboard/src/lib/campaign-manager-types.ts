@@ -33,6 +33,19 @@ export interface KeywordStats {
   keyword_difficulty?: number;
   cpc?: number;
   competitive_density?: number;
+  api_source?: string;
+  api_function?: string;
+  search_engine?: string;
+  bid?: number;
+  match_type?: string;
+  location_code?: number;
+  date_interval?: string;
+  search_partners?: boolean;
+  impressions?: number;
+  ctr?: number;
+  average_cpc?: number;
+  total_cost?: number;
+  clicks?: number;
   last_updated?: string;
 }
 
