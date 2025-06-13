@@ -7,13 +7,18 @@ import MainLayout from './components/layout/MainLayout';
 import Dashboard from './pages/Dashboard';
 import Campaigns from './pages/Campaigns';
 import Locations from './pages/Locations';
+import Preview from './pages/Preview';
 import NotFound from './pages/NotFound';
 
 const App: React.FC = () => {
   return (
     <ThemeProvider>
-      <MainLayout>
-        <Routes>
+      <Routes>
+        {/* Preview route - accessible directly */}
+        <Route path="/preview" element={<Preview />} />
+        
+        {/* Main app routes with layout */}
+        <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/locations" element={<Locations />} />
@@ -29,8 +34,8 @@ const App: React.FC = () => {
           
           {/* 404 route */}
           <Route path="*" element={<NotFound />} />
-        </Routes>
-      </MainLayout>
+        </Route>
+      </Routes>
     </ThemeProvider>
   );
 };
