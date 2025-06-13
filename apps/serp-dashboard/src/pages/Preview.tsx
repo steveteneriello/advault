@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Calendar, 
   MapPin, 
@@ -39,17 +39,16 @@ import {
   Bell,
   User
 } from 'lucide-react';
-import { useTheme } from '@/hooks/useTheme';
 
-const Preview: React.FC = () => {
-  const { isDark, toggleTheme } = useTheme();
-  const [activeView, setActiveView] = React.useState('dashboard');
-  const [activeSection, setActiveSection] = React.useState(1);
-  const [selectedLocations, setSelectedLocations] = React.useState<number[]>([]);
-  const [selectedCampaigns, setSelectedCampaigns] = React.useState<number[]>([]);
-  const [selectedKeywords, setSelectedKeywords] = React.useState<number[]>([]);
-  const [selectedDays, setSelectedDays] = React.useState(['mon', 'tue', 'wed', 'thu', 'fri']);
-  const [campaignData, setCampaignData] = React.useState({
+const Preview = () => {
+  const [darkMode, setDarkMode] = useState(true);
+  const [activeView, setActiveView] = useState('dashboard');
+  const [activeSection, setActiveSection] = useState(1);
+  const [selectedLocations, setSelectedLocations] = useState([]);
+  const [selectedCampaigns, setSelectedCampaigns] = useState([]);
+  const [selectedKeywords, setSelectedKeywords] = useState([]);
+  const [selectedDays, setSelectedDays] = useState(['mon', 'tue', 'wed', 'thu', 'fri']);
+  const [campaignData, setCampaignData] = useState({
     name: '',
     type: 'client',
     assignment: '',
@@ -67,7 +66,7 @@ const Preview: React.FC = () => {
   });
 
   // Theme colors
-  const theme = isDark ? {
+  const theme = darkMode ? {
     bg: 'bg-black',
     bgSecondary: 'bg-zinc-900',
     bgTertiary: 'bg-zinc-800',
@@ -124,11 +123,11 @@ const Preview: React.FC = () => {
     { id: 3, name: 'Market Intel - Roofing', client: 'Internal', keywords: 45, schedule: 'Monthly @ 12:00 AM', status: 'completed' }
   ];
 
-  const handleInputChange = (field: string, value: any) => {
+  const handleInputChange = (field, value) => {
     setCampaignData(prev => ({ ...prev, [field]: value }));
   };
 
-  const toggleLocation = (locationId: number) => {
+  const toggleLocation = (locationId) => {
     setSelectedLocations(prev => 
       prev.includes(locationId) 
         ? prev.filter(id => id !== locationId)
@@ -136,7 +135,7 @@ const Preview: React.FC = () => {
     );
   };
 
-  const toggleCampaign = (campaignId: number) => {
+  const toggleCampaign = (campaignId) => {
     setSelectedCampaigns(prev => 
       prev.includes(campaignId) 
         ? prev.filter(id => id !== campaignId)
@@ -144,7 +143,7 @@ const Preview: React.FC = () => {
     );
   };
 
-  const toggleKeyword = (keywordId: number) => {
+  const toggleKeyword = (keywordId) => {
     setSelectedKeywords(prev => 
       prev.includes(keywordId) 
         ? prev.filter(id => id !== keywordId)
@@ -152,7 +151,7 @@ const Preview: React.FC = () => {
     );
   };
 
-  const toggleDay = (day: string) => {
+  const toggleDay = (day) => {
     setSelectedDays(prev => 
       prev.includes(day) 
         ? prev.filter(d => d !== day)
@@ -189,12 +188,12 @@ const Preview: React.FC = () => {
 
   // Location Builder Component (from previous implementation)
   const LocationBuilder = () => {
-    const [searchResults, setSearchResults] = React.useState<any[]>([]);
-    const [centerCoords, setCenterCoords] = React.useState<any>(null);
-    const [savedLists, setSavedLists] = React.useState<any[]>([]);
-    const [isLoading, setIsLoading] = React.useState(false);
+    const [searchResults, setSearchResults] = useState([]);
+    const [centerCoords, setCenterCoords] = useState(null);
+    const [savedLists, setSavedLists] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
-    const handleSearchResults = (results: any[], coords: any) => {
+    const handleSearchResults = (results, coords) => {
       setSearchResults(results);
       setCenterCoords(coords);
     };
@@ -220,7 +219,7 @@ const Preview: React.FC = () => {
                     onSearchResults={handleSearchResults}
                     onListSaved={handleListSaved}
                     theme={theme}
-                    darkMode={isDark}
+                    darkMode={darkMode}
                   />
                 </div>
               </div>
@@ -230,11 +229,11 @@ const Preview: React.FC = () => {
           {/* Map and Results */}
           <div className="flex" style={{ height: 'calc(100vh - 180px)' }}>
             {/* Map */}
-            <div className={`flex-1 h-full ${isDark ? 'bg-zinc-950' : 'bg-gray-100'}`}>
+            <div className={`flex-1 h-full ${darkMode ? 'bg-zinc-950' : 'bg-gray-100'}`}>
               <LocationMap 
                 searchResults={searchResults}
                 centerCoords={centerCoords}
-                darkMode={isDark}
+                darkMode={darkMode}
               />
             </div>
             
@@ -246,7 +245,7 @@ const Preview: React.FC = () => {
                   centerCoords={centerCoords}
                   onListSaved={handleListSaved}
                   theme={theme}
-                  darkMode={isDark}
+                  darkMode={darkMode}
                 />
               </div>
             )}
@@ -295,11 +294,11 @@ const Preview: React.FC = () => {
         {/* Theme Toggle - subtle in corner */}
         <div className="absolute bottom-4 right-4">
           <button
-            onClick={toggleTheme}
+            onClick={() => setDarkMode(!darkMode)}
             className={`p-2 rounded-lg ${theme.bgTertiary} ${theme.hover} transition-colors`}
-            title={isDark ? 'Light mode' : 'Dark mode'}
+            title={darkMode ? 'Light mode' : 'Dark mode'}
           >
-            {isDark ? (
+            {darkMode ? (
               <Sun className={`w-4 h-4 ${theme.textMuted}`} />
             ) : (
               <Moon className={`w-4 h-4 ${theme.textMuted}`} />
@@ -386,7 +385,7 @@ const Preview: React.FC = () => {
                 <div className={`border-b ${theme.border}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 1 ? null : 1)}
-                    className={`w-full p-6 ${isDark ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
+                    className={`w-full p-6 ${darkMode ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
@@ -463,7 +462,7 @@ const Preview: React.FC = () => {
                 <div className={`border-b ${theme.border}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 2 ? null : 2)}
-                    className={`w-full p-6 ${isDark ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
+                    className={`w-full p-6 ${darkMode ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
@@ -564,7 +563,7 @@ const Preview: React.FC = () => {
                 <div className={`border-b ${theme.border}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 3 ? null : 3)}
-                    className={`w-full p-6 ${isDark ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
+                    className={`w-full p-6 ${darkMode ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
@@ -666,7 +665,7 @@ const Preview: React.FC = () => {
                 <div className={`border-b ${theme.border}`}>
                   <button
                     onClick={() => setActiveSection(activeSection === 4 ? null : 4)}
-                    className={`w-full p-6 ${isDark ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
+                    className={`w-full p-6 ${darkMode ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
@@ -776,7 +775,7 @@ const Preview: React.FC = () => {
                 <div>
                   <button
                     onClick={() => setActiveSection(activeSection === 5 ? null : 5)}
-                    className={`w-full p-6 ${isDark ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
+                    className={`w-full p-6 ${darkMode ? 'bg-zinc-800/50 hover:bg-zinc-800' : 'bg-gray-50 hover:bg-gray-100'} transition-colors flex items-center justify-between`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="w-7 h-7 bg-blue-500 rounded-full flex items-center justify-center text-sm font-medium text-white">
@@ -951,12 +950,12 @@ const Preview: React.FC = () => {
 };
 
 // Location Components (simplified versions - would be imported in real app)
-const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }: any) => {
-  const [filters, setFilters] = React.useState({
+const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }) => {
+  const [filters, setFilters] = useState({
     centerZipCode: '',
     radiusMiles: 50
   });
-  const [isSearching, setIsSearching] = React.useState(false);
+  const [isSearching, setIsSearching] = useState(false);
 
   const handleSearch = () => {
     if (!filters.centerZipCode.trim()) {
@@ -1015,7 +1014,7 @@ const LocationFilters = ({ onSearchResults, onListSaved, theme, darkMode }: any)
   );
 };
 
-const LocationMap = ({ searchResults, centerCoords, darkMode }: any) => {
+const LocationMap = ({ searchResults, centerCoords, darkMode }) => {
   if (!centerCoords) {
     return (
       <div className={`h-full flex items-center justify-center ${darkMode ? 'bg-zinc-950' : 'bg-gray-50'}`}>
@@ -1039,8 +1038,8 @@ const LocationMap = ({ searchResults, centerCoords, darkMode }: any) => {
   );
 };
 
-const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, darkMode }: any) => {
-  const [selectedCities, setSelectedCities] = React.useState(new Set());
+const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, darkMode }) => {
+  const [selectedCities, setSelectedCities] = useState(new Set());
 
   if (searchResults.length === 0) return null;
 
@@ -1060,7 +1059,7 @@ const LocationResults = ({ searchResults, centerCoords, onListSaved, theme, dark
 
       <div className="flex-1 overflow-y-auto p-4">
         <div className="space-y-4">
-          {searchResults.map((location: any, index: number) => (
+          {searchResults.map((location, index) => (
             <div key={index} className={`border rounded-lg p-4 ${theme.bgSecondary} ${theme.border}`}>
               <h3 className="font-semibold">{location.city}, {location.state_name}</h3>
               <p className={`text-sm ${theme.textMuted}`}>
