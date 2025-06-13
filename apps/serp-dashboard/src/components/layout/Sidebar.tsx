@@ -12,7 +12,8 @@ import {
   Building2, 
   Settings,
   Sun,
-  Moon
+  Moon,
+  Search // Add Search icon for SCRAPI
 } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -34,7 +35,8 @@ const navigation: NavSection[] = [
       { icon: Layout, label: 'Dashboard', path: '/' },
       { icon: Target, label: 'Campaigns', path: '/campaigns' },
       { icon: Calendar, label: 'Schedule', path: '/schedule' },
-      { icon: MapPin, label: 'Locations', path: '/locations' }
+      { icon: MapPin, label: 'Locations', path: '/locations' },
+      { icon: Search, label: 'SCRAPI', path: '/scrapi' } // Add SCRAPI to navigation
     ]
   },
   {

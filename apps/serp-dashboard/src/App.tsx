@@ -7,6 +7,7 @@ import MainLayout from './components/layout/MainLayout';
 import Dashboard from './pages/Dashboard';
 import Campaigns from './pages/Campaigns';
 import Locations from './pages/Locations';
+import Scrapi from './pages/Scrapi'; // Add the new Scrapi page
 import Preview from './pages/Preview';
 import NotFound from './pages/NotFound';
 
@@ -22,6 +23,7 @@ const App: React.FC = () => {
           <Route path="/" element={<Dashboard />} />
           <Route path="/campaigns" element={<Campaigns />} />
           <Route path="/locations" element={<Locations />} />
+          <Route path="/scrapi" element={<Scrapi />} /> {/* Add the new route */}
           
           {/* Add placeholder routes for other sections */}
           <Route path="/schedule" element={<ComingSoon title="Schedule" />} />
