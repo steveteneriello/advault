@@ -6,8 +6,9 @@ import MainLayout from './components/layout/MainLayout';
 // Pages
 import Dashboard from './pages/Dashboard';
 import Campaigns from './pages/Campaigns';
+import CampaignManager from './pages/CampaignManager';
 import Locations from './pages/Locations';
-import Scrapi from './pages/Scrapi'; // Add the new Scrapi page
+import Scrapi from './pages/Scrapi';
 import Preview from './pages/Preview';
 import NotFound from './pages/NotFound';
 
@@ -22,13 +23,14 @@ const App: React.FC = () => {
         <Route element={<MainLayout />}>
           <Route path="/" element={<Dashboard />} />
           <Route path="/campaigns" element={<Campaigns />} />
+          <Route path="/campaign-manager" element={<CampaignManager />} />
           <Route path="/locations" element={<Locations />} />
-          <Route path="/scrapi" element={<Scrapi />} /> {/* Add the new route */}
+          <Route path="/scrapi" element={<Scrapi />} />
           
           {/* Add placeholder routes for other sections */}
           <Route path="/schedule" element={<ComingSoon title="Schedule" />} />
           <Route path="/keywords" element={<ComingSoon title="Keyword Data" />} />
-          <Route path="/campaign-manager" element={<ComingSoon title="Campaign Manager" />} />
+          <Route path="/analytics" element={<ComingSoon title="Analytics" />} />
           <Route path="/templates" element={<ComingSoon title="Flight Templates" />} />
           <Route path="/clients" element={<ComingSoon title="Clients" />} />
           <Route path="/advertisers" element={<ComingSoon title="Advertisers" />} />
@@ -44,7 +46,7 @@ const App: React.FC = () => {
 
 // Simple component for routes that aren't implemented yet
 const ComingSoon: React.FC<{ title: string }> = ({ title }) => (
-  <div className="flex flex-col items-center justify-center h-full">
+  <div className="flex flex-col items-center justify-center h-full p-8">
     <h1 className="text-2xl font-bold mb-4">{title}</h1>
     <p className="text-lg text-zinc-400">Coming soon</p>
   </div>

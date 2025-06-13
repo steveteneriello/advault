@@ -15,7 +15,8 @@ import {
   Moon,
   Search,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Layers
 } from 'lucide-react';
 import { useTheme } from '@/hooks/useTheme';
 
@@ -40,6 +41,7 @@ const navigation: NavSection[] = [
     items: [
       { icon: Layout, label: 'Dashboard', path: '/' },
       { icon: Target, label: 'Campaigns', path: '/campaigns' },
+      { icon: Layers, label: 'Campaign Manager', path: '/campaign-manager' },
       { icon: Calendar, label: 'Schedule', path: '/schedule' },
       { icon: MapPin, label: 'Locations', path: '/locations' },
       { icon: Search, label: 'SCRAPI', path: '/scrapi' }
@@ -49,7 +51,7 @@ const navigation: NavSection[] = [
     title: 'Data Management',
     items: [
       { icon: Database, label: 'Keyword Data', path: '/keywords' },
-      { icon: BarChart3, label: 'Campaign Manager', path: '/campaign-manager' },
+      { icon: BarChart3, label: 'Analytics', path: '/analytics' },
       { icon: FileText, label: 'Flight Templates', path: '/templates' }
     ]
   },
