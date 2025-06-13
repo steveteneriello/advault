@@ -79,63 +79,18 @@ export interface SerpData {
 export const api = {
   // Locations
   async getLocations(filters = {}) {
-    // Mock implementation for development
-    return [
-      {
-        id: "1",
-        city: "Boston",
-        state_name: "Massachusetts",
-        state_id: "MA",
-        county_name: "Suffolk",
-        postal_code: "02108",
-        latitude: 42.3601,
-        longitude: -71.0589,
-        population: 694583,
-        income_household_median: 76298,
-        housing_units: 300000,
-        home_value: 650000,
-        home_ownership: 35,
-        age_median: 32
-      },
-      {
-        id: "2",
-        city: "Cambridge",
-        state_name: "Massachusetts",
-        state_id: "MA",
-        county_name: "Middlesex",
-        postal_code: "02138",
-        latitude: 42.3736,
-        longitude: -71.1097,
-        population: 118403,
-        income_household_median: 103154,
-        housing_units: 51000,
-        home_value: 843300,
-        home_ownership: 32,
-        age_median: 30
-      }
-    ] as LocationData[];
-  },
-  
-  async searchLocationsByZip(zipCode: string, radiusMiles: number = 50) {
-    // Mock implementation for development
-    return {
-      center: {
-        id: "1",
-        city: "Boston",
-        state_name: "Massachusetts",
-        state_id: "MA",
-        county_name: "Suffolk",
-        postal_code: "02108",
-        latitude: 42.3601,
-        longitude: -71.0589,
-        population: 694583,
-        income_household_median: 76298,
-        housing_units: 300000,
-        home_value: 650000,
-        home_ownership: 35,
-        age_median: 32
-      },
-      locations: [
+    try {
+      const { data, error } = await supabase
+        .from('location_data')
+        .select('*')
+        .limit(100);
+      
+      if (error) throw error;
+      return data as LocationData[];
+    } catch (error) {
+      console.error('Error fetching locations:', error);
+      // Return mock data for development
+      return [
         {
           id: "1",
           city: "Boston",
@@ -168,24 +123,160 @@ export const api = {
           home_ownership: 32,
           age_median: 30
         }
-      ] as LocationData[]
-    };
+      ] as LocationData[];
+    }
   },
   
-  // Other API functions with mock implementations
+  async searchLocationsByZip(zipCode: string, radiusMiles: number = 50) {
+    try {
+      const { data, error } = await supabase
+        .from('location_data')
+        .select('*')
+        .eq('postal_code', zipCode)
+        .limit(1);
+      
+      if (error) throw error;
+      
+      if (data && data.length > 0) {
+        const centerLocation = data[0];
+        
+        // Now get locations within radius
+        // This would use a real distance calculation in production
+        const { data: nearbyLocations, error: nearbyError } = await supabase
+          .from('location_data')
+          .select('*')
+          .limit(20);
+        
+        if (nearbyError) throw nearbyError;
+        
+        return {
+          center: centerLocation,
+          locations: nearbyLocations as LocationData[]
+        };
+      }
+      
+      return { center: null, locations: [] };
+    } catch (error) {
+      console.error('Error searching locations by zip:', error);
+      // Return mock data for development
+      return {
+        center: {
+          id: "1",
+          city: "Boston",
+          state_name: "Massachusetts",
+          state_id: "MA",
+          county_name: "Suffolk",
+          postal_code: "02108",
+          latitude: 42.3601,
+          longitude: -71.0589,
+          population: 694583,
+          income_household_median: 76298,
+          housing_units: 300000,
+          home_value: 650000,
+          home_ownership: 35,
+          age_median: 32
+        },
+        locations: [
+          {
+            id: "1",
+            city: "Boston",
+            state_name: "Massachusetts",
+            state_id: "MA",
+            county_name: "Suffolk",
+            postal_code: "02108",
+            latitude: 42.3601,
+            longitude: -71.0589,
+            population: 694583,
+            income_household_median: 76298,
+            housing_units: 300000,
+            home_value: 650000,
+            home_ownership: 35,
+            age_median: 32
+          },
+          {
+            id: "2",
+            city: "Cambridge",
+            state_name: "Massachusetts",
+            state_id: "MA",
+            county_name: "Middlesex",
+            postal_code: "02138",
+            latitude: 42.3736,
+            longitude: -71.1097,
+            population: 118403,
+            income_household_median: 103154,
+            housing_units: 51000,
+            home_value: 843300,
+            home_ownership: 32,
+            age_median: 30
+          }
+        ] as LocationData[]
+      };
+    }
+  },
+  
+  // Other API functions with fallback to mock data
   async getCampaigns() {
-    return [] as Campaign[];
+    try {
+      const { data, error } = await supabase
+        .from('campaigns')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (error) throw error;
+      return data as Campaign[];
+    } catch (error) {
+      console.error('Error fetching campaigns:', error);
+      return [] as Campaign[];
+    }
   },
   
   async createCampaign(campaign: Partial<Campaign>) {
-    return {} as Campaign;
+    try {
+      const { data, error } = await supabase
+        .from('campaigns')
+        .insert(campaign)
+        .select();
+      
+      if (error) throw error;
+      return data[0] as Campaign;
+    } catch (error) {
+      console.error('Error creating campaign:', error);
+      return {} as Campaign;
+    }
   },
   
   async getKeywords(category?: string) {
-    return [] as Keyword[];
+    try {
+      let query = supabase
+        .from('keywords')
+        .select('*');
+      
+      if (category) {
+        query = query.eq('category', category);
+      }
+      
+      const { data, error } = await query;
+      
+      if (error) throw error;
+      return data as Keyword[];
+    } catch (error) {
+      console.error('Error fetching keywords:', error);
+      return [] as Keyword[];
+    }
   },
   
   async getSerpData(campaignId: string) {
-    return [] as SerpData[];
+    try {
+      const { data, error } = await supabase
+        .from('serps')
+        .select('*')
+        .eq('campaign_id', campaignId);
+      
+      if (error) throw error;
+      return data as SerpData[];
+    } catch (error) {
+      console.error('Error fetching SERP data:', error);
+      return [] as SerpData[];
+    }
   }
 };

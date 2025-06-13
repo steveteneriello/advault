@@ -1,85 +1,70 @@
 // Main entry point for the application
+const express = require('express');
+const path = require('path');
+const fs = require('fs');
 
-console.log(`
-╔════════════════════════════════════════════════════════╗
-║                                                        ║
-║   SCRAPI - Automated Search & Ad Intelligence Platform ║
-║                                                        ║
-║   🚀 New Modernized Entry Points Available!           ║
-║                                                        ║
-║   Run the main CLI for all available commands:        ║
-║     node SCRAPI/cli/main-cli.cjs                       ║
-║                                                        ║
-╚════════════════════════════════════════════════════════╝
-`);
+// Create Express app
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-console.log('\n📋 Quick Start - New Entry Points:');
-console.log('');
-console.log('🔍 Single Query:');
-console.log('   node SCRAPI/entry-points/single-query/scrapi-automation.cjs "disaster restoration" "Phoenix, AZ, United States"');
-console.log('');
-console.log('📦 Batch Processing:');
-console.log('   node SCRAPI/entry-points/batch-processing/scrapi-batch-automation.cjs');
-console.log('');
-console.log('📊 Monitor Jobs:');
-console.log('   node SCRAPI/entry-points/monitoring/batch-status-dashboard.cjs');
-console.log('');
-console.log('⏰ Scheduled Jobs:');
-console.log('   node SCRAPI/z-scrapi-scheduler/scheduler-cli.js');
-console.log('');
-console.log('📖 Full Menu:');
-console.log('   node SCRAPI/cli/main-cli.cjs');
-console.log('');
+// Check if we're in a production environment
+const isProduction = process.env.NODE_ENV === 'production';
 
-// Also display the legacy menu for backward compatibility
-console.log('\n📋 Legacy Commands (still supported):');
-console.log(`
-╔════════════════════════════════════════════════════════╗
-║   Data Collection:                                     ║
-║     npm run collect:ads                                ║
-║     npm run collect:html                               ║
-║     npm run collect:and-process                        ║
-║                                                        ║
-║   Data Processing:                                     ║
-║     npm run process:stage                              ║
-║     npm run process:all                                ║
-║     npm run process:png-to-base64                      ║
-║                                                        ║
-║   Viewing Results:                                     ║
-║     npm run view:serps                                 ║
-║     npm run view:html-renderings                       ║
-║     npm run view:images                                ║
-║     npm run view:serp-gallery                          ║
-║     npm run view:db                                    ║
-║                                                        ║
-║   HTML Rendering:                                      ║
-║     npm run render:html                                ║
-║                                                        ║
-║   Reports:                                             ║
-║     npm run report:generate                            ║
-║                                                        ║
-║   SCRAPI Commands:                                     ║
-║     npm run scrapi                                     ║
-║     npm run scrapi-batch                               ║
-║     npm run serp                                       ║
-║     npm run keyword:feeder                             ║
-║     npm run batch:process                              ║
-║                                                        ║
-║   File Management:                                     ║
-║     npm run organize:output                            ║
-║                                                        ║
-╚════════════════════════════════════════════════════════╝
-`);
+// Serve static files from the SERP dashboard build directory if it exists
+const serpDashboardPath = path.join(__dirname, 'apps/serp-dashboard/dist');
+if (fs.existsSync(serpDashboardPath)) {
+  console.log('Serving SERP dashboard from:', serpDashboardPath);
+  app.use(express.static(serpDashboardPath));
+  
+  // For any routes that don't match API routes, serve the index.html
+  app.get('*', (req, res) => {
+    if (!req.path.startsWith('/api/')) {
+      res.sendFile(path.join(serpDashboardPath, 'index.html'));
+    }
+  });
+}
 
-console.log('\n💡 Getting Started Tips:');
-console.log('');
-console.log('🔧 For comprehensive help and all available commands:');
-console.log('   node SCRAPI/cli/main-cli.js');
-console.log('');
-console.log('📖 Legacy commands for backward compatibility:');
-console.log('   npm run collect:html "your search query" "location"  # Collect with HTML rendering');
-console.log('   npm run view:html-renderings                        # View HTML renderings');
-console.log('   npm run scrapi "your search query" "location"       # Run SCRAPI automation');
-console.log('   npm run organize:output                             # Organize output files');
-console.log('');
-console.log('🆕 Try the new modernized entry points for better error handling and logging!');
+// Check if the SCRAPI API server exists
+const scrapiApiPath = path.join(__dirname, 'server/api/scrapi/index.js');
+if (fs.existsSync(scrapiApiPath)) {
+  console.log('Loading SCRAPI API from:', scrapiApiPath);
+  try {
+    const scrapiApi = require(scrapiApiPath);
+    // If scrapiApi is an Express app, use it as middleware
+    if (typeof scrapiApi === 'function' && scrapiApi.listen) {
+      app.use('/api', (req, res, next) => {
+        // Remove /api prefix from the path
+        req.url = req.url.replace(/^\/api/, '');
+        return scrapiApi(req, res, next);
+      });
+    }
+  } catch (error) {
+    console.error('Error loading SCRAPI API:', error);
+  }
+} else {
+  console.log('SCRAPI API not found at:', scrapiApiPath);
+  
+  // Create a simple API endpoint for health checks
+  app.get('/api/health', (req, res) => {
+    res.json({ status: 'healthy', timestamp: new Date().toISOString() });
+  });
+}
+
+// Start the server
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+  console.log(`http://localhost:${PORT}`);
+  
+  // Display available routes
+  console.log('\nAvailable routes:');
+  console.log('- / (SERP Dashboard)');
+  console.log('- /api/health (Health check)');
+  
+  // Display SCRAPI CLI commands if available
+  if (fs.existsSync(path.join(__dirname, 'SCRAPI'))) {
+    console.log('\nSCRAPI Commands:');
+    console.log('- npm run scrapi "query" "location" (Run single query)');
+    console.log('- npm run batch (Run batch processing)');
+    console.log('- npm run monitor (View job status)');
+  }
+});
