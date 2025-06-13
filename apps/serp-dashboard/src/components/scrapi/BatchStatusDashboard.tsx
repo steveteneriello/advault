@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { scrapiClient } from '@/lib/scrapi-client';
 import type { ScrapiBatchJob, ScrapiSearchQuery } from '@/lib/scrapi-schema';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Progress } from "@/components/ui/progress";
+import { Table, TableHeader, TableBody, TableHead, TableRow, TableCell } from "@/components/ui/table";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 interface BatchStatusDashboardProps {
   batchId?: string;
@@ -338,20 +343,24 @@ const BatchStatusDashboard: React.FC<BatchStatusDashboardProps> = ({
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
-      <div className="p-6 border-b border-zinc-800">
-        <h2 className="text-xl font-semibold">Batch Processing Status</h2>
-      </div>
+    <Card className="h-full">
+      <CardHeader>
+        <CardTitle>Batch Processing Status</CardTitle>
+        <CardDescription>
+          Monitor the status of your batch processing jobs
+        </CardDescription>
+      </CardHeader>
       
       {error && (
-        <div className="m-6 bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg">
+        <div className="mx-6 bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg">
           {error}
-          <button 
+          <Button 
+            variant="link"
             className="ml-2 text-red-200 underline"
             onClick={() => setError(null)}
           >
             Dismiss
-          </button>
+          </Button>
         </div>
       )}
       
@@ -424,23 +433,25 @@ const BatchStatusDashboard: React.FC<BatchStatusDashboardProps> = ({
                   
                   <div className="flex space-x-2">
                     {batchDetails.batch.status === 'processing' && (
-                      <button
+                      <Button
+                        variant="destructive"
+                        size="sm"
                         onClick={handleCancelBatch}
                         disabled={isLoading}
-                        className="px-3 py-1 bg-red-500 text-white rounded text-sm hover:bg-red-600 transition-colors disabled:opacity-50"
                       >
                         Cancel
-                      </button>
+                      </Button>
                     )}
                     
                     {batchDetails.batch.status === 'completed' && batchDetails.batch.failed_queries > 0 && (
-                      <button
+                      <Button
+                        variant="default"
+                        size="sm"
                         onClick={handleRetryFailed}
                         disabled={isLoading}
-                        className="px-3 py-1 bg-blue-500 text-white rounded text-sm hover:bg-blue-600 transition-colors disabled:opacity-50"
                       >
                         Retry Failed
-                      </button>
+                      </Button>
                     )}
                   </div>
                 </div>
@@ -451,12 +462,7 @@ const BatchStatusDashboard: React.FC<BatchStatusDashboardProps> = ({
                     <span>Progress</span>
                     <span>{calculateProgress(batchDetails.batch)}%</span>
                   </div>
-                  <div className="w-full bg-zinc-800 rounded-full h-2.5">
-                    <div 
-                      className="bg-blue-500 h-2.5 rounded-full" 
-                      style={{ width: `${calculateProgress(batchDetails.batch)}%` }}
-                    ></div>
-                  </div>
+                  <Progress value={calculateProgress(batchDetails.batch)} />
                   <div className="flex justify-between text-xs text-zinc-500 mt-1">
                     <span>
                       {batchDetails.batch.completed_queries} / {batchDetails.batch.total_queries} completed
@@ -497,23 +503,23 @@ const BatchStatusDashboard: React.FC<BatchStatusDashboardProps> = ({
                 <h3 className="text-lg font-semibold mb-4">Queries</h3>
                 
                 <div className="overflow-x-auto">
-                  <table className="w-full">
-                    <thead>
-                      <tr className="bg-zinc-800 text-xs font-medium text-zinc-400 uppercase tracking-wider">
-                        <th className="px-6 py-3 text-left">Query</th>
-                        <th className="px-6 py-3 text-left">Location</th>
-                        <th className="px-6 py-3 text-left">Status</th>
-                        <th className="px-6 py-3 text-left">Started</th>
-                        <th className="px-6 py-3 text-left">Completed</th>
-                        <th className="px-6 py-3 text-left">Actions</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-zinc-800">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Query</TableHead>
+                        <TableHead>Location</TableHead>
+                        <TableHead>Status</TableHead>
+                        <TableHead>Started</TableHead>
+                        <TableHead>Completed</TableHead>
+                        <TableHead>Actions</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
                       {batchDetails.queries.map(query => (
-                        <tr key={query.id} className="hover:bg-zinc-800 transition-colors">
-                          <td className="px-6 py-4">{query.query}</td>
-                          <td className="px-6 py-4">{query.location}</td>
-                          <td className="px-6 py-4">
+                        <TableRow key={query.id}>
+                          <TableCell>{query.query}</TableCell>
+                          <TableCell>{query.location}</TableCell>
+                          <TableCell>
                             <span className={`px-2 py-1 rounded-full text-xs font-medium ${
                               query.status === 'completed' ? 'bg-green-500/20 text-green-400' :
                               query.status === 'processing' ? 'bg-blue-500/20 text-blue-400' :
@@ -522,53 +528,57 @@ const BatchStatusDashboard: React.FC<BatchStatusDashboardProps> = ({
                             }`}>
                               {query.status}
                             </span>
-                          </td>
-                          <td className="px-6 py-4">
+                          </TableCell>
+                          <TableCell>
                             {query.started_at 
                               ? new Date(query.started_at).toLocaleString() 
                               : '-'}
-                          </td>
-                          <td className="px-6 py-4">
+                          </TableCell>
+                          <TableCell>
                             {query.completed_at 
                               ? new Date(query.completed_at).toLocaleString() 
                               : '-'}
-                          </td>
-                          <td className="px-6 py-4">
+                          </TableCell>
+                          <TableCell>
                             {query.status === 'completed' && (
-                              <button
+                              <Button
+                                variant="link"
+                                size="sm"
                                 onClick={() => {
                                   if (onViewResults) {
                                     onViewResults(query.id);
                                   }
                                 }}
-                                className="text-blue-400 hover:text-blue-300 text-sm"
+                                className="text-blue-400 hover:text-blue-300 p-0 h-auto"
                               >
                                 View Results
-                              </button>
+                              </Button>
                             )}
                             {query.status === 'failed' && (
-                              <button
+                              <Button
+                                variant="link"
+                                size="sm"
                                 onClick={() => {
                                   // Show error details
                                   alert(`Error: ${query.error_message || 'Unknown error'}`);
                                 }}
-                                className="text-red-400 hover:text-red-300 text-sm"
+                                className="text-red-400 hover:text-red-300 p-0 h-auto"
                               >
                                 Show Error
-                              </button>
+                              </Button>
                             )}
-                          </td>
-                        </tr>
+                          </TableCell>
+                        </TableRow>
                       ))}
-                    </tbody>
-                  </table>
+                    </TableBody>
+                  </Table>
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 

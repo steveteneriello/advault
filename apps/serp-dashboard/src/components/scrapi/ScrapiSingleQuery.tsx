@@ -1,5 +1,11 @@
 import React, { useState } from 'react';
 import { scrapiClient } from '@/lib/scrapi-client';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 interface ScrapiSingleQueryProps {
   onQuerySubmitted?: (queryId: string) => void;
@@ -62,114 +68,101 @@ const ScrapiSingleQuery: React.FC<ScrapiSingleQueryProps> = ({ onQuerySubmitted 
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-      <h2 className="text-xl font-semibold mb-4">Single Query Search</h2>
-      
-      <form onSubmit={handleSubmit}>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-          <div>
-            <label className="block text-sm font-medium mb-2">Search Query</label>
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-              placeholder="e.g., plumbers near me"
-              disabled={isLoading}
-            />
+    <Card>
+      <CardHeader>
+        <CardTitle>Single Query Search</CardTitle>
+        <CardDescription>
+          Search for ads with a specific query and location
+        </CardDescription>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            <div className="space-y-2">
+              <Label htmlFor="query">Search Query</Label>
+              <Input
+                id="query"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="e.g., plumbers near me"
+                disabled={isLoading}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="location">Location</Label>
+              <Input
+                id="location"
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
+                placeholder="e.g., Boston, MA"
+                disabled={isLoading}
+              />
+            </div>
           </div>
-          <div>
-            <label className="block text-sm font-medium mb-2">Location</label>
-            <input
-              type="text"
-              value={location}
-              onChange={(e) => setLocation(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-              placeholder="e.g., Boston, MA"
-              disabled={isLoading}
-            />
-          </div>
-        </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Platform</label>
-          <div className="flex space-x-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'google'}
-                onChange={() => setPlatform('google')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Google</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'bing'}
-                onChange={() => setPlatform('bing')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Bing</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'both'}
-                onChange={() => setPlatform('both')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Both</span>
-            </label>
-          </div>
-        </div>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <Label>Platform</Label>
+              <RadioGroup 
+                value={platform} 
+                onValueChange={(value) => setPlatform(value as 'google' | 'bing' | 'both')}
+                className="flex space-x-4"
+              >
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="google" id="google" />
+                  <Label htmlFor="google">Google</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="bing" id="bing" />
+                  <Label htmlFor="bing">Bing</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="both" id="both" />
+                  <Label htmlFor="both">Both</Label>
+                </div>
+              </RadioGroup>
+            </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Rendering Options</label>
-          <div className="flex space-x-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={renderHtml}
-                onChange={(e) => setRenderHtml(e.target.checked)}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>HTML Rendering</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={renderPng}
-                onChange={(e) => setRenderPng(e.target.checked)}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>PNG Rendering</span>
-            </label>
+            <div className="space-y-2">
+              <Label>Rendering Options</Label>
+              <div className="flex space-x-4">
+                <div className="flex items-center space-x-2">
+                  <Checkbox 
+                    id="renderHtml" 
+                    checked={renderHtml}
+                    onCheckedChange={(checked) => setRenderHtml(checked === true)}
+                  />
+                  <Label htmlFor="renderHtml">HTML Rendering</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Checkbox 
+                    id="renderPng" 
+                    checked={renderPng}
+                    onCheckedChange={(checked) => setRenderPng(checked === true)}
+                  />
+                  <Label htmlFor="renderPng">PNG Rendering</Label>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
 
-        {error && (
-          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg mb-4">
-            {error}
-          </div>
-        )}
-
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            disabled={isLoading || !query.trim() || !location.trim()}
-            className="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors text-white disabled:opacity-50"
-          >
-            {isLoading ? 'Searching...' : 'Search Now'}
-          </button>
-        </div>
-      </form>
-    </div>
+          {error && (
+            <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg mt-4">
+              {error}
+            </div>
+          )}
+        </form>
+      </CardContent>
+      <CardFooter className="flex justify-end">
+        <Button
+          type="submit"
+          onClick={handleSubmit}
+          disabled={isLoading || !query.trim() || !location.trim()}
+        >
+          {isLoading ? 'Searching...' : 'Search Now'}
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 

@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { scrapiClient } from '@/lib/scrapi-client';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Label } from "@/components/ui/label";
 
 interface BatchProcessorProps {
   onBatchSubmitted?: (batchId: string) => void;
@@ -109,11 +116,13 @@ const BatchProcessor: React.FC<BatchProcessorProps> = ({ onBatchSubmitted }) => 
   };
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-      <h2 className="text-xl font-semibold mb-4">SCRAPI Batch Processor</h2>
-      
-      <div className="mb-4">
-        <div className="flex items-center mb-2">
+    <Card>
+      <CardHeader>
+        <CardTitle>SCRAPI Batch Processor</CardTitle>
+        <CardDescription>
+          Submit multiple queries for batch processing
+        </CardDescription>
+        <div className="flex items-center mt-2">
           <div className={`w-3 h-3 rounded-full mr-2 ${
             apiStatus === 'connected' ? 'bg-green-500' : 
             apiStatus === 'disconnected' ? 'bg-red-500' : 'bg-yellow-500'
@@ -122,182 +131,165 @@ const BatchProcessor: React.FC<BatchProcessorProps> = ({ onBatchSubmitted }) => 
             API Status: {apiStatus === 'unknown' ? 'Checking...' : apiStatus}
           </span>
         </div>
-      </div>
+      </CardHeader>
+      <CardContent>
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div className="space-y-2">
+            <Label htmlFor="batchName">Batch Name</Label>
+            <Input
+              id="batchName"
+              value={batchName}
+              onChange={(e) => setBatchName(e.target.value)}
+              placeholder="e.g., Home Services - June 2025"
+              disabled={isLoading}
+            />
+          </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Batch Name</label>
-          <input
-            type="text"
-            value={batchName}
-            onChange={(e) => setBatchName(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-            placeholder="e.g., Home Services - June 2025"
-            disabled={isLoading}
-          />
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">
-            Queries (one per line, format: query|location)
-          </label>
-          <textarea
-            value={queries}
-            onChange={(e) => setQueries(e.target.value)}
-            className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white h-40"
-            placeholder="plumbers near me|Boston, MA
+          <div className="space-y-2">
+            <Label htmlFor="queries">
+              Queries (one per line, format: query|location)
+            </Label>
+            <Textarea
+              id="queries"
+              value={queries}
+              onChange={(e) => setQueries(e.target.value)}
+              placeholder="plumbers near me|Boston, MA
 electricians|New York, NY
 hvac repair|Miami, FL"
-            disabled={isLoading}
-          />
-          <p className="text-xs text-zinc-500 mt-1">
-            Each line should contain a query and optional location separated by |
-          </p>
-        </div>
-
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Platform</label>
-          <div className="flex space-x-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'google'}
-                onChange={() => setPlatform('google')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Google</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'bing'}
-                onChange={() => setPlatform('bing')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Bing</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                checked={platform === 'both'}
-                onChange={() => setPlatform('both')}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>Both</span>
-            </label>
+              disabled={isLoading}
+              className="h-40"
+            />
+            <p className="text-xs text-zinc-500">
+              Each line should contain a query and optional location separated by |
+            </p>
           </div>
-        </div>
 
-        <div className="mb-4">
-          <label className="block text-sm font-medium mb-2">Rendering Options</label>
-          <div className="flex space-x-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={renderHtml}
-                onChange={(e) => setRenderHtml(e.target.checked)}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>HTML Rendering</span>
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                checked={renderPng}
-                onChange={(e) => setRenderPng(e.target.checked)}
-                className="mr-2"
-                disabled={isLoading}
-              />
-              <span>PNG Rendering</span>
-            </label>
+          <div className="space-y-2">
+            <Label>Platform</Label>
+            <RadioGroup 
+              value={platform} 
+              onValueChange={(value) => setPlatform(value as 'google' | 'bing' | 'both')}
+              className="flex space-x-4"
+            >
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="google" id="platform-google" />
+                <Label htmlFor="platform-google">Google</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="bing" id="platform-bing" />
+                <Label htmlFor="platform-bing">Bing</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <RadioGroupItem value="both" id="platform-both" />
+                <Label htmlFor="platform-both">Both</Label>
+              </div>
+            </RadioGroup>
           </div>
-        </div>
 
-        <div className="mb-4">
-          <button
-            type="button"
-            onClick={() => setAdvancedOptions(!advancedOptions)}
-            className="text-sm text-blue-400 hover:text-blue-300"
-          >
-            {advancedOptions ? 'Hide' : 'Show'} Advanced Options
-          </button>
-          
-          {advancedOptions && (
-            <div className="mt-3 p-4 bg-zinc-800 rounded-lg">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div>
-                  <label className="block text-sm font-medium mb-2">Max Concurrency</label>
-                  <input
-                    type="number"
-                    min="1"
-                    max="20"
-                    value={maxConcurrency}
-                    onChange={(e) => setMaxConcurrency(parseInt(e.target.value))}
-                    className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-                    disabled={isLoading}
-                  />
-                  <p className="text-xs text-zinc-500 mt-1">
-                    Maximum number of concurrent queries
-                  </p>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-2">Delay Between Queries (sec)</label>
-                  <input
-                    type="number"
-                    min="0"
-                    max="60"
-                    value={delayBetweenQueries}
-                    onChange={(e) => setDelayBetweenQueries(parseInt(e.target.value))}
-                    className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-                    disabled={isLoading}
-                  />
-                  <p className="text-xs text-zinc-500 mt-1">
-                    Seconds to wait between queries
-                  </p>
-                </div>
-                
-                <div>
-                  <label className="block text-sm font-medium mb-2">Max Retries</label>
-                  <input
-                    type="number"
-                    min="0"
-                    max="10"
-                    value={maxRetries}
-                    onChange={(e) => setMaxRetries(parseInt(e.target.value))}
-                    className="w-full px-4 py-2 rounded-lg focus:outline-none focus:border-blue-500 bg-zinc-800 border-zinc-700 text-white"
-                    disabled={isLoading}
-                  />
-                  <p className="text-xs text-zinc-500 mt-1">
-                    Maximum retry attempts for failed queries
-                  </p>
-                </div>
+          <div className="space-y-2">
+            <Label>Rendering Options</Label>
+            <div className="flex space-x-4">
+              <div className="flex items-center space-x-2">
+                <Checkbox 
+                  id="renderHtml" 
+                  checked={renderHtml}
+                  onCheckedChange={(checked) => setRenderHtml(checked === true)}
+                />
+                <Label htmlFor="renderHtml">HTML Rendering</Label>
+              </div>
+              <div className="flex items-center space-x-2">
+                <Checkbox 
+                  id="renderPng" 
+                  checked={renderPng}
+                  onCheckedChange={(checked) => setRenderPng(checked === true)}
+                />
+                <Label htmlFor="renderPng">PNG Rendering</Label>
               </div>
             </div>
-          )}
-        </div>
-
-        {error && (
-          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg mb-4">
-            {error}
           </div>
-        )}
 
-        <div className="flex justify-end">
-          <button
-            type="submit"
-            disabled={isLoading || apiStatus !== 'connected' || !batchName.trim() || !queries.trim()}
-            className="px-4 py-2 bg-blue-500 rounded-lg text-sm font-medium hover:bg-blue-600 transition-colors text-white disabled:opacity-50"
-          >
-            {isLoading ? 'Submitting...' : 'Submit Batch'}
-          </button>
-        </div>
-      </form>
-    </div>
+          <div>
+            <Button
+              type="button"
+              variant="ghost"
+              onClick={() => setAdvancedOptions(!advancedOptions)}
+              className="text-sm text-blue-400 hover:text-blue-300 p-0 h-auto"
+            >
+              {advancedOptions ? 'Hide' : 'Show'} Advanced Options
+            </Button>
+            
+            {advancedOptions && (
+              <div className="mt-3 p-4 bg-zinc-800 rounded-lg">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="maxConcurrency">Max Concurrency</Label>
+                    <Input
+                      id="maxConcurrency"
+                      type="number"
+                      min="1"
+                      max="20"
+                      value={maxConcurrency}
+                      onChange={(e) => setMaxConcurrency(parseInt(e.target.value))}
+                      disabled={isLoading}
+                    />
+                    <p className="text-xs text-zinc-500">
+                      Maximum number of concurrent queries
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="delayBetweenQueries">Delay Between Queries (sec)</Label>
+                    <Input
+                      id="delayBetweenQueries"
+                      type="number"
+                      min="0"
+                      max="60"
+                      value={delayBetweenQueries}
+                      onChange={(e) => setDelayBetweenQueries(parseInt(e.target.value))}
+                      disabled={isLoading}
+                    />
+                    <p className="text-xs text-zinc-500">
+                      Seconds to wait between queries
+                    </p>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <Label htmlFor="maxRetries">Max Retries</Label>
+                    <Input
+                      id="maxRetries"
+                      type="number"
+                      min="0"
+                      max="10"
+                      value={maxRetries}
+                      onChange={(e) => setMaxRetries(parseInt(e.target.value))}
+                      disabled={isLoading}
+                    />
+                    <p className="text-xs text-zinc-500">
+                      Maximum retry attempts for failed queries
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {error && (
+            <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-3 rounded-lg">
+              {error}
+            </div>
+          )}
+        </form>
+      </CardContent>
+      <CardFooter className="flex justify-end">
+        <Button
+          type="submit"
+          onClick={handleSubmit}
+          disabled={isLoading || apiStatus !== 'connected' || !batchName.trim() || !queries.trim()}
+        >
+          {isLoading ? 'Submitting...' : 'Submit Batch'}
+        </Button>
+      </CardFooter>
+    </Card>
   );
 };
 

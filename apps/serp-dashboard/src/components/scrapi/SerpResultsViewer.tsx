@@ -7,6 +7,9 @@ import type {
   ScrapiGoogleAdRendering,
   ScrapiBingAdRendering
 } from '@/lib/scrapi-schema';
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
 
 interface SerpResultsViewerProps {
   queryId: string;
@@ -261,41 +264,47 @@ const SerpResultsViewer: React.FC<SerpResultsViewerProps> = ({ queryId }) => {
 
   if (isLoading && !serpResult) {
     return (
-      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-        <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-zinc-400">Loading SERP results...</p>
-        </div>
-      </div>
+      <Card className="h-full">
+        <CardContent className="flex items-center justify-center h-full">
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+            <p className="mt-4 text-zinc-400">Loading SERP results...</p>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 
   if (error) {
     return (
-      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-        <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-lg">
-          <h3 className="font-medium mb-2">Error Loading Results</h3>
-          <p>{error}</p>
-        </div>
-      </div>
+      <Card className="h-full">
+        <CardContent>
+          <div className="bg-red-500/20 border border-red-500/50 text-red-200 p-4 rounded-lg">
+            <h3 className="font-medium mb-2">Error Loading Results</h3>
+            <p>{error}</p>
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 
   if (!serpResult) {
     return (
-      <div className="bg-zinc-900 border border-zinc-800 rounded-lg p-6">
-        <div className="text-center py-12 text-zinc-500">
-          No SERP results found
-        </div>
-      </div>
+      <Card className="h-full">
+        <CardContent className="flex items-center justify-center h-full">
+          <div className="text-center py-12 text-zinc-500">
+            No SERP results found
+          </div>
+        </CardContent>
+      </Card>
     );
   }
 
   return (
-    <div className="bg-zinc-900 border border-zinc-800 rounded-lg overflow-hidden">
+    <Card className="h-full">
       {/* SERP Header */}
-      <div className="p-6 border-b border-zinc-800">
-        <h2 className="text-xl font-semibold">SERP Results</h2>
+      <CardHeader>
+        <CardTitle>SERP Results</CardTitle>
         <div className="mt-2 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div>
             <div className="text-sm text-zinc-500">Query</div>
@@ -314,278 +323,278 @@ const SerpResultsViewer: React.FC<SerpResultsViewerProps> = ({ queryId }) => {
             <div className="font-medium">{serpResult.ads_count}</div>
           </div>
         </div>
-      </div>
+      </CardHeader>
 
-      {/* Tabs for Google/Bing */}
-      <div className="border-b border-zinc-800">
-        <div className="flex">
-          <button
-            className={`px-6 py-3 font-medium text-sm ${
-              activeTab === 'google' 
-                ? 'border-b-2 border-blue-500 text-blue-500' 
-                : 'text-zinc-400 hover:text-zinc-200'
-            }`}
-            onClick={() => setActiveTab('google')}
-          >
-            Google Ads ({googleAds.length})
-          </button>
-          <button
-            className={`px-6 py-3 font-medium text-sm ${
-              activeTab === 'bing' 
-                ? 'border-b-2 border-blue-500 text-blue-500' 
-                : 'text-zinc-400 hover:text-zinc-200'
-            }`}
-            onClick={() => setActiveTab('bing')}
-          >
-            Bing Ads ({bingAds.length})
-          </button>
-        </div>
-      </div>
-
-      {/* Main content area */}
-      <div className="flex h-[calc(100vh-300px)]">
-        {/* Ads list */}
-        <div className="w-1/3 border-r border-zinc-800 overflow-y-auto">
-          <div className="p-4 border-b border-zinc-800">
-            <h3 className="font-medium">
-              {activeTab === 'google' ? 'Google Ads' : 'Bing Ads'}
-            </h3>
+      <CardContent className="p-0">
+        <Tabs value={activeTab} onValueChange={(value) => setActiveTab(value as 'google' | 'bing')}>
+          <div className="border-b border-zinc-800">
+            <TabsList className="w-full justify-start rounded-none bg-transparent border-b border-zinc-800 p-0">
+              <TabsTrigger 
+                value="google"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-blue-500 data-[state=active]:bg-transparent px-6 py-3"
+              >
+                Google Ads ({googleAds.length})
+              </TabsTrigger>
+              <TabsTrigger 
+                value="bing"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-blue-500 data-[state=active]:bg-transparent px-6 py-3"
+              >
+                Bing Ads ({bingAds.length})
+              </TabsTrigger>
+            </TabsList>
           </div>
-          
-          {activeTab === 'google' ? (
-            googleAds.length === 0 ? (
-              <div className="p-4 text-zinc-500 text-center">No Google ads found</div>
-            ) : (
-              <div>
-                {googleAds.map(ad => (
-                  <div
-                    key={ad.id}
-                    className={`p-4 border-b border-zinc-800 cursor-pointer hover:bg-zinc-800 transition-colors ${
-                      selectedAd?.id === ad.id ? 'bg-zinc-800' : ''
-                    }`}
-                    onClick={() => handleAdClick(ad.id, 'google')}
-                  >
-                    <div className="font-medium text-blue-400">{ad.title || 'No title'}</div>
-                    <div className="text-green-400 text-sm">{ad.display_url || 'No URL'}</div>
-                    <div className="text-zinc-400 text-sm mt-1 line-clamp-2">
-                      {ad.description || 'No description'}
+
+          <div className="flex h-[calc(100vh-300px)]">
+            {/* Ads list */}
+            <TabsContent value="google" className="m-0 w-1/3 border-r border-zinc-800 overflow-y-auto">
+              {googleAds.length === 0 ? (
+                <div className="p-4 text-zinc-500 text-center">No Google ads found</div>
+              ) : (
+                <div>
+                  {googleAds.map(ad => (
+                    <div
+                      key={ad.id}
+                      className={`p-4 border-b border-zinc-800 cursor-pointer hover:bg-zinc-800 transition-colors ${
+                        selectedAd?.id === ad.id ? 'bg-zinc-800' : ''
+                      }`}
+                      onClick={() => handleAdClick(ad.id, 'google')}
+                    >
+                      <div className="font-medium text-blue-400">{ad.title || 'No title'}</div>
+                      <div className="text-green-400 text-sm">{ad.display_url || 'No URL'}</div>
+                      <div className="text-zinc-400 text-sm mt-1 line-clamp-2">
+                        {ad.description || 'No description'}
+                      </div>
+                      <div className="text-xs text-zinc-500 mt-2">
+                        Position: {ad.position || 'N/A'}
+                      </div>
                     </div>
-                    <div className="text-xs text-zinc-500 mt-2">
-                      Position: {ad.position || 'N/A'}
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+            
+            <TabsContent value="bing" className="m-0 w-1/3 border-r border-zinc-800 overflow-y-auto">
+              {bingAds.length === 0 ? (
+                <div className="p-4 text-zinc-500 text-center">No Bing ads found</div>
+              ) : (
+                <div>
+                  {bingAds.map(ad => (
+                    <div
+                      key={ad.id}
+                      className={`p-4 border-b border-zinc-800 cursor-pointer hover:bg-zinc-800 transition-colors ${
+                        selectedAd?.id === ad.id ? 'bg-zinc-800' : ''
+                      }`}
+                      onClick={() => handleAdClick(ad.id, 'bing')}
+                    >
+                      <div className="font-medium text-blue-400">{ad.title || 'No title'}</div>
+                      <div className="text-green-400 text-sm">{ad.display_url || 'No URL'}</div>
+                      <div className="text-zinc-400 text-sm mt-1 line-clamp-2">
+                        {ad.description || 'No description'}
+                      </div>
+                      <div className="text-xs text-zinc-500 mt-2">
+                        Position: {ad.position || 'N/A'}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </TabsContent>
+            
+            {/* Ad details and renderings */}
+            <div className="flex-1 overflow-y-auto">
+              {!selectedAd ? (
+                <div className="p-6 text-center text-zinc-500">
+                  Select an ad to view details
+                </div>
+              ) : (
+                <div>
+                  {/* Ad details */}
+                  <div className="p-6 border-b border-zinc-800">
+                    <h3 className="font-medium mb-4">Ad Details</h3>
+                    
+                    {/* Ad information */}
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <div className="text-sm text-zinc-500">Title</div>
+                        <div className="font-medium">
+                          {activeTab === 'google' 
+                            ? googleAds.find(ad => ad.id === selectedAd.id)?.title || 'N/A'
+                            : bingAds.find(ad => ad.id === selectedAd.id)?.title || 'N/A'
+                          }
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-zinc-500">Display URL</div>
+                        <div className="font-medium text-green-400">
+                          {activeTab === 'google' 
+                            ? googleAds.find(ad => ad.id === selectedAd.id)?.display_url || 'N/A'
+                            : bingAds.find(ad => ad.id === selectedAd.id)?.display_url || 'N/A'
+                          }
+                        </div>
+                      </div>
+                      <div className="col-span-2">
+                        <div className="text-sm text-zinc-500">Description</div>
+                        <div>
+                          {activeTab === 'google' 
+                            ? googleAds.find(ad => ad.id === selectedAd.id)?.description || 'N/A'
+                            : bingAds.find(ad => ad.id === selectedAd.id)?.description || 'N/A'
+                          }
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-zinc-500">Destination URL</div>
+                        <div className="font-medium break-all">
+                          <a 
+                            href={activeTab === 'google' 
+                              ? googleAds.find(ad => ad.id === selectedAd.id)?.destination_url || '#'
+                              : bingAds.find(ad => ad.id === selectedAd.id)?.destination_url || '#'
+                            } 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="text-blue-400 hover:underline"
+                          >
+                            {activeTab === 'google' 
+                              ? googleAds.find(ad => ad.id === selectedAd.id)?.destination_url || 'N/A'
+                              : bingAds.find(ad => ad.id === selectedAd.id)?.destination_url || 'N/A'
+                            }
+                          </a>
+                        </div>
+                      </div>
+                      <div>
+                        <div className="text-sm text-zinc-500">Advertiser Domain</div>
+                        <div className="font-medium">
+                          {activeTab === 'google' 
+                            ? googleAds.find(ad => ad.id === selectedAd.id)?.advertiser_domain || 'N/A'
+                            : bingAds.find(ad => ad.id === selectedAd.id)?.advertiser_domain || 'N/A'
+                          }
+                        </div>
+                      </div>
                     </div>
                   </div>
-                ))}
-              </div>
-            )
-          ) : (
-            bingAds.length === 0 ? (
-              <div className="p-4 text-zinc-500 text-center">No Bing ads found</div>
-            ) : (
-              <div>
-                {bingAds.map(ad => (
-                  <div
-                    key={ad.id}
-                    className={`p-4 border-b border-zinc-800 cursor-pointer hover:bg-zinc-800 transition-colors ${
-                      selectedAd?.id === ad.id ? 'bg-zinc-800' : ''
-                    }`}
-                    onClick={() => handleAdClick(ad.id, 'bing')}
-                  >
-                    <div className="font-medium text-blue-400">{ad.title || 'No title'}</div>
-                    <div className="text-green-400 text-sm">{ad.display_url || 'No URL'}</div>
-                    <div className="text-zinc-400 text-sm mt-1 line-clamp-2">
-                      {ad.description || 'No description'}
-                    </div>
-                    <div className="text-xs text-zinc-500 mt-2">
-                      Position: {ad.position || 'N/A'}
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )
-          )}
-        </div>
-        
-        {/* Ad details and renderings */}
-        <div className="flex-1 overflow-y-auto">
-          {!selectedAd ? (
-            <div className="p-6 text-center text-zinc-500">
-              Select an ad to view details
-            </div>
-          ) : (
-            <div>
-              {/* Ad details */}
-              <div className="p-6 border-b border-zinc-800">
-                <h3 className="font-medium mb-4">Ad Details</h3>
-                
-                {/* Ad information */}
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <div className="text-sm text-zinc-500">Title</div>
-                    <div className="font-medium">
-                      {activeTab === 'google' 
-                        ? googleAds.find(ad => ad.id === selectedAd.id)?.title || 'N/A'
-                        : bingAds.find(ad => ad.id === selectedAd.id)?.title || 'N/A'
-                      }
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">Display URL</div>
-                    <div className="font-medium text-green-400">
-                      {activeTab === 'google' 
-                        ? googleAds.find(ad => ad.id === selectedAd.id)?.display_url || 'N/A'
-                        : bingAds.find(ad => ad.id === selectedAd.id)?.display_url || 'N/A'
-                      }
-                    </div>
-                  </div>
-                  <div className="col-span-2">
-                    <div className="text-sm text-zinc-500">Description</div>
-                    <div>
-                      {activeTab === 'google' 
-                        ? googleAds.find(ad => ad.id === selectedAd.id)?.description || 'N/A'
-                        : bingAds.find(ad => ad.id === selectedAd.id)?.description || 'N/A'
-                      }
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">Destination URL</div>
-                    <div className="font-medium break-all">
-                      <a 
-                        href={activeTab === 'google' 
-                          ? googleAds.find(ad => ad.id === selectedAd.id)?.destination_url || '#'
-                          : bingAds.find(ad => ad.id === selectedAd.id)?.destination_url || '#'
-                        } 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-400 hover:underline"
-                      >
-                        {activeTab === 'google' 
-                          ? googleAds.find(ad => ad.id === selectedAd.id)?.destination_url || 'N/A'
-                          : bingAds.find(ad => ad.id === selectedAd.id)?.destination_url || 'N/A'
-                        }
-                      </a>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">Advertiser Domain</div>
-                    <div className="font-medium">
-                      {activeTab === 'google' 
-                        ? googleAds.find(ad => ad.id === selectedAd.id)?.advertiser_domain || 'N/A'
-                        : bingAds.find(ad => ad.id === selectedAd.id)?.advertiser_domain || 'N/A'
-                      }
-                    </div>
+                  
+                  {/* Renderings */}
+                  <div className="p-6">
+                    <h3 className="font-medium mb-4">Renderings</h3>
+                    
+                    {isLoading ? (
+                      <div className="text-center py-4">
+                        <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
+                        <p className="mt-2 text-zinc-400">Loading renderings...</p>
+                      </div>
+                    ) : adRenderings.length === 0 ? (
+                      <div className="text-center py-4 text-zinc-500">
+                        No renderings available for this ad
+                      </div>
+                    ) : (
+                      <div>
+                        {/* Group renderings by target (SERP vs Landing Page) */}
+                        {['serp', 'landing_page'].map(target => {
+                          const targetRenderings = adRenderings.filter(r => 
+                            r.rendering_target === target
+                          );
+                          
+                          if (targetRenderings.length === 0) return null;
+                          
+                          return (
+                            <div key={target} className="mb-6">
+                              <h4 className="text-sm font-medium mb-3 capitalize">
+                                {target.replace('_', ' ')} Renderings
+                              </h4>
+                              
+                              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {/* HTML Renderings */}
+                                {targetRenderings.filter(r => r.rendering_type === 'html').map(rendering => (
+                                  <div key={rendering.id} className="bg-zinc-800 rounded-lg overflow-hidden">
+                                    <div className="p-3 border-b border-zinc-700 flex justify-between items-center">
+                                      <span className="font-medium">HTML Rendering</span>
+                                      {rendering.storage_url && (
+                                        <Button
+                                          variant="link"
+                                          size="sm"
+                                          asChild
+                                          className="text-blue-400 p-0 h-auto"
+                                        >
+                                          <a 
+                                            href={rendering.storage_url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Full
+                                          </a>
+                                        </Button>
+                                      )}
+                                    </div>
+                                    <div className="p-4">
+                                      {rendering.storage_url ? (
+                                        <div className="bg-white rounded h-40 overflow-hidden">
+                                          <iframe 
+                                            src={rendering.storage_url} 
+                                            className="w-full h-full border-0"
+                                            title="HTML Rendering"
+                                          ></iframe>
+                                        </div>
+                                      ) : (
+                                        <div className="text-center py-4 text-zinc-500">
+                                          HTML rendering not available
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                                
+                                {/* PNG Renderings */}
+                                {targetRenderings.filter(r => r.rendering_type === 'png').map(rendering => (
+                                  <div key={rendering.id} className="bg-zinc-800 rounded-lg overflow-hidden">
+                                    <div className="p-3 border-b border-zinc-700 flex justify-between items-center">
+                                      <span className="font-medium">PNG Rendering</span>
+                                      {rendering.storage_url && (
+                                        <Button
+                                          variant="link"
+                                          size="sm"
+                                          asChild
+                                          className="text-blue-400 p-0 h-auto"
+                                        >
+                                          <a 
+                                            href={rendering.storage_url} 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                          >
+                                            View Full
+                                          </a>
+                                        </Button>
+                                      )}
+                                    </div>
+                                    <div className="p-4">
+                                      {rendering.storage_url ? (
+                                        <div className="bg-white rounded h-40 overflow-hidden">
+                                          <img 
+                                            src={rendering.storage_url} 
+                                            alt="PNG Rendering"
+                                            className="w-full h-full object-contain"
+                                          />
+                                        </div>
+                                      ) : (
+                                        <div className="text-center py-4 text-zinc-500">
+                                          PNG rendering not available
+                                        </div>
+                                      )}
+                                    </div>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    )}
                   </div>
                 </div>
-              </div>
-              
-              {/* Renderings */}
-              <div className="p-6">
-                <h3 className="font-medium mb-4">Renderings</h3>
-                
-                {isLoading ? (
-                  <div className="text-center py-4">
-                    <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto"></div>
-                    <p className="mt-2 text-zinc-400">Loading renderings...</p>
-                  </div>
-                ) : adRenderings.length === 0 ? (
-                  <div className="text-center py-4 text-zinc-500">
-                    No renderings available for this ad
-                  </div>
-                ) : (
-                  <div>
-                    {/* Group renderings by target (SERP vs Landing Page) */}
-                    {['serp', 'landing_page'].map(target => {
-                      const targetRenderings = adRenderings.filter(r => 
-                        r.rendering_target === target
-                      );
-                      
-                      if (targetRenderings.length === 0) return null;
-                      
-                      return (
-                        <div key={target} className="mb-6">
-                          <h4 className="text-sm font-medium mb-3 capitalize">
-                            {target.replace('_', ' ')} Renderings
-                          </h4>
-                          
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            {/* HTML Renderings */}
-                            {targetRenderings.filter(r => r.rendering_type === 'html').map(rendering => (
-                              <div key={rendering.id} className="bg-zinc-800 rounded-lg overflow-hidden">
-                                <div className="p-3 border-b border-zinc-700 flex justify-between items-center">
-                                  <span className="font-medium">HTML Rendering</span>
-                                  {rendering.storage_url && (
-                                    <a 
-                                      href={rendering.storage_url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="text-blue-400 text-sm hover:underline"
-                                    >
-                                      View Full
-                                    </a>
-                                  )}
-                                </div>
-                                <div className="p-4">
-                                  {rendering.storage_url ? (
-                                    <div className="bg-white rounded h-40 overflow-hidden">
-                                      <iframe 
-                                        src={rendering.storage_url} 
-                                        className="w-full h-full border-0"
-                                        title="HTML Rendering"
-                                      ></iframe>
-                                    </div>
-                                  ) : (
-                                    <div className="text-center py-4 text-zinc-500">
-                                      HTML rendering not available
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            ))}
-                            
-                            {/* PNG Renderings */}
-                            {targetRenderings.filter(r => r.rendering_type === 'png').map(rendering => (
-                              <div key={rendering.id} className="bg-zinc-800 rounded-lg overflow-hidden">
-                                <div className="p-3 border-b border-zinc-700 flex justify-between items-center">
-                                  <span className="font-medium">PNG Rendering</span>
-                                  {rendering.storage_url && (
-                                    <a 
-                                      href={rendering.storage_url} 
-                                      target="_blank" 
-                                      rel="noopener noreferrer"
-                                      className="text-blue-400 text-sm hover:underline"
-                                    >
-                                      View Full
-                                    </a>
-                                  )}
-                                </div>
-                                <div className="p-4">
-                                  {rendering.storage_url ? (
-                                    <div className="bg-white rounded h-40 overflow-hidden">
-                                      <img 
-                                        src={rendering.storage_url} 
-                                        alt="PNG Rendering"
-                                        className="w-full h-full object-contain"
-                                      />
-                                    </div>
-                                  ) : (
-                                    <div className="text-center py-4 text-zinc-500">
-                                      PNG rendering not available
-                                    </div>
-                                  )}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
+              )}
             </div>
-          )}
-        </div>
-      </div>
-    </div>
+          </div>
+        </Tabs>
+      </CardContent>
+    </Card>
   );
 };
 
