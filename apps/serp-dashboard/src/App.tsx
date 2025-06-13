@@ -6,7 +6,7 @@ import MainLayout from './components/layout/MainLayout';
 // Pages
 import Dashboard from './pages/Dashboard';
 import Campaigns from './pages/Campaigns';
-import CampaignBuilder from './pages/CampaignManager';
+import CampaignBuilder from './pages/CampaignBuilder';
 import Locations from './pages/Locations';
 import Scrapi from './pages/Scrapi';
 import Preview from './pages/Preview';

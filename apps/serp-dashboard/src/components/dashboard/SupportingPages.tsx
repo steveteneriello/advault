@@ -8,7 +8,8 @@ import {
   FileText, 
   Settings, 
   Users, 
-  Building2 
+  Building2,
+  Layers
 } from 'lucide-react';
 
 interface PageCard {
@@ -24,7 +25,7 @@ const SupportingPages: React.FC = () => {
   const pages: PageCard[] = [
     { icon: Calendar, title: 'Schedule', description: 'Manage job schedules', path: '/schedule' },
     { icon: Database, title: 'Keyword Data', description: 'Browse keyword metrics', path: '/keywords' },
-    { icon: BarChart3, title: 'Campaign Manager', description: 'Build keyword campaigns', path: '/campaign-manager' },
+    { icon: Layers, title: 'Campaign Builder', description: 'Build keyword campaigns', path: '/campaign-builder' },
     { icon: MapPin, title: 'Location Manager', description: 'Configure locations', path: '/locations' },
     { icon: FileText, title: 'Flight Templates', description: 'Save campaign templates', path: '/templates' },
     { icon: Settings, title: 'App Configuration', description: 'System settings', path: '/settings' },
@@ -42,7 +43,7 @@ const SupportingPages: React.FC = () => {
             onClick={() => navigate(page.path)}
             className="bg-zinc-800 border border-zinc-700 rounded-lg p-6 text-center cursor-pointer hover:bg-zinc-700 transition-all hover:-translate-y-0.5"
           >
-            <page.icon className="w-12 h-12 mx-auto mb-3 text-zinc-400" />
+            <page.icon className="w-8 h-8 mx-auto mb-3 text-white" />
             <h4 className="font-medium mb-1">{page.title}</h4>
             <p className="text-xs text-zinc-400">{page.description}</p>
           </div>

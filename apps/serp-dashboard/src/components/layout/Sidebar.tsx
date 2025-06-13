@@ -104,7 +104,7 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
                       : 'text-zinc-400 hover:bg-zinc-800 hover:text-white'
                   }`}
                 >
-                  <item.icon className="w-5 h-5 text-white" />
+                  <item.icon className="w-5 h-5" />
                   {!collapsed && item.label}
                 </button>
               );
@@ -121,12 +121,12 @@ const Sidebar: React.FC<SidebarProps> = ({ collapsed }) => {
         >
           {isDark ? (
             <>
-              <Sun className="w-5 h-5 text-white" />
+              <Sun className="w-5 h-5" />
               {!collapsed && <span>Light Mode</span>}
             </>
           ) : (
             <>
-              <Moon className="w-5 h-5 text-white" />
+              <Moon className="w-5 h-5" />
               {!collapsed && <span>Dark Mode</span>}
             </>
           )}

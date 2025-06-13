@@ -1,16 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Get environment variables
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-// Validate that required environment variables are present
-if (!supabaseUrl || !supabaseAnonKey) {
-  console.error('Missing Supabase configuration. Please check your environment variables:');
-  console.error('VITE_SUPABASE_URL:', supabaseUrl ? 'Set' : 'Missing');
-  console.error('VITE_SUPABASE_ANON_KEY:', supabaseAnonKey ? 'Set' : 'Missing');
-  throw new Error('Supabase configuration is incomplete. Please set VITE_SUPABASE_URL and VITE_SUPABASE_ANON_KEY in your .env.local file.');
-}
+// Use environment variables with fallbacks for development
+const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || 'https://your-project.supabase.co';
+const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || 'your-anon-key';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
 
@@ -226,7 +218,7 @@ export const api = {
   async getCampaigns() {
     try {
       const { data, error } = await supabase
-        .from('campaigns')
+        .from('campaign_manager_campaigns')
         .select('*')
         .order('created_at', { ascending: false });
       
@@ -241,7 +233,7 @@ export const api = {
   async createCampaign(campaign: Partial<Campaign>) {
     try {
       const { data, error } = await supabase
-        .from('campaigns')
+        .from('campaign_manager_campaigns')
         .insert(campaign)
         .select();
       
@@ -256,7 +248,7 @@ export const api = {
   async getKeywords(category?: string) {
     try {
       let query = supabase
-        .from('keywords')
+        .from('campaign_manager_keywords')
         .select('*');
       
       if (category) {
